@@ -168,6 +168,11 @@ body {
             padding-left: 20px;
             background: url(../img/burger.svg) no-repeat left;
         }
+
+        &--info {
+            padding-right: 20px;
+            background: url(../img/information.svg) no-repeat right;
+        }
     }
 
     &__interaction {
@@ -417,6 +422,11 @@ body {
         border: 1px solid $dark;
         background: none;
         cursor: pointer;
+
+        &--popular {
+            padding-left: 27px;
+            background: url(../img/popular.svg) no-repeat left center;
+        }
     }
 
     &__layout-buttons {

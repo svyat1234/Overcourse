@@ -123,6 +123,10 @@ body {
   padding-left: 20px;
   background: url(../img/burger.svg) no-repeat left;
 }
+.header__link--info {
+  padding-right: 20px;
+  background: url(../img/information.svg) no-repeat right;
+}
 .header__interaction {
   display: flex;
   align-items: center;
@@ -360,6 +364,10 @@ body {
   border: 1px solid #262626;
   background: none;
   cursor: pointer;
+}
+.courses__category--popular {
+  padding-left: 27px;
+  background: url(../img/popular.svg) no-repeat left center;
 }
 .courses__layout-buttons {
   display: flex;
