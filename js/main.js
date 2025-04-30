@@ -24,3 +24,50 @@ const selectionSwiper = new Swiper('.selection__swiper', {
         prevEl: '.selection .swiper-button-prev',
     },
 });
+
+const schoolsSwiper = new Swiper('.schools__slider', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
+    }
+});
+
+// Schools slider hover effect
+const schoolsSlider = document.querySelector('.schools__slider');
+const slides = document.querySelectorAll('.schools__slide');
+
+if (schoolsSlider && slides.length) {
+    let currentIndex = 0;
+    const interval = 3000; // 3 seconds between each slide
+
+    function activateNextSlide() {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+    }
+
+    // Start the sequence
+    setInterval(activateNextSlide, interval);
+}
