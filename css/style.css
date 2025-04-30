@@ -844,6 +844,7 @@ body {
 }
 .schools__title {
   max-width: 805px;
+  font-size: 62px;
 }
 .schools__title--accent {
   color: #AFE982;
