@@ -1481,6 +1481,10 @@ body {
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+
+        &--small {
+            font-size: 51px;
+        }
     }
 
     &__statistic-card-info {

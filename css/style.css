@@ -1279,6 +1279,9 @@ body {
   font-weight: 600;
   line-height: normal;
 }
+.about__statistic-card-count--small {
+  font-size: 51px;
+}
 .about__statistic-card-info {
   position: absolute;
   top: 30px;
