@@ -1,0 +1,836 @@
+// COLORS
+
+$light: #fff;
+$background: #F9F9F9;
+$dark: #262626;
+$main: #86BCED;
+$accent: #AFE982;
+$gray: #8E8E8E;
+$button: #F8F8F8;
+
+// CONTAINER
+
+$container: 1596px;
+$desktop-width: 1920px;
+
+// SETTINGS
+
+$button-border-radius: 10px;
+
+
+@mixin flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-start-between {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@mixin flex-end-between {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+@mixin flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: $background;
+    color: $dark;
+}
+
+.container {
+    max-width: $container;
+    width: calc(($container / $desktop-width) * 100%);
+    margin: auto;
+}
+
+.logo {
+    width: 200px;
+    height: 34px;
+}
+
+.section {
+    margin-top: 200px;
+}
+
+.button {
+    @include flex-center-center;
+    height: 50px;
+    border-radius: $button-border-radius;
+    background: $button;
+    color: $dark;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+
+    &:hover {
+        background: $accent;
+        color: $light;
+    }
+}
+
+.section-title {
+    font-family: Montserrat, sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    max-width: 800px;
+
+    &--accent {
+        font-style: italic;
+        font-weight: 400;
+    }
+}
+
+.swiper-slide {
+    width: auto !important;
+}
+
+
+
+
+// HEADER
+
+.header {
+    @include flex-center-between;
+    background: $dark;
+
+    &--main {
+        margin-top: 60px;
+    }
+
+    &__content {
+        @include flex-center-between;
+        max-width: 1110px;
+        width: 100%;
+    }
+
+    &__nav {
+        @include flex-center-between;
+        max-width: 705px;
+        width: 100%;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        &--courses {
+            padding-left: 20px;
+            background: url(../img/burger.svg) no-repeat left;
+        }
+    }
+
+    &__interaction {
+        @include flex-center-between;
+        max-width: 210px;
+        width: 100%;
+    }
+
+    &__search {
+        border: none;
+        width: 17px;
+        height: 19px;
+        background: url(../img/search.svg) no-repeat center / cover;
+        cursor: pointer;
+    }
+
+    &__button {
+        padding: 10px 19px;
+        border-radius: $button-border-radius;
+        flex-shrink: 0;
+        color: $main;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background-color: $light;
+        cursor: pointer;
+        border: none;
+    }
+    
+}
+
+
+// PROMO
+
+.promo {
+    margin-top: calc(-42px - 60px);
+    padding: 20px;
+
+    &__wrap {
+        background: $main;
+        border-radius: 65px;
+    }
+
+    &__content {
+        @include flex-start-between;  
+        max-width: $container;
+        width: calc(($container / ($desktop-width - 20px)) * 100%);
+        margin: auto;
+        padding-bottom: 90px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__heading {
+        margin-top: 212px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-family: "Open Sans Hebrew", sans-serif;
+        font-size: 70px;
+        font-weight: 500;
+        line-height: 100%;
+        color: $light;
+    }
+
+    &__form {
+        @include flex-center-between;
+        margin-top: 30px;
+        max-width: 785px;
+        width: 100%;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        max-width: 373px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        width: 100%;
+        height: 44px;
+        border-radius: 12px;
+        border: none;
+        padding-left: 30px;
+
+        &::placeholder {
+            color: #E6E6E6;
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 0;
+    }
+
+    &__form-text {
+        @include flex-center-center;
+        color: $light;  
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border: 1px solid $light;
+        border-radius: 12px;
+        max-width: 373px;
+        width: 100%;
+        height: 44px;
+    }
+
+    &__requests {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    &__request-link {
+        text-decoration: none;
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        border-bottom: 1px solid $light;
+    }
+
+    &__tags {
+        max-width: 660px;
+        width: 100%;
+        margin-top: 80px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    &__tag {
+        text-decoration: none;
+        color: $light;  
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 999px;
+        border: 1px solid $light;
+        padding: 10px 30px;
+
+        &--more {
+            background: $light;
+            color: $main;
+        }
+    }
+
+    &__img-wrap {
+        position: relative;
+        margin-top: 100px;
+        width: 754.0px;
+        height: 639.0px;
+    }
+
+    &__img-text {
+        @include flex-center-center;
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        position: absolute;
+        top: 18%;
+        left: 4%;
+        width: 174px;
+        height: 50px;
+        border-radius: 11px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(5.5px);
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 11px;
+            right: 0;
+            bottom: 0;
+            width: 16px;
+            height: 16px;
+            background: rgba(#A4D3FF, 0.6) url(../img/round.svg) no-repeat center;
+            transform: translate(40%, 40%);
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+}
+
+
+.courses {
+
+    &__title {
+        max-width: 905px;
+    }
+
+    &__menu {
+        margin-top: 50px;
+        @include flex-center-between;
+    }
+
+    &__categories {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__category {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 30px;
+        border-radius: 999px;
+        border: 1px solid $dark;
+        background: none;
+        cursor: pointer;
+    }
+
+    &__layout-buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__layout-button {
+        width: 40px;
+        height: 40px;
+        background: none;
+        border-radius: 10px;
+        border: 1px solid $dark;
+        cursor: pointer;
+
+        &--grid {
+            background: url(../img/grid.svg) no-repeat center;
+        }
+
+        &--list {
+            background: url(../img/list.svg) no-repeat center;
+        }
+
+        &--grid-active {
+            background: $dark url(../img/grid-active.svg) no-repeat center;
+        }
+
+        &--list-active {
+            background: $dark url(../img/list-active.svg) no-repeat center;
+        }
+    }
+
+	&__cards {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: stretch;
+	}
+
+	&__card {
+        height: 100%;
+        background: $light;
+        border-radius: 30px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+	}
+
+	&__card-img-wrap {
+        position: relative;
+        width: 100%;
+        height: 202px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        overflow: hidden;
+	}
+
+	&__card-img {
+        object-fit: cover;
+	}
+
+	&__card-info {
+        @include flex-center-between;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+	}
+
+	&__card-rating {
+        padding: 8px 10px 8px 33px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
+        backdrop-filter: blur(12px);
+        color: $light;
+        -webkit-text-stroke-width: 0.76px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.40);
+        font-family: Montserrat, sans-serif;
+        font-size: 24.063px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+	}
+
+	&__card-company {
+        @include flex-center-center;
+        width: 123px;
+        height: 40px;
+        background: $light;
+        border-radius: 10px;
+	}
+
+    &__card-company-img {
+        max-width: 120px;
+        max-height: 38px;
+    }
+
+    &__card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+	&__card-title {
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+	}
+
+	&__card-time {
+        display: flex;
+        margin-top: 10px;
+        color: $accent;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+	}
+    
+	&__card-tags {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+	}
+
+	&__card-tag {
+        padding: 3.5px 10px;
+        text-decoration: none;
+        color: #8E8E8E;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 7px;
+        border: 1px solid #8E8E8E;
+	}
+
+	&__card-installments {
+        display: flex;
+        margin-top: 25px;
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+	}
+
+	&__card-price-wrap {
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+        column-gap: 13px;
+	}
+
+	&__card-price {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+	}
+
+	&__card-price-old {
+        color: #8E8E8E;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        text-decoration-line: line-through;
+	}
+
+	&__card-buttons {
+        @include flex-center-between;
+        margin-top: 14px;
+        margin-top: 25px;
+        column-gap: 3px;
+	}
+
+	&__card-link {
+        text-decoration: none;
+        max-width: 100%;
+        width: 100%;
+	}
+
+	&__card-favorite {
+        border: none;
+        min-width: 50px;
+        height: 50px;
+        background: $button url(../img/favorite.svg) no-repeat center;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background 0.1s ease-in-out;
+
+        &:hover {
+            background: $accent url(../img/favorite-active.svg) no-repeat center;
+        }
+
+        &--active {
+            background: $accent url(../img/favorite-active.svg) no-repeat center;
+        }
+	}
+
+
+}
+
+
+// IMPRESSIONS
+
+.impressions {
+
+    &__heading {
+        @include flex-end-between;
+        margin-bottom: 80px;
+    }
+
+
+    &__info {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__count-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__count-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 18.232px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__count {
+        font-family: Montserrat, sans-serif;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    & .swiper-button-next {
+        margin-top: 0;
+        top: auto;
+        position: relative;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &__card-video {
+        width: 384px;
+        height: 538px;
+        border-radius: 43px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__card-video-img {
+        object-fit: cover;
+    }
+
+    &__card-video-controls {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    &__card-video-time {
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-video-play {
+        background: rgba(255, 255, 255, 0.40) url(../img/play.svg) no-repeat center;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__card-video-info {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+
+    &__card-video-name {
+        color: $light;
+        font-family: Montserrat, sans-serif ;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-video-city {
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-review {
+        @include flex-start-between;
+        background: $light;
+        border-radius: 43px;
+        padding: 30px;
+        max-width: 652px;
+        width: 100%;
+        padding: 50px;
+    }
+
+    &__card-review-content {
+
+    }
+
+    &__card-review-heading {
+        @include flex-center-between;
+        max-width: 310px;
+        width: 100%;
+    }
+
+    &__card-review-person {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card-review-name {
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__card-review-city {
+        margin-top: 5px;
+        color: #C9C9C9;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-review-school {
+        max-width: 146px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card-review-school-course {
+        color: #C9C9C9;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-review-school-name {
+        margin-top: 5px;
+        color: #C9C9C9;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__card-review-text {
+        position: relative;
+        margin-top: 120px;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-left: 25px;
+        overflow: visible;
+        max-width: 300px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: -20px;
+            width: 20px;
+            height: 17px;
+            background: url(../img/quote.svg) no-repeat left top;
+        }
+    }
+
+    &__card-review-button {
+        margin-top: 70px;
+        margin-left: 25px;
+        color: $dark;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $dark;
+    }
+
+    &__card-review-img-wrap {
+        max-width: 200px;
+        width: 100%;
+        height: 236px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &__card-review-img {
+        object-fit: cover;
+    }
+}
