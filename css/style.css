@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-style: italic;
+  src: url(../fonts/opensanshebrew/OpenSansHebrew-Italic.ttf);
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -70,6 +75,7 @@ body {
   line-height: 100%;
 }
 .section-title--accent {
+  font-family: "OpenSansHebrew", sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -554,6 +560,9 @@ body {
   justify-content: space-between;
   margin-bottom: 80px;
 }
+.impressions__title {
+  max-width: 800px;
+}
 .impressions__info {
   display: flex;
   align-items: center;
@@ -588,9 +597,9 @@ body {
   position: relative;
   background: url(../img/arrow-right.svg) no-repeat center;
   width: 50px;
-  height: 50px;
+  height: 77px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #262626;
 }
 .impressions__card-video {
   width: 384px;

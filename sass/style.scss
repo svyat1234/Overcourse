@@ -42,6 +42,12 @@ $button-border-radius: 10px;
     justify-content: center;
 }
 
+@font-face {
+    font-family: "OpenSansHebrew";
+    font-style: italic;
+    src: url(../fonts/opensanshebrew/OpenSansHebrew-Italic.ttf);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -114,6 +120,7 @@ body {
     line-height: 100%;
 
     &--accent {
+        font-family: "OpenSansHebrew", sans-serif;
         font-style: italic;
         font-weight: 400;
     }
@@ -635,6 +642,9 @@ body {
         margin-bottom: 80px;
     }
 
+    &__title {
+        max-width: 800px;
+    }
 
     &__info {
         display: flex;
@@ -674,9 +684,9 @@ body {
         position: relative;
         background: url(../img/arrow-right.svg) no-repeat center;
         width: 50px;
-        height: 50px;
+        height: 77px;
         border-radius: 10px;
-        border: none;
+        border: 1px solid $dark;
     }
 
     &__card-video {
