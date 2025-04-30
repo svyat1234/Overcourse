@@ -79,11 +79,30 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    border: none;
+    text-decoration: none;
     cursor: pointer;
-
     &:hover {
         background: $accent;
         color: $light;
+    }
+}
+
+.button-favorite {
+    border: none;
+    min-width: 50px;
+    height: 50px;
+    background: $button url(../img/favorite.svg) no-repeat center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.1s ease-in-out;
+
+    &:hover {
+        background: $accent url(../img/favorite-active.svg) no-repeat center;
+    }
+
+    &--active {
+        background: $accent url(../img/favorite-active.svg) no-repeat center;
     }
 }
 
@@ -93,19 +112,25 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
-    max-width: 800px;
 
     &--accent {
         font-style: italic;
         font-weight: 400;
     }
 }
+.swiper-button-prev, 
+.swiper-button-next {
+    left: auto !important;
+    right: auto !important; 
+    top: auto !important;
+    bottom: auto !important;
+    margin-top: 0 !important;
 
-.swiper-slide {
-    width: auto !important;
+    &::after {
+        content: '' !important;
+    }
+
 }
-
-
 
 
 // HEADER
@@ -525,14 +550,14 @@ body {
 	&__card-tag {
         padding: 3.5px 10px;
         text-decoration: none;
-        color: #8E8E8E;
+        color: $gray;
         font-family: Montserrat, sans-serif;
         font-size: 14px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
         border-radius: 7px;
-        border: 1px solid #8E8E8E;
+        border: 1px solid $gray;
 	}
 
 	&__card-installments {
@@ -559,7 +584,7 @@ body {
 	}
 
 	&__card-price-old {
-        color: #8E8E8E;
+        color: $gray;
         font-family: Montserrat, sans-serif;
         font-size: 16px;
         font-style: normal;
@@ -580,23 +605,6 @@ body {
         width: 100%;
 	}
 
-	&__card-favorite {
-        border: none;
-        min-width: 50px;
-        height: 50px;
-        background: $button url(../img/favorite.svg) no-repeat center;
-        cursor: pointer;
-        border-radius: 10px;
-        transition: background 0.1s ease-in-out;
-
-        &:hover {
-            background: $accent url(../img/favorite-active.svg) no-repeat center;
-        }
-
-        &--active {
-            background: $accent url(../img/favorite-active.svg) no-repeat center;
-        }
-	}
 
 
 }
@@ -638,6 +646,10 @@ body {
         font-style: normal;
         font-weight: 600;
         line-height: 100%;
+    }
+
+    & .swiper-slide {
+        width: auto;
     }
 
     & .swiper-button-next {
@@ -833,4 +845,643 @@ body {
     &__card-review-img {
         object-fit: cover;
     }
+
 }
+
+
+// REVIEWS
+
+.reviews {
+
+    // &__title {
+    // }
+
+    &__cards {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    &__card {
+        background: $light;
+        border-radius: 30px;
+        padding: 30px;
+        height: 272px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__card-heading {
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card-school {
+        position: relative;
+        font-family: Montserrat, sans-serif;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: -30px;
+            top: -1px;
+            width: 20px;
+            height: 20px;
+            background: url(../img/star-light.svg) no-repeat center;
+        }
+    }
+
+    // &__card-rating {
+    // }
+
+    &__card-count {
+        position: relative;
+        margin-top: 27px;
+        color: $accent;
+        font-family: Montserrat, sans-serif;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: -30px;
+            top: -1px;
+            width: 20px;
+            height: 20px;
+            background: url(../img/reviews-count.svg) no-repeat center;
+        }
+    }
+
+    &__card-content {
+        @include flex-center-between;
+    }
+
+    &__card-img {
+        max-width: 160px;
+        max-height: 50px;
+    }
+
+    &__card-link {
+        width: 58px;
+        height: 40px;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        border-radius: 10px;
+        border: 1px solid $dark;
+    }
+}
+
+
+// SCHOOLS
+
+.schools {
+    background: $light;
+    border-radius: 60px;
+    padding: 70px 0 70px 70px;
+
+    &__content {
+        @include flex-center-between;
+    }
+    
+    &__title {
+        max-width: 805px;
+
+        &--accent {
+            color: $accent;
+        }
+    }
+
+    &__text {
+        display: flex;
+        max-width: 670px;
+        margin-top: 40px;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__slider-wrap {
+        max-width: 715px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__slider {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        overflow: hidden;
+    }
+
+    &__slide {
+        min-width: 249px;
+        height: 249px;
+        
+        &--active {
+            min-width: 384px;
+            height: 384px;
+            z-index: 1;
+        }
+
+    }
+
+    &__slide-img {
+        object-fit: cover;
+    }
+
+    &__button {
+        margin-top: 70px;
+        max-width: 230px;
+        width: 100%;
+    }
+    
+}
+
+
+// TOP COURSES
+
+.top-courses {
+    padding: 0px 30px;
+    overflow: hidden;
+    max-height: 1125px;
+
+    &__wrap {
+        position: relative;
+        padding: 60px 0px;
+        background: #EAF5FF;
+        border-radius: 60px;
+    }
+
+    &__title { 
+        max-width: 753px;
+        margin: auto;
+        text-align: center;
+    }
+
+    &__cards-wrap {
+        border-radius: 30px;
+        max-height: 790px;
+        padding-bottom: 60px;
+        overflow: hidden; 
+    }
+
+	&__cards {
+        border-radius: 30px;
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        max-height: 730px;
+        overflow-y: scroll;
+        // scrollbar-width: none;
+        // -ms-overflow-style: none;
+
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
+	}
+
+	&__card {
+        @include flex-start-between;
+        row-gap: 30px;
+        border-radius: 30px;
+        background: $light;
+        overflow: hidden;
+	}
+
+	&__card-img-wrap {
+        position: relative;
+        height: 335px;
+        width: 443px;
+        overflow: hidden;
+	}
+
+    &__card-rating {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        padding: 8px 10px 8px 33px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
+        backdrop-filter: blur(12px);
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        font-size: 24.063px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__card-company {
+        @include flex-center-center;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 123px;
+        height: 40px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__card-company-img {
+        max-width: 120px;
+        max-height: 38px;
+    }
+
+	&__card-img {
+        object-fit: cover;
+	}
+
+	&__card-content {
+        @include flex-start-between;
+        padding: 30px;
+        max-width: 1090px;
+        width: 100%;
+	}
+
+	&__card-heading {
+        display: flex;
+        flex-direction: column;
+	}
+
+	&__card-title {
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+	}
+
+	&__card-info {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        color: $accent;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+	}
+
+	// &__card-time {
+	// }
+
+	// &__card-count {
+	// }
+
+	&__card-tags {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+	}
+
+    &__card-tag {
+        padding: 3.5px 10px;
+        text-decoration: none;
+        color: $gray;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 7px;
+        border: 1px solid $gray;
+    }
+
+	&__card-text {
+        margin-top: 40px;
+        font-kerning: none;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        max-width: 500px;
+	}
+
+    &__prices-buttons {
+        height: 272px;
+        max-width: 324px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+	&__prices {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 10px;
+	}
+
+	&__installments {
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+	}
+
+    &__prices-wrap {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+	}
+
+
+	// &__price {
+	// }
+
+	&__price-old {
+        color: $gray;
+        text-decoration-line: line-through;
+	}
+    
+	&__buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+	}
+
+	&__button {
+        max-width: 272px;
+        width: 100%;
+	}
+
+
+
+}
+
+
+// SELECTION
+
+.selection {
+
+    &__swiper {
+    }
+
+    &__heading {
+        @include flex-start-between;
+        margin-bottom: 70px;
+    }
+
+    &__title {
+        max-width: 500px;
+    }
+
+    &__interaction {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__interaction-wrap {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+    }
+
+    &__link {
+        padding: 15px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: $dark;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    & .swiper-button-prev {
+        position: relative;
+        width: 58px;
+        height: 40px;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        border-radius: 10px;
+        border: 1px solid #262626;
+        transform: rotate(180deg);
+    }
+
+    & .swiper-button-next {
+        position: relative;
+        left: 0;
+        right: 0;
+        width: 58px;
+        height: 40px;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        border-radius: 10px;
+        border: 1px solid #262626;
+    }
+
+    & .swiper-slide {
+        position: relative;
+        height: 520px;
+        border-radius: 30px;
+        overflow: hidden;
+        width: auto;
+    }
+
+    &__slide-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+    }
+
+    &__slide-tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    &__slide-tag {
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+        color: $light;
+        border: 1px solid $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: rgba(217, 217, 217, 0.01);
+        backdrop-filter: blur(12px);
+    }
+
+    &__slide-title {
+        margin-top: 15px;
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+}
+
+
+// ABOUT
+
+.about {
+    padding: 0px 30px;
+
+    &__wrap {
+        padding: 100px 0;
+        background: $light;
+        border-radius: 60px;
+    }
+
+    &__title {
+        max-width: 800px;
+        text-align: center;
+        margin: auto;
+    }
+
+    &__cards {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 30px;
+        align-items: stretch;
+    }
+
+    &__info-card {
+        background: #F8F8F8;
+        border-radius: 30px;
+        padding: 30px;
+        height: 364px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__info-card-heading {
+        @include flex-start-between;
+    }
+
+    &__info-card-num {
+        font-family: Montserrat, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__info-card-icon {
+        width: 110px;
+        height: 110px;
+
+        &--search {
+            background: url(../img/info-card-icon-search.svg) no-repeat center;
+        }
+    }
+
+    &__info-card-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        &--accent {
+            font-weight: 600;
+        }
+    }
+
+    &__statistic-card {
+        position: relative;
+        background: #F8F8F8;
+        border-radius: 30px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &:nth-child(4) .about__statistic-card-text {
+            max-width: 275px;
+        }
+    
+        &:nth-child(5) .about__statistic-card-text {
+            max-width: 350px;
+        }
+    
+        &:nth-child(6) .about__statistic-card-text {
+            max-width: 418px;
+        }
+    }
+
+    &__statistic-card-count {
+        margin-top: 50px;
+        font-family: Montserrat, sans-serif;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__statistic-card-info {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        padding: 30px;
+        border-radius: 999px;
+        background: #AFE982;
+        padding: 10px 30px;
+        color: $light;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__statistic-card-text {
+        margin-top: 10px;
+        text-align: center;
+        font-kerning: none;
+        font-family: Montserrat, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        opacity: 0.6;
+    }
+}
+
