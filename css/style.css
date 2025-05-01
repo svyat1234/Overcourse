@@ -7,11 +7,12 @@
 body {
   background: #F9F9F9;
   color: #262626;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
   max-width: 1596px;
-  width: 83.125%;
+  width: 90%;
   margin: auto;
 }
 
@@ -921,10 +922,11 @@ body {
 .top-courses__wrap {
   position: relative;
   padding: 60px 0px;
-  background: #EAF5FF;
+  background: #86BCED;
   border-radius: 60px;
 }
 .top-courses__title {
+  color: #fff;
   max-width: 753px;
   margin: auto;
   text-align: center;
@@ -1217,15 +1219,18 @@ body {
   max-width: 800px;
   text-align: center;
   margin: auto;
+  margin-bottom: 70px;
 }
 .about__cards {
-  margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 30px;
   align-items: stretch;
+}
+.about__cards:not(:first-child) {
+  margin-top: 30px;
 }
 .about__info-card {
   background: #F8F8F8;
@@ -1274,14 +1279,26 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: all 0.3s ease;
 }
-.about__statistic-card:nth-child(4) .about__statistic-card-text {
+.about__statistic-card:hover {
+  background: #86BCED;
+  color: #fff;
+}
+.about__statistic-card:hover .about__statistic-card-info {
+  background: #fff;
+  color: #86BCED;
+}
+.about__statistic-card:hover .about__statistic-card-text {
+  opacity: 1;
+}
+.about__statistic-card:nth-child(1) .about__statistic-card-text {
   max-width: 275px;
 }
-.about__statistic-card:nth-child(5) .about__statistic-card-text {
+.about__statistic-card:nth-child(2) .about__statistic-card-text {
   max-width: 350px;
 }
-.about__statistic-card:nth-child(6) .about__statistic-card-text {
+.about__statistic-card:nth-child(3) .about__statistic-card-text {
   max-width: 418px;
 }
 .about__statistic-card-count {
@@ -1301,7 +1318,7 @@ body {
   right: 30px;
   padding: 30px;
   border-radius: 999px;
-  background: #AFE982;
+  background: #86BCED;
   padding: 10px 30px;
   color: #fff;
   font-family: "Montserrat", sans-serif;
@@ -1320,4 +1337,178 @@ body {
   font-weight: 500;
   line-height: 120%;
   opacity: 0.6;
+}
+
+.news__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.news__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 785px;
+  width: 100%;
+  cursor: pointer;
+}
+.news__card--active {
+  cursor: default;
+  flex-direction: column;
+}
+.news__card--active .news__card-img-wrap {
+  height: 520px;
+  width: 100%;
+}
+.news__card--active .news__card-info {
+  max-width: 100%;
+}
+.news__card--active .news__card-tags {
+  margin-top: 30px;
+}
+.news__card--active .news__card-title {
+  font-size: 45px;
+}
+.news__card--active .news__card-text {
+  display: block;
+}
+.news__card-img-wrap {
+  width: 250px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.news__card-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news__card-info {
+  max-width: 507px;
+}
+.news__card-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.news__card-tag {
+  padding: 3.5px 10px;
+  text-decoration: none;
+  color: #8E8E8E;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 7px;
+  border: 1px solid #8E8E8E;
+}
+.news__card-title {
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.news__card-text {
+  max-width: 717px;
+  display: none;
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.news__cards-wrap {
+  max-width: 785px;
+  width: 100%;
+}
+.news__cards {
+  display: grid;
+  row-gap: 20px;
+}
+.news__link {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  text-decoration: none;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.question__cards {
+  margin-top: 60px;
+  display: grid;
+}
+.question__card {
+  padding: 50px 0px;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #ECECEC;
+  cursor: pointer;
+}
+.question__card:last-child {
+  border-bottom: 1px solid #ECECEC;
+}
+.question__card--active .question__card-content {
+  height: var(--content-height);
+}
+.question__card--active .question__card-icon {
+  transform: rotate(180deg);
+}
+.question__card-content {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+.question__card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1500px;
+  width: 100%;
+}
+.question__card-title {
+  max-width: 580px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  line-height: 100%;
+  font-style: normal;
+  font-weight: 600;
+}
+.question__card-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  max-width: 700px;
+}
+.question__card-icon {
+  width: 25px;
+  height: 25px;
+  background: url(../img/question-arrow.svg) no-repeat center;
+  transition: transform 0.3s ease-in-out;
+}
+.question__card-text {
+  margin-top: 60px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

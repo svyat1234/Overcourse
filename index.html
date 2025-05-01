@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
 </head>
 <body>
     <main id="main">
@@ -19,11 +19,11 @@
             <div class="header__content">
                 <a href="/"><img src="./img/logo.svg" alt="Overcourse" class="logo"></a>
                 <nav class="header__nav">
-                    <a href="" class="header__link header__link--courses">Все курсы</a>
-                    <a href="" class="header__link">Школы</a>
-                    <a href="" class="header__link">Вебинары</a>
-                    <a href="" class="header__link">Новости</a>
-                    <a href="" class="header__link header__link--info">Информация</a>
+                    <a href="#" class="header__link header__link--courses">Все курсы</a>
+                    <a href="#" class="header__link">Школы</a>
+                    <a href="#" class="header__link">Вебинары</a>
+                    <a href="#" class="header__link">Новости</a>
+                    <a href="#" class="header__link header__link--info">Информация</a>
                 </nav>
                 <!-- /.header__nav -->
             </div>
@@ -1163,6 +1163,9 @@
                             <p class="about__info-card-text"><span class="about__info-card-text--accent">Умный поиск</span> — нейропомощник облегчит подбор программ</p>
                         </div>
                         <!-- /.about__info-card -->
+                    </div>
+                    <!-- /.about__cards -->
+                    <div class="about__cards">
                         <div class="about__statistic-card">
                             <h3 class="about__statistic-card-count">13 000+</h3>
                             <span class="about__statistic-card-info">курсов</span>
@@ -1181,14 +1184,205 @@
                             <p class="about__statistic-card-text">Мы не накручиваем рейтинги — только честные оценки студентов</p>
                         </div>
                         <!-- /.about__statistic-card -->
-                    </div>
-                    <!-- /.about__cards -->
                 </div>
                 <!-- /.container -->
             </div>
             <!-- /.about__wrap -->
         </section>
         <!-- /.about -->
+
+        <section class="news section container">
+            <h2 class="news__title section-title">Новости<span class="section-title--accent"> и статьи</span></h2>
+
+            <div class="news__content">
+                <div class="news__card news__card--active">
+                    <div class="news__card-img-wrap">
+                        <img src="./img/news.png" alt="news" class="news__card-img">
+                    </div>
+                    <!-- /.news__card-img-wrap -->
+                    <div class="news__card-info">
+                        <div class="news__card-tags">
+                            <a href="#" class="news__card-tag">Дизайн</a>
+                            <a href="#" class="news__card-tag">Frontend</a>
+                            <a href="#" class="news__card-tag">Backend</a>
+                        </div>
+                        <!-- /.news__card-tags -->
+                        <h3 class="news__card-title">Как агрегаторы могут помочь в поиске подходящих курсов</h3>
+                        <p class="news__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.news__card-info -->
+                </div>
+                <!-- /.news__card -->
+                <div class="news__cards-wrap">
+                    <div class="news__cards">
+                        <div class="news__card">
+                            <div class="news__card-img-wrap">
+                                <img src="./img/news.png" alt="news" class="news__card-img">
+                            </div>
+                            <!-- /.news__card-img-wrap -->
+                            <div class="news__card-info">
+                                <div class="news__card-tags">
+                                    <a href="#" class="news__card-tag">Дизайн</a>
+                                    <a href="#" class="news__card-tag">Frontend</a>
+                                    <a href="#" class="news__card-tag">Backend</a>
+                                </div>
+                                <!-- /.news__card-tags -->
+                                <h3 class="news__card-title">Как агрегаторы могут помочь в поиске подходящих курсов</h3>
+                                <p class="news__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                            </div>
+                            <!-- /.news__card-info -->
+                        </div>
+                        <!-- /.news__card -->
+                        <div class="news__card">
+                            <div class="news__card-img-wrap">
+                                <img src="./img/news.png" alt="news" class="news__card-img">
+                            </div>
+                            <!-- /.news__card-img-wrap -->
+                            <div class="news__card-info">
+                                <div class="news__card-tags">
+                                    <a href="#" class="news__card-tag">Дизайн</a>
+                                    <a href="#" class="news__card-tag">Frontend</a>
+                                    <a href="#" class="news__card-tag">Backend</a>
+                                </div>
+                                <!-- /.news__card-tags -->
+                                <h3 class="news__card-title">Как агрегаторы могут помочь в поиске подходящих курсов</h3>
+                                <p class="news__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                            </div>
+                            <!-- /.news__card-info -->
+                        </div>
+                        <!-- /.news__card -->
+                        <div class="news__card">
+                            <div class="news__card-img-wrap">
+                                <img src="./img/news.png" alt="news" class="news__card-img">
+                            </div>
+                            <!-- /.news__card-img-wrap -->
+                            <div class="news__card-info">
+                                <div class="news__card-tags">
+                                    <a href="#" class="news__card-tag">Дизайн</a>
+                                    <a href="#" class="news__card-tag">Frontend</a>
+                                    <a href="#" class="news__card-tag">Backend</a>
+                                </div>
+                                <!-- /.news__card-tags -->
+                                <h3 class="news__card-title">Как агрегаторы могут помочь в поиске подходящих курсов</h3>
+                                <p class="news__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                            </div>
+                            <!-- /.news__card-info -->
+                        </div>
+                        <!-- /.news__card -->
+                        <div class="news__card">
+                            <div class="news__card-img-wrap">
+                                <img src="./img/news.png" alt="news" class="news__card-img">
+                            </div>
+                            <!-- /.news__card-img-wrap -->
+                            <div class="news__card-info">
+                                <div class="news__card-tags">
+                                    <a href="#" class="news__card-tag">Дизайн</a>
+                                    <a href="#" class="news__card-tag">Frontend</a>
+                                    <a href="#" class="news__card-tag">Backend</a>
+                                </div>
+                                <!-- /.news__card-tags -->
+                                <h3 class="news__card-title">Как агрегаторы могут помочь в поиске подходящих курсов</h3>
+                                <p class="news__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                            </div>
+                            <!-- /.news__card-info -->
+                        </div>
+                        <!-- /.news__card -->
+                    </div>
+                    <!-- /.news__cards -->
+                    <a href="#" class="news__link">Все подборки</a>
+                </div>
+                <!-- /.news__cards-wrap -->
+            </div>
+            <!-- /.news__content -->
+        </section>
+        <!-- /.news section -->
+
+        <section class="question section container">
+            <h2 class="question__title section-title">Остались<span class="section-title--accent"> вопросы?</span></h2>
+
+            <div class="question__cards">
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                            <div class="question__card-icon"></div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+            </div>
+            <!-- /.question__cards -->
+        </section>
+        
     </main>
 </body>
 </html>

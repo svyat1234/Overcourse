@@ -53,11 +53,12 @@ $button-border-radius: 10px;
 body {
     background: $background;
     color: $dark;
+    font-family: $main-font;
 }
 
 .container {
     max-width: $container;
-    width: calc(($container / $desktop-width) * 100%);
+    width: 90%;
     margin: auto;
 }
 
@@ -1131,11 +1132,12 @@ body {
     &__wrap {
         position: relative;
         padding: 60px 0px;
-        background: #EAF5FF;
+        background: $main;
         border-radius: 60px;
     }
 
     &__title { 
+        color: $light;
         max-width: 753px;
         margin: auto;
         text-align: center;
@@ -1477,15 +1479,19 @@ body {
         max-width: 800px;
         text-align: center;
         margin: auto;
+        margin-bottom: 70px;
     }
 
     &__cards {
-        margin-top: 70px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 20px;
         row-gap: 30px;
         align-items: stretch;
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
     }
 
     &__info-card {
@@ -1540,16 +1546,30 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        transition: all 0.3s ease;
+        &:hover {
+            background: $main;
+            color: $light;
 
-        &:nth-child(4) .about__statistic-card-text {
+            .about__statistic-card-info {
+                background: $light;
+                color: $main;
+            }
+
+            .about__statistic-card-text {
+                opacity: 1;
+            }
+        }
+
+        &:nth-child(1) .about__statistic-card-text {
             max-width: 275px;
         }
     
-        &:nth-child(5) .about__statistic-card-text {
+        &:nth-child(2) .about__statistic-card-text {
             max-width: 350px;
         }
     
-        &:nth-child(6) .about__statistic-card-text {
+        &:nth-child(3) .about__statistic-card-text {
             max-width: 418px;
         }
     }
@@ -1573,7 +1593,7 @@ body {
         right: 30px;
         padding: 30px;
         border-radius: 999px;
-        background: #AFE982;
+        background: $main;
         padding: 10px 30px;
         color: $light;
         font-family: $main-font;
@@ -1594,5 +1614,220 @@ body {
         line-height: 120%;
         opacity: 0.6;
     }
+}
+
+
+.news {
+
+    &__title {
+
+    }
+    
+    &__content {
+        @include flex-start-between;
+        margin-top: 70px;
+    }
+    
+    &__card {
+        @include flex-center-between;
+        max-width: 785px;
+        width: 100%;
+        cursor: pointer;
+    
+        &--active {
+            cursor: default;
+            flex-direction: column;
+
+            & .news__card-img-wrap {
+                height: 520px;
+                width: 100%;
+            }
+
+            & .news__card-info {
+                max-width: 100%;
+            }
+
+            & .news__card-tags {
+                margin-top: 30px;
+            }
+
+            & .news__card-title {
+                font-size: 45px;
+            }
+
+            & .news__card-text {
+                display: block;
+            }
+            
+            
+        }
+    }
+    
+    &__card-img-wrap {
+        width: 250px;
+        height: 160px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    
+    &__card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &__card-info {
+        max-width: 507px;
+    }
+    
+    &__card-tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+    
+    &__card-tag {
+        padding: 3.5px 10px;
+        text-decoration: none;
+        color: $gray;
+        font-family: $main-font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 7px;
+        border: 1px solid $gray;
+    }
+    
+    &__card-title {
+        margin-top: 10px;
+        font-family: $main-font;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    
+    &__card-text {
+        max-width: 717px;
+        display: none;
+        margin-top: 30px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    &__cards-wrap {
+        max-width: 785px;
+        width: 100%;
+    }
+    
+    &__cards {
+        display: grid;
+        row-gap: 20px;
+    }
+    
+    &__link {
+        margin-top: 26px;
+        @include flex-center-center;
+        width: 100%;
+        height: 55px;
+        text-decoration: none;
+        color: $dark;
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: $light;
+        border-radius: 10px;
+    }
+}
+
+    
+// QUESTION
+
+.question {
+
+    // &__title {
+
+    // }
+
+    &__cards {
+        margin-top: 60px;
+        display: grid;
+    }
+
+    &__card {
+        padding: 50px 0px;
+        width: 100%;
+        overflow: hidden;
+        border-top: 1px solid #ECECEC;
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: 1px solid #ECECEC;
+        }
+
+        &--active {
+            .question__card-content {
+                height: var(--content-height);
+            }
+
+            .question__card-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__card-content {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+    }
+
+    &__card-heading {
+        @include flex-start-between;
+        max-width: 1500px;
+        width: 100%;
+    }
+
+    &__card-title {
+        max-width: 580px;
+        font-family: $main-font;
+        font-size: 25px;
+        line-height: 100%;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    &__card-subtitle {
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        max-width: 700px;
+    }
+
+    &__card-icon {
+        width: 25px;
+        height: 25px;
+        background: url(../img/question-arrow.svg) no-repeat center;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    &__card-text {
+        margin-top: 60px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
 }
 
