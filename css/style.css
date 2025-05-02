@@ -93,10 +93,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #262626;
-}
-.header--main {
+  max-width: 1670px;
+  padding: 20px 37px;
+  width: 90%;
+  margin: auto;
+  position: relative;
   margin-top: 60px;
+  background: #fff;
+  border-radius: 20px;
+}
+.header--light {
+  color: #fff;
+  background: none;
+}
+.header--light .header__link {
+  color: #fff;
+}
+.header--light .header__link--courses {
+  background: url(../img/burger-light.svg) no-repeat left;
+}
+.header--light .header__link--info {
+  background: url(../img/information-light.svg) no-repeat right;
+}
+.header--light .header__search {
+  background: url(../img/search-light.svg) no-repeat center/cover;
+}
+.header--light .header__button {
+  color: #86BCED;
+  background: #fff;
 }
 .header__content {
   display: flex;
@@ -114,7 +138,7 @@ body {
 }
 .header__link {
   text-decoration: none;
-  color: #fff;
+  color: #262626;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -147,13 +171,13 @@ body {
   padding: 10px 19px;
   border-radius: 10px;
   flex-shrink: 0;
-  color: #86BCED;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  background-color: #fff;
+  background: #262626;
+  color: #fff;
   cursor: pointer;
   border: none;
 }
@@ -345,6 +369,7 @@ body {
 }
 .courses__menu {
   margin-top: 50px;
+  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -398,7 +423,6 @@ body {
   background: #262626 url(../img/list-active.svg) no-repeat center;
 }
 .courses__cards {
-  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -914,37 +938,30 @@ body {
     transform: translateX(-837px);
   }
 }
-.top-courses {
+.top-courses--small {
   padding: 0px 30px;
   overflow: hidden;
   max-height: 1125px;
 }
-.top-courses__wrap {
+.top-courses--small .top-courses__wrap {
   position: relative;
   padding: 60px 0px;
   background: #86BCED;
   border-radius: 60px;
 }
-.top-courses__title {
+.top-courses--small .top-courses__title {
   color: #fff;
-  max-width: 753px;
   margin: auto;
   text-align: center;
 }
-.top-courses__cards-wrap {
-  border-radius: 30px;
-  max-height: 790px;
-  padding-bottom: 60px;
-  overflow: hidden;
+.top-courses__title {
+  max-width: 753px;
 }
 .top-courses__cards {
   border-radius: 30px;
-  margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
-  max-height: 730px;
-  overflow-y: scroll;
 }
 .top-courses__card {
   display: flex;
@@ -1159,26 +1176,32 @@ body {
   border-radius: 10px;
   border: 1px solid #262626;
 }
-.selection .swiper-slide {
+.selection__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+.selection__card {
   position: relative;
   height: 520px;
   border-radius: 30px;
   overflow: hidden;
   width: auto;
 }
-.selection__slide-content {
+.selection__card-content {
   position: absolute;
   top: 0;
   left: 0;
   padding: 30px;
 }
-.selection__slide-tags {
+.selection__card-tags {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 3px;
 }
-.selection__slide-tag {
+.selection__card-tag {
   text-decoration: none;
   padding: 10px;
   border-radius: 10px;
@@ -1193,7 +1216,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
 }
-.selection__slide-title {
+.selection__card-title {
   margin-top: 15px;
   color: #fff;
   font-family: "Montserrat", sans-serif;
@@ -1515,11 +1538,64 @@ body {
 
 .footer {
   padding: 0px 20px 20px 20px;
+}
+.footer--light {
+  color: #fff;
+}
+.footer--light .footer__wrap {
+  background: #86BCED;
+}
+.footer--light .footer__title {
+  color: #fff;
+}
+.footer--light .footer__title--accent {
+  background: url(../img/footer-arrow-light.svg) no-repeat left top 30px;
+}
+.footer--light .footer__input {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.footer--light .footer__input::-moz-placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+.footer--light .footer__input::placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+.footer--light .footer__checkbox:checked + .footer__checkbox-custom {
+  background: url(../img/checkbox-light.svg) no-repeat center;
+}
+.footer--light .footer__checkbox-custom {
+  border: 1px solid #fff;
+}
+.footer--light .footer__checkbox-text {
+  color: #fff;
+}
+.footer--light .footer__checkbox-link {
+  color: #fff;
+}
+.footer--light .footer__button--request {
+  background: #fff;
+  color: #86BCED;
+}
+.footer--light .footer__button--telegram {
+  background: #86BCED;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.footer--light .footer__contacts-item {
+  color: #D0E7FC;
+}
+.footer--light .footer__info {
+  border-top: 1px solid #fff;
+}
+.footer--light .footer__info-link {
   color: #fff;
 }
 .footer__wrap {
   padding: 80px 0;
-  background: #86BCED;
+  background: #fff;
   border-radius: 60px;
 }
 .footer__content {
@@ -1535,7 +1611,6 @@ body {
 }
 .footer__title {
   max-width: 470px;
-  color: #fff;
   font-size: 44px;
   line-height: 100%;
   font-style: normal;
@@ -1556,10 +1631,9 @@ body {
 }
 .footer__input {
   width: 100%;
-  color: #fff;
   background: none;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #262626;
   font-size: 14px;
   font-style: normal;
   padding-top: 17px;
@@ -1567,11 +1641,11 @@ body {
   outline: none;
 }
 .footer__input::-moz-placeholder {
-  color: #fff;
+  color: #262626;
   opacity: 0.8;
 }
 .footer__input::placeholder {
-  color: #fff;
+  color: #262626;
   opacity: 0.8;
 }
 .footer__checkbox-label {
@@ -1599,15 +1673,14 @@ body {
 .footer__checkbox-custom {
   width: 20px;
   height: 20px;
-  border: 1px solid #fff;
+  border: 1px solid #262626;
   flex-shrink: 0;
 }
 .footer__checkbox-text {
-  color: #fff;
   font-size: 14px;
 }
 .footer__ceckbox-link {
-  color: #fff;
+  color: #262626;
   text-decoration: underline;
 }
 .footer__buttons {
@@ -1633,15 +1706,14 @@ body {
   border: none;
   max-width: 320px;
   width: 100%;
-  background: #fff;
-  color: #86BCED;
+  color: #fff;
+  background: #262626;
 }
 .footer__button--telegram {
   max-width: 180px;
   width: 100%;
-  color: #fff;
-  background: #86BCED;
-  border: 1px solid #fff;
+  background: none;
+  border: 1px solid #262626;
 }
 .footer__contacts {
   margin-top: 64px;
@@ -1682,7 +1754,7 @@ body {
   gap: 7px;
 }
 .footer__contacts-item {
-  color: #D0E7FC;
+  color: #262626;
   font-size: 16px;
   line-height: 100%;
   font-style: normal;
@@ -1694,7 +1766,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-top: 15px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #262626;
   width: 100%;
   margin-top: 60px;
 }
@@ -1705,7 +1777,7 @@ body {
        column-gap: 60px;
 }
 .footer__info-link {
-  color: #fff;
+  color: #262626;
   font-size: 16px;
   line-height: 100%;
   font-style: normal;

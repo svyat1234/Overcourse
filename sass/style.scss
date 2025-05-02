@@ -141,10 +141,40 @@ body {
 
 .header {
     @include flex-center-between;
-    background: $dark;
+    max-width: calc($container + 74px);
+    padding: 20px 37px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    margin-top: 60px;
+    background: $light;
+    border-radius: 20px;
 
-    &--main {
-        margin-top: 60px;
+    &--light {
+        color: $light;
+        background: none;
+        
+        & .header__link {
+            color: $light;
+
+            &--courses {
+                background: url(../img/burger-light.svg) no-repeat left;
+            }
+
+            &--info {
+                background: url(../img/information-light.svg) no-repeat right;
+            }
+        }
+
+        & .header__search {
+            background: url(../img/search-light.svg) no-repeat center / cover;
+        }
+
+        & .header__button {
+            color: $main;
+            background: $light;
+        }
+
     }
 
     &__content {
@@ -161,7 +191,7 @@ body {
 
     &__link {
         text-decoration: none;
-        color: $light;
+        color: $dark;
         font-family: $main-font;
         font-size: 16px;
         font-style: normal;
@@ -197,13 +227,13 @@ body {
         padding: 10px 19px;
         border-radius: $button-border-radius;
         flex-shrink: 0;
-        color: $main;
         font-family: $main-font;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        background-color: $light;
+        background: $dark;
+        color: $light;
         cursor: pointer;
         border: none;
     }
@@ -406,6 +436,7 @@ body {
 
     &__menu {
         margin-top: 50px;
+        margin-bottom: 60px;
         @include flex-center-between;
     }
 
@@ -465,7 +496,6 @@ body {
     }
 
 	&__cards {
-        margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
@@ -1125,39 +1155,46 @@ body {
 // TOP COURSES
 
 .top-courses {
-    padding: 0px 30px;
-    overflow: hidden;
-    max-height: 1125px;
 
-    &__wrap {
-        position: relative;
-        padding: 60px 0px;
-        background: $main;
-        border-radius: 60px;
+    &--small {
+        padding: 0px 30px;
+        overflow: hidden;
+        max-height: 1125px;
+
+        & .top-courses__wrap {
+            position: relative;
+            padding: 60px 0px;
+            background: $main;
+            border-radius: 60px;
+        }
+
+        & .top-courses__title { 
+            color: $light;
+            margin: auto;
+            text-align: center;
+        }
+        
+        
     }
 
     &__title { 
-        color: $light;
         max-width: 753px;
-        margin: auto;
-        text-align: center;
     }
 
     &__cards-wrap {
-        border-radius: 30px;
-        max-height: 790px;
-        padding-bottom: 60px;
-        overflow: hidden; 
+        // border-radius: 30px;
+        // max-height: 790px;
+        // padding-bottom: 60px;
+        // overflow: hidden; 
     }
 
 	&__cards {
         border-radius: 30px;
-        margin-top: 70px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
-        max-height: 730px;
-        overflow-y: scroll;
+        // max-height: 730px;
+        // overflow-y: scroll;
         // scrollbar-width: none;
         // -ms-overflow-style: none;
 
@@ -1412,6 +1449,17 @@ body {
     }
 
     & .swiper-slide {
+       
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    &__card {
         position: relative;
         height: 520px;
         border-radius: 30px;
@@ -1419,21 +1467,21 @@ body {
         width: auto;
     }
 
-    &__slide-content {
+    &__card-content {
         position: absolute;
         top: 0;
         left: 0;
         padding: 30px;
     }
 
-    &__slide-tags {
+    &__card-tags {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 3px;
     }
 
-    &__slide-tag {
+    &__card-tag {
         text-decoration: none;
         padding: 10px;
         border-radius: 10px;
@@ -1448,7 +1496,7 @@ body {
         backdrop-filter: blur(12px);
     }
 
-    &__slide-title {
+    &__card-title {
         margin-top: 15px;
         color: $light;
         font-family: $main-font;
@@ -1833,11 +1881,84 @@ body {
 
 .footer {
     padding: 0px 20px 20px 20px;
-    color: $light;
+
+    &--light {
+        color: $light;
+
+        & .footer__wrap {
+            background: $main;
+        }
+
+        & .footer__title {
+            color: $light;
+
+            &--accent {
+                background: url(../img/footer-arrow-light.svg) no-repeat left top 30px;
+            }
+        }
+
+        & .footer__input {
+            color: $light;
+            border-bottom: 1px solid $light;
+
+            &::placeholder {
+                color: $light;
+                opacity: 0.8;
+            }
+        }
+
+        & .footer__checkbox {
+            
+            &:checked + .footer__checkbox-custom {
+                background: url(../img/checkbox-light.svg) no-repeat center;
+            }
+        }
+
+        & .footer__checkbox-custom {
+            border: 1px solid $light;
+        }
+
+        & .footer__checkbox-text {
+            color: $light;
+        }
+
+        & .footer__checkbox-link{
+            color: $light;
+        }
+        
+        & .footer__button {
+            &--request {
+                background: $light;
+                color: $main;
+            }
+
+            &--telegram {
+                background: $main;
+                color: $light;
+                border: 1px solid $light;
+            }
+        }
+
+        & .footer__contacts-item {
+            color: #D0E7FC;
+        }
+
+        & .footer__info {
+            border-top: 1px solid $light;
+        }
+
+        & .footer__info-link {
+            color: $light;
+        }
+
+        // & .footer__info-made {
+        //     color: $light;
+        // }
+    }
 
     &__wrap {
         padding: 80px 0;
-        background: $main;
+        background: $light;
         border-radius: 60px;
     }
     
@@ -1854,7 +1975,6 @@ body {
     
     &__title {
         max-width: 470px;
-        color: $light;
         font-size: 44px;
         line-height: 100%;
         font-style: normal;
@@ -1880,10 +2000,9 @@ body {
     
     &__input {
         width: 100%;
-        color: $light;
         background: none;
         border: none;
-        border-bottom: 1px solid $light;
+        border-bottom: 1px solid $dark;
         font-size: 14px;
         font-style: normal;
         padding-top: 17px;
@@ -1891,7 +2010,7 @@ body {
         outline: none;
 
         &::placeholder {
-            color: $light;
+            color: $dark;
             opacity: 0.8;
         }
     }
@@ -1924,17 +2043,16 @@ body {
     &__checkbox-custom {
         width: 20px;
         height: 20px;
-        border: 1px solid $light;
+        border: 1px solid $dark;
         flex-shrink: 0;
     }
     
     &__checkbox-text {
-        color: $light;
         font-size: 14px;
     }
     
     &__ceckbox-link {
-        color: $light;
+        color: $dark;
         text-decoration: underline;
     }
     
@@ -1959,16 +2077,15 @@ body {
             border: none;
             max-width: 320px;
             width: 100%;
-            background: $light;
-            color: $main;
+            color: $light;
+            background: $dark;
         }
 
         &--telegram {
             max-width: 180px;
             width: 100%;
-            color: $light;
-            background: $main;
-            border: 1px solid $light;
+            background: none;
+            border: 1px solid $dark;
         }
     }
     
@@ -2016,7 +2133,7 @@ body {
     }
     
     &__contacts-item {
-        color: #D0E7FC;
+        color: $dark;
         font-size: 16px;
         line-height: 100%;
         font-style: normal;
@@ -2027,7 +2144,7 @@ body {
     &__info {
         @include flex-center-between;
         padding-top: 15px;
-        border-top: 1px solid $light;
+        border-top: 1px solid $dark;
         width: 100%;
         margin-top: 60px;
     }
@@ -2039,7 +2156,7 @@ body {
     }
     
     &__info-link {
-        color: $light;
+        color: $dark;
         font-size: 16px;
         line-height: 100%;
         font-style: normal;

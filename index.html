@@ -15,14 +15,14 @@
 <body>
     <main id="main">
 
-        <header class="header header--main container">
+        <header class="header header--light">
             <div class="header__content">
-                <a href="/"><img src="./img/logo.svg" alt="Overcourse" class="logo"></a>
+                <a href="/"><img src="./img/logo-light.svg" alt="Overcourse" class="logo"></a>
                 <nav class="header__nav">
-                    <a href="#" class="header__link header__link--courses">Все курсы</a>
+                    <a href="./catalog.html" class="header__link header__link--courses">Все курсы</a>
                     <a href="#" class="header__link">Школы</a>
                     <a href="#" class="header__link">Вебинары</a>
-                    <a href="#" class="header__link">Новости</a>
+                    <a href="./news.html" class="header__link">Новости</a>
                     <a href="#" class="header__link header__link--info">Информация</a>
                 </nav>
                 <!-- /.header__nav -->
@@ -42,7 +42,7 @@
                 <div class="promo__content">
                     <div class="promo__info">
                         <div class="promo__heading">
-                            <h1 class="promo__title">Все онлайн курсы на одной <span class="section-title--accent">платформе</span></h1>
+                            <h1 class="promo__title">Все онлайн курсы на одной <span class="section-title--accent">платформе</span></h1>
                             <form class="promo__form">
                                 <div class="promo__input-wrapper">
                                     <input type="text" class="promo__input" placeholder="Введите запрос">
@@ -68,7 +68,7 @@
                             <a href="" class="promo__tag">Продажи</a>
                             <a href="" class="promo__tag">Разработка игр</a>
                             <a href="" class="promo__tag">Разработка игр</a>
-                            <a href="" class="promo__tag">Красота и здоровье</a>
+                            <a href="" class="promo__tag">Красота и здоровье</a>
                             <a href="" class="promo__tag">Творчество</a>
                             <a href="" class="promo__tag">Творчество</a>
                             <a href="" class="promo__tag">ИТ</a>
@@ -723,7 +723,7 @@
         <section class="schools section container">
             <div class="schools__content">
                 <div class="schools__heading">
-                    <h2 class="schools__title section-title"><span class="schools__title--accent section-title--accent">2 150+ школ</span> уже на Overcourse — Ваш ход!</h2>
+                    <h2 class="schools__title section-title"><span class="schools__title--accent section-title--accent">2 150+ школ</span> уже на Overcourse — Ваш ход!</h2>
                     <span class="schools__text">Присоединяйтесь к лидерам образования: опубликуйте курсы вашей школы и начните обучение новых студентов уже сейчас.</span>
                     <button class="schools__button button">Добавить курс</button>
                 </div>
@@ -761,7 +761,7 @@
         <!-- /.schools -->
 
 
-        <section class="top-courses section">
+        <section class="top-courses top-courses--small section">
             <div class="top-courses__wrap">
                 <div class="container">
                     <h2 class="top-courses__title section-title"><span class="section-title--accent">Топ-5 курсов</span> по отзывам учеников</h2>
@@ -1010,7 +1010,6 @@
 
         <section class="selection section container">
             
-            <div class="selection__swiper swiper">
                 <div class="selection__heading">
                     <h2 class="selection__title section-title">Подборки<span class="section-title--accent"> курсов</span></h2>
                     <div class="selection__interaction">
@@ -1026,111 +1025,144 @@
                 </div>
                 <!-- /.selection__heading -->
                  
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                <div class="selection__cards">
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="#" class="selection__slide-link">
-                            <div class="selection__slide-content">
-                                <div class="selection__slide-tags">
-                                    <a href="#" class="selection__slide-tag">Дизайн</a>
-                                    <a href="#" class="selection__slide-tag">Frontend</a>
-                                    <a href="#" class="selection__slide-tag">Backend</a>
-                                    <a href="#" class="selection__slide-tag">Программирование</a>
-                                    <a href="#" class="selection__slide-tag">UX/UI</a>  
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
                                 </div>
-                                <!-- /.selection__slide-tags -->
-                                <h3 class="selection__slide-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
                             </div>
-                            <!-- /.selection__slide-content -->
+                            <!-- /.selection__card-content -->
+                            <img src="./img/selection.png" alt="selection" class="selection__img">
+                        </a>
+                    </div>
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
+                                </div>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                            </div>
+                            <!-- /.selection__card-content -->
+                            <img src="./img/selection.png" alt="selection" class="selection__img">
+                        </a>
+                    </div>
+                    <div class="selection__card">
+                        <a href="#" class="selection__card-link">
+                            <div class="selection__card-content">
+                                <div class="selection__card-tags">
+                                    <a href="#" class="selection__card-tag">Дизайн</a>
+                                    <a href="#" class="selection__card-tag">Frontend</a>
+                                    <a href="#" class="selection__card-tag">Backend</a>
+                                    <a href="#" class="selection__card-tag">Программирование</a>
+                                    <a href="#" class="selection__card-tag">UX/UI</a>  
+                                </div>
+                                <!-- /.selection__card-tags -->
+                                <h3 class="selection__card-title">Научиться делать сайты и&nbsp;сервисы</h3>
+                            </div>
+                            <!-- /.selection__card-content -->
                             <img src="./img/selection.png" alt="selection" class="selection__img">
                         </a>
                     </div>
                 </div>
-            </div>
 
         </section>
 
@@ -1384,7 +1416,7 @@
         </section>
         
 
-        <footer class="footer section">
+        <footer class="footer footer--light section">
             <div class="footer__wrap">
                 <div class="container">
                     <div class="footer__content">
@@ -1398,7 +1430,7 @@
                                 <label for="footer__checkbox" class="footer__checkbox-label">
                                     <input type="checkbox" id="footer__checkbox" class="footer__checkbox" required>
                                     <span class="footer__checkbox-custom"></span>
-                                    <span class="footer__checkbox-text">Даю согласие на обработку <a href="#" class="footer__ceckbox-link">Персональных данных</a></span>
+                                    <span class="footer__checkbox-text">Даю согласие на обработку <a href="#" class="footer__checkbox-link">Персональных данных</a></span>
                                 </label>
                                 <div class="footer__buttons">
                                     <button class="footer__button footer__button--request">Оставить заявку</button>
