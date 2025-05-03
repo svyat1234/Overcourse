@@ -22,8 +22,8 @@
                     <a href="./catalog.html" class="header__link header__link--courses">Все курсы</a>
                     <a href="#" class="header__link">Школы</a>
                     <a href="#" class="header__link">Вебинары</a>
-                    <a href="#" class="header__link">Новости</a>
-                    <a href="./news.html" class="header__link header__link--info">Информация</a>
+                    <a href="./news.html" class="header__link">Новости</a>
+                    <a href="#" class="header__link header__link--info">Информация</a>
                 </nav>
                 <!-- /.header__nav -->
             </div>
@@ -38,24 +38,65 @@
 
         <section class="courses section container">
             <h1 class="courses__title section-title">Лучшие курсы по направлениям</h1>
-            <div class="courses__menu">
-                <div class="courses__categories">
-                    <button class="courses__category"><span class="courses__category--popular">Популярные</span></button>
-                    <button class="courses__category">Со скидками</button>
-                    <button class="courses__category">В рассрочку</button>
-                    <button class="courses__category">Бесплатные</button>
-                    <button class="courses__category">Для новчиков</button>
-                    <button class="courses__category">До 6 месяцев</button>
-                    <button class="courses__category">4.5 и выше</button>
+
+            <div class="courses-filters">
+
+                <div class="courses-filters__main-buttons">
+                    <button class="courses-filters__main-button courses-filters__main-button--filters">
+                        <span class="courses-filters__main-button-title courses-filters__text-icon courses-filters__text-icon--filters">Фильтры</span>
+                        <span class="courses-filters__main-button-count">1</span>
+                    </button>
+                    <button class="courses-filters__main-button courses-filters__main-button--categories">
+                        <span class="courses-filters__main-button-subtitle">Программирование</span>
+                        <span class="courses-filters__main-button-title">Все категории</span>
+                    </button>
                 </div>
-                <!-- /.courses__categories -->
-                <div class="courses__layout-buttons">
-                    <button class="courses__layout-button courses__layout-button--grid courses__layout-button--grid-active"></button>
-                    <button class="courses__layout-button courses__layout-button--list"></button>
+                <!-- /.courses-filters__main-buttons -->
+
+                <div class="courses-filters__lists">
+
+                    <div class="courses-filters__list">
+                        <button class="courses-filters__list-button">Инструменты все</button>
+                    </div>
+                    <!-- /.courses-filters__list -->
+
+                    <div class="courses-filters__list">
+                        <button class="courses-filters__list-button">
+                            <span class="courses-filters__text-icon courses-filters__text-icon--rating">Рейтинг любой</span>
+                        </button>
+                    </div>
+                    <!-- /.courses-filters__list -->
+
+                    <div class="courses-filters__list">
+                        <button class="courses-filters__list-button">
+                            <span class="courses-filters__text-icon courses-filters__text-icon--price">0 ₽ - 288 000 ₽</span>
+                        </button>
+                    </div>
+                    <!-- /.courses-filters__list -->
+                     
                 </div>
-                <!-- /.courses__layout-buttons -->
+                <!-- /.courses-filter__list-buttons -->
             </div>
-            <!-- /.courses__menu -->
+            <!-- /.courses-filters -->
+
+            <div class="courses-menu">
+                <div class="courses-menu__categories">
+                    <button class="courses-menu__category"><span class="courses-menu__category--popular">Популярные</span></button>
+                    <button class="courses-menu__category">Со скидками</button>
+                    <button class="courses-menu__category">В рассрочку</button>
+                    <button class="courses-menu__category">Бесплатные</button>
+                    <button class="courses-menu__category">Для новчиков</button>
+                    <button class="courses-menu__category">До 6 месяцев</button>
+                    <button class="courses-menu__category">4.5 и выше</button>
+                </div>
+                <!-- /.courses-menu__categories -->
+                <div class="courses-menu__layout-buttons">
+                    <button class="courses-menu__layout-button courses-menu__layout-button--grid courses-menu__layout-button--grid-active"></button>
+                    <button class="courses-menu__layout-button courses-menu__layout-button--list"></button>
+                </div>
+                <!-- /.courses-menu__layout-buttons -->
+            </div>
+            <!-- /.courses-menu -->
 
             <div class="courses__cards">
                 <div class="courses__card">
@@ -348,6 +389,24 @@
 
             </div>
             <!-- /.courses__cards -->
+
+            <div class="pagination">
+                <div class="pagination__content">
+                    <button class="pagination__arrow pagination__arrow--prev"></button>
+                    <div class="pagination__pages">
+                        <button class="pagination__page pagination__page--active">1</button>
+                        <button class="pagination__page">2</button>
+                        <button class="pagination__page">3</button>
+                        <button class="pagination__page">4</button>
+                        <button class="pagination__page">...</button>
+                        <button class="pagination__page">34</button>
+                    </div>
+                    <button class="pagination__arrow pagination__arrow--next"></button>
+                </div>
+                <!-- /.pagination__content -->
+                <a href="#" class="pagination__link button">Смотреть все</a>
+            </div>
+            <!-- /.pagination -->
         </section>
         <!-- /.courses -->
 
@@ -355,24 +414,65 @@
             <div class="top-courses__wrap">
                 <div class="container">
                     <h2 class="top-courses__title section-title"><span class="section-title--accent">Топ курсов</span> по отзывам учеников</h2>
-                    <div class="courses__menu">
-                        <div class="courses__categories">
-                            <button class="courses__category"><span class="courses__category--popular">Популярные</span></button>
-                            <button class="courses__category">Со скидками</button>
-                            <button class="courses__category">В рассрочку</button>
-                            <button class="courses__category">Бесплатные</button>
-                            <button class="courses__category">Для новчиков</button>
-                            <button class="courses__category">До 6 месяцев</button>
-                            <button class="courses__category">4.5 и выше</button>
+
+                    <div class="courses-filters">
+
+                        <div class="courses-filters__main-buttons">
+                            <button class="courses-filters__main-button courses-filters__main-button--filters">
+                                <span class="courses-filters__main-button-title courses-filters__text-icon courses-filters__text-icon--filters">Фильтры</span>
+                                <span class="courses-filters__main-button-count">1</span>
+                            </button>
+                            <button class="courses-filters__main-button courses-filters__main-button--categories">
+                                <span class="courses-filters__main-button-subtitle">Программирование</span>
+                                <span class="courses-filters__main-button-title">Все категории</span>
+                            </button>
                         </div>
-                        <!-- /.courses__categories -->
-                        <div class="courses__layout-buttons">
-                            <button class="courses__layout-button courses__layout-button--grid courses__layout-button--grid-active"></button>
-                            <button class="courses__layout-button courses__layout-button--list"></button>
+                        <!-- /.courses-filters__main-buttons -->
+        
+                        <div class="courses-filters__lists">
+        
+                            <div class="courses-filters__list">
+                                <button class="courses-filters__list-button">Инструменты все</button>
+                            </div>
+                            <!-- /.courses-filters__list -->
+        
+                            <div class="courses-filters__list">
+                                <button class="courses-filters__list-button">
+                                    <span class="courses-filters__text-icon courses-filters__text-icon--rating">Рейтинг любой</span>
+                                </button>
+                            </div>
+                            <!-- /.courses-filters__list -->
+        
+                            <div class="courses-filters__list">
+                                <button class="courses-filters__list-button">
+                                    <span class="courses-filters__text-icon courses-filters__text-icon--price">0 ₽ - 288 000 ₽</span>
+                                </button>
+                            </div>
+                            <!-- /.courses-filters__list -->
+                             
                         </div>
-                        <!-- /.courses__layout-buttons -->
+                        <!-- /.courses-filter__list-buttons -->
                     </div>
-                    <!-- /.courses__menu -->
+                    <!-- /.courses-filters -->
+
+                    <div class="courses-menu">
+                        <div class="courses-menu__categories">
+                            <button class="courses-menu__category"><span class="courses-menu__category--popular">Популярные</span></button>
+                            <button class="courses-menu__category">Со скидками</button>
+                            <button class="courses-menu__category">В рассрочку</button>
+                            <button class="courses-menu__category">Бесплатные</button>
+                            <button class="courses-menu__category">Для новчиков</button>
+                            <button class="courses-menu__category">До 6 месяцев</button>
+                            <button class="courses-menu__category">4.5 и выше</button>
+                        </div>
+                        <!-- /.courses-menu__categories -->
+                        <div class="courses-menu__layout-buttons">
+                            <button class="courses-menu__layout-button courses-menu__layout-button--grid courses-menu__layout-button--grid-active"></button>
+                            <button class="courses-menu__layout-button courses-menu__layout-button--list"></button>
+                        </div>
+                        <!-- /.courses-menu__layout-buttons -->
+                    </div>
+                    <!-- /.courses-menu -->
     
                     <div class="top-courses__cards-wrap">
                         <div class="top-courses__cards">
@@ -610,6 +710,23 @@
                         <!-- /.top-courses__cards -->
                     </div>
                     <!-- /.top-courses__cards-wrap -->
+                    <div class="pagination">
+                        <div class="pagination__content">
+                            <button class="pagination__arrow pagination__arrow--prev"></button>
+                            <div class="pagination__pages">
+                                <button class="pagination__page pagination__page--active">1</button>
+                                <button class="pagination__page">2</button>
+                                <button class="pagination__page">3</button>
+                                <button class="pagination__page">4</button>
+                                <button class="pagination__page">...</button>
+                                <button class="pagination__page">34</button>
+                            </div>
+                            <button class="pagination__arrow pagination__arrow--next"></button>
+                        </div>
+                        <!-- /.pagination__content -->
+                        <a href="#" class="pagination__link button">Смотреть все</a>
+                    </div>
+                    <!-- /.pagination -->
                 </div>
                 <!-- /.container -->
             </div>

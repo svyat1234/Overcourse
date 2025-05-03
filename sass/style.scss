@@ -15,6 +15,7 @@ $desktop-width: 1920px;
 
 // SETTINGS
 
+$header-height: 79px;
 $main-font: "Montserrat", sans-serif;
 $secondary-font: "Open Sans", sans-serif;
 $button-border-radius: 10px;
@@ -74,6 +75,7 @@ body {
 .button {
     @include flex-center-center;
     height: 50px;
+    width: 100%;
     border-radius: $button-border-radius;
     background: $button;
     color: $dark;
@@ -122,6 +124,271 @@ body {
         font-weight: 400;
     }
 }
+
+.courses-filters {
+    @include flex-center-between;
+    margin-bottom: 30px;
+    
+    &__main-buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__main-button {
+        position: relative;
+        padding: 0px 20px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid $dark;
+        background: $dark;
+        cursor: pointer;
+        text-align-last: left;
+
+        &--filters {
+            width: 172px;
+        }
+
+        &--categories {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 227px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                width: 11px;
+                height: 6px;
+                background: url(../img/arrow-down-light.svg) no-repeat center;
+            }
+        }
+    }
+
+    &__main-button-count {
+        @include flex-center-center;
+        position: absolute;
+        top: -15px;
+        right: -10px;
+        font-size: 16px;
+        color: $light;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        width: 30px;
+        height: 30px;
+        background: $accent;
+        border-radius: 50%;
+    }
+
+    &__main-button-title {
+        font-size: 16px;
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        color: $light;
+    }
+    
+    &__main-button-subtitle {
+        color: $light;
+        opacity: 0.7;
+        font-size: 10px;
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__lists {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__list {
+        height: 50px;
+        width: 305px;
+        background: $light;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__list-button {
+        position: relative;
+        padding: 0px 20px;
+        text-align-last: left;
+        height: 50px;
+        width: 100%;
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: $light;
+        border: none;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 11px;
+            height: 6px;
+            background: url(../img/arrow-down.svg) no-repeat center;
+        }
+
+    }
+
+    &__text-icon {
+        padding-left: 40px;
+
+        &--filters {
+            background: url(../img/filters.svg) no-repeat left center;
+        }   
+
+        &--rating {
+            background: url(../img/rating.svg) no-repeat left center;
+        }
+
+        &--price {
+            background: url(../img/price.svg) no-repeat left center;
+        }
+    }
+}
+
+.courses-menu {
+    @include flex-center-between;
+    margin-bottom: 60px;
+
+    &__categories {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__category {
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 30px;
+        border-radius: 999px;
+        border: 1px solid $dark;
+        background: none;
+        cursor: pointer;
+
+        &--popular {
+            padding-left: 27px;
+            background: url(../img/popular.svg) no-repeat left center;
+        }
+    }
+
+    &__layout-buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__layout-button {
+        width: 40px;
+        height: 40px;
+        background: none;
+        border-radius: 10px;
+        border: 1px solid $dark;
+        cursor: pointer;
+
+        &--grid {
+            background: url(../img/grid.svg) no-repeat center;
+        }
+
+        &--list {
+            background: url(../img/list.svg) no-repeat center;
+        }
+
+        &--grid-active {
+            background: $dark url(../img/grid-active.svg) no-repeat center;
+        }
+
+        &--list-active {
+            background: $dark url(../img/list-active.svg) no-repeat center;
+        }
+    }
+}
+
+.pagination {
+    @include flex-center-between;
+    margin-top: 50px;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    &__arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+
+        &--prev {
+            background: $light url(../img/pagination-arrow.svg) no-repeat center;
+        }
+        
+        &--next {
+            background: $light url(../img/pagination-arrow.svg) no-repeat center;
+            transform: rotate(180deg);
+        }
+        
+    }
+
+    &__pages {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__page {
+        font-family: $main-font;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: background 0.1s ease-in-out;
+
+        &:hover {
+            background: $accent;
+            color: $light;
+        }
+
+
+        &--active {
+            color: $light;
+            background: $accent;
+
+        }
+    }
+
+    &__link {
+        background: $light;
+        max-width: 344px;
+    }
+}
+
 .swiper-button-prev, 
 .swiper-button-next {
     left: auto !important;
@@ -141,11 +408,14 @@ body {
 
 .header {
     @include flex-center-between;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: calc($container + 74px);
-    padding: 20px 37px;
     width: 90%;
+    padding: 20px calc(74px / 2); // header шире на 74px чем контейнер, поэтому пэдинги по бокам по половине 74px, чтобы выровнять по центру
     margin: auto;
-    position: relative;
     margin-top: 60px;
     background: $light;
     border-radius: 20px;
@@ -244,8 +514,8 @@ body {
 // PROMO
 
 .promo {
-    margin-top: calc(-42px - 60px);
-    padding: 20px;
+    // margin-top: calc(0px - $header-height - 60px); // отнимаем высоту хедера и отступ сверху
+    padding: 20px 20px 0 20px;
 
     &__wrap {
         background: $main;
@@ -429,73 +699,13 @@ body {
 
 
 .courses {
-
     &__title {
         max-width: 905px;
-    }
-
-    &__menu {
-        margin-top: 50px;
         margin-bottom: 60px;
-        @include flex-center-between;
-    }
-
-    &__categories {
-        display: flex;
-        align-items: center;
-        column-gap: 3px;
-    }
-
-    &__category {
-        font-family: $main-font;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        padding: 10px 30px;
-        border-radius: 999px;
-        border: 1px solid $dark;
-        background: none;
-        cursor: pointer;
-
-        &--popular {
-            padding-left: 27px;
-            background: url(../img/popular.svg) no-repeat left center;
-        }
-    }
-
-    &__layout-buttons {
-        display: flex;
-        align-items: center;
-        column-gap: 3px;
-    }
-
-    &__layout-button {
-        width: 40px;
-        height: 40px;
-        background: none;
-        border-radius: 10px;
-        border: 1px solid $dark;
-        cursor: pointer;
-
-        &--grid {
-            background: url(../img/grid.svg) no-repeat center;
-        }
-
-        &--list {
-            background: url(../img/list.svg) no-repeat center;
-        }
-
-        &--grid-active {
-            background: $dark url(../img/grid-active.svg) no-repeat center;
-        }
-
-        &--list-active {
-            background: $dark url(../img/list-active.svg) no-repeat center;
-        }
     }
 
 	&__cards {
+        margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
@@ -788,6 +998,7 @@ body {
         max-width: 652px;
         width: 100%;
         padding: 50px;
+        column-gap: 25px;
     }
 
     // &__card-review-content {
@@ -888,8 +1099,7 @@ body {
     }
 
     &__card-review-img-wrap {
-        max-width: 200px;
-        width: 100%;
+        width: 200px;
         height: 236px;
         border-radius: 20px;
         overflow: hidden;
@@ -1160,6 +1370,7 @@ body {
         padding: 0px 30px;
         overflow: hidden;
         max-height: 1125px;
+    
 
         & .top-courses__wrap {
             position: relative;
@@ -1171,6 +1382,7 @@ body {
         & .top-courses__title { 
             color: $light;
             margin: auto;
+            margin-bottom: 60px;
             text-align: center;
         }
         
@@ -1179,6 +1391,7 @@ body {
 
     &__title { 
         max-width: 753px;
+        margin-bottom: 60px;
     }
 
     &__cards-wrap {
