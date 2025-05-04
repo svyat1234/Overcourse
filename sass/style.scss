@@ -15,7 +15,6 @@ $desktop-width: 1920px;
 
 // SETTINGS
 
-$header-height: 79px;
 $main-font: "Montserrat", sans-serif;
 $secondary-font: "Open Sans", sans-serif;
 $button-border-radius: 10px;
@@ -419,6 +418,7 @@ body {
     margin-top: 60px;
     background: $light;
     border-radius: 20px;
+    z-index: 100;
 
     &--light {
         color: $light;
@@ -445,6 +445,21 @@ body {
             background: $light;
         }
 
+    }
+
+    &--active {
+        position: fixed;
+        margin-top: 30px;
+        animation: slideDown 0.3s ease-in-out forwards;
+        border: 2px solid rgba(255, 255, 255, 0.40);
+        background: rgba(255, 255, 255, 0.60);
+        backdrop-filter: blur(57px);
+    }
+
+    &--hidden {
+        position: fixed;
+        margin-top: 30px;
+        animation: slideUp 0.3s ease-in-out forwards;
     }
 
     &__content {
@@ -508,6 +523,24 @@ body {
         border: none;
     }
     
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(calc(-100% - 30px));
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        transform: translateX(-50%) translateY(calc(-100% - 30px));
+    }
 }
 
 
@@ -583,7 +616,20 @@ body {
 
     &__button {
         position: absolute;
-        right: 0;
+        top: 3px;
+        right: 4px;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &:hover svg rect {
+            fill: rgb(134 188 237);
+            transition: all 0.2s;
+        }
+        &:hover svg path {
+            fill: rgb(175, 233, 130);
+            transition: all 0.6s;
+        }
     }
 
     &__form-icon {
@@ -645,6 +691,12 @@ body {
         border-radius: 999px;
         border: 1px solid $light;
         padding: 10px 30px;
+        transition: all 0.1s;
+
+        &:hover {
+            color: $accent;
+            border: 1px solid $accent;
+        }
 
         &--more {
             background: $light;
@@ -1134,6 +1186,11 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        &--more {
+            @include flex-center-center;
+            background: $light;
+        }
     }
 
     &__card-heading {
@@ -1200,6 +1257,31 @@ body {
         background: url(../img/arrow-right.svg) no-repeat center;
         border-radius: 10px;
         border: 1px solid $dark;
+    }
+
+    &__card-more-text {
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__card-more-link {
+        @include flex-center-center;
+        margin-top: 16px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: $accent;
+        border-radius: 10px;
+        max-width: 230px;
+        width: 100%;
+        height: 50px;
+        color: $light;
+        text-decoration: none;
     }
 }
 
@@ -1618,6 +1700,7 @@ body {
     }
 
     &__interaction-wrap {
+        margin-top: 34px;
         display: flex;
         align-items: center;
         column-gap: 15px;
@@ -1628,6 +1711,7 @@ body {
         border-radius: 10px;
         text-decoration: none;
         color: $dark;
+        background: $light;
         font-family: $main-font;
         font-size: 16px;
         font-style: normal;
@@ -2039,7 +2123,19 @@ body {
             }
 
             .question__card-icon {
-                transform: rotate(180deg);
+                &::before {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+
+                &::after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .question__card-text {
+                opacity: 1;
             }
         }
     }
@@ -2061,33 +2157,60 @@ body {
         max-width: 580px;
         font-family: $main-font;
         font-size: 25px;
-        line-height: 100%;
+        line-height: 97%;
         font-style: normal;
         font-weight: 600;
     }
 
-    &__card-subtitle {
+    &__card-subtitle-wrap {
+        @include flex-start-between;
+        max-width: 775px;
+        width: 100%;
+    }
+
+    &__card-text {
         font-family: $main-font;
         font-size: 16px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         max-width: 700px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
 
     &__card-icon {
+        position: relative;
+        min-width: 25px;
         width: 25px;
         height: 25px;
-        background: url(../img/question-arrow.svg) no-repeat center;
-        transition: transform 0.3s ease-in-out;
-    }
-    
-    &__card-text {
-        margin-top: 60px;
-        font-family: $main-font;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        // background: url(../img/question-arrow.svg) no-repeat center;
+        transition: all 0.3s ease-in-out;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transform: scale(1);
+            background: url(../img/question-arrow.svg) no-repeat center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: scale(0);
+            background: url(../img/question-close.svg) no-repeat center;
+            transition: all 0.3s ease-in-out;
+        }
     }
     
 }

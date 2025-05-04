@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Overcourse | Главная</title>
+    <link rel="icon" href="./img/site-icon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./vendor/css/swiper-bundle.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="./js/main.js" type="module" defer></script>
+    <script src="./vendor/js/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
 </head>
 <body>
     <main id="main">
 
         <header class="header header--light">
             <div class="header__content">
-                <a href="/"><img src="./img/logo-light.svg" alt="Overcourse" class="logo"></a>
+                <a href="./index.html"><img src="./img/logo-light.svg" alt="Overcourse" class="logo"></a>
                 <nav class="header__nav">
                     <a href="./catalog.html" class="header__link header__link--courses">Все курсы</a>
                     <a href="#" class="header__link">Школы</a>
@@ -46,7 +47,14 @@
                             <form class="promo__form">
                                 <div class="promo__input-wrapper">
                                     <input type="text" class="promo__input" placeholder="Введите запрос">
-                                    <button class="promo__button" type="submit" aria-label="Найти"></button>
+                                    <button class="promo__button" type="submit" aria-label="Найти">
+                                        <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect y="0.583984" width="36" height="36" rx="9" fill="#AFE982"/>
+                                            <path d="M10.1045 10.1016L15.2993 13.2304V23.7377L10.1045 26.8665V10.1016Z" fill="white"/>
+                                            <path d="M29.7773 15.5332L24.4891 18.5013L15.3563 13.3055L15.2055 7.24308L29.7773 15.5332Z" fill="white"/>
+                                            <path d="M29.7773 21.6348L24.4891 18.6667L15.3563 23.8625L15.2055 29.9249L29.7773 21.6348Z" fill="white"/>
+                                        </svg>
+                                    </button>
                                 </div>
                                 <div class="promo__form-icon"></div>
                                 <span class="promo__form-text">Подберем курс с помощью ИИ асистента</span>
@@ -702,16 +710,9 @@
                 </div>
                 <!-- /.reviews__card -->
 
-                <div class="reviews__card">
-                    <div class="reviews__card-heading">
-                        <span class="reviews__card-school"><span class="reviews__card-rating">4.8</span> | SkyPro</span>
-                        <span class="reviews__card-count">1182 отзыва</span>
-                    </div>
-                    <!-- /.reviews__card-heading -->
-                    <div class="reviews__card-content">
-                        <img src="./img/reviews-card.png" alt="review" class="reviews__card-img">
-                        <a href="#" class="reviews__card-link"></a>
-                    </div>
+                <div class="reviews__card reviews__card--more">
+                    <span class="reviews__card-more-text">Более 15 392 отзывов</span>
+                    <a href="#" class="reviews__card-more-link">Cмотреть все</a>
                 </div>
                 <!-- /.reviews__card -->
 
@@ -1017,7 +1018,7 @@
                     <div class="selection__interaction">
                         <span class="section-title section-title--accent">от overcourse</span>
                         <div class="selection__interaction-wrap">
-                            <a href="#" class="selection__link">Все подборки</a>
+                            <a href="./selection.html" class="selection__link">Все подборки</a>
                             <div class="selection__buttons">
                                 <button class="swiper-button-prev"></button>
                                 <button class="swiper-button-next"></button>
@@ -1323,11 +1324,12 @@
                     <div class="question__card-content">
                         <div class="question__card-heading">
                             <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
@@ -1335,12 +1337,13 @@
                 <div class="question__card">
                     <div class="question__card-content">
                         <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <h3 class="question__card-title">Слияние и поглощение</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
@@ -1348,12 +1351,13 @@
                 <div class="question__card">
                     <div class="question__card-content">
                         <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <h3 class="question__card-title">Новая политика или регламент</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
@@ -1361,12 +1365,13 @@
                 <div class="question__card">
                     <div class="question__card-content">
                         <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <h3 class="question__card-title">А также явные признаки</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
@@ -1374,12 +1379,13 @@
                 <div class="question__card">
                     <div class="question__card-content">
                         <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <h3 class="question__card-title">Институционализации и по сей день</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
@@ -1387,12 +1393,13 @@
                 <div class="question__card">
                     <div class="question__card-content">
                         <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <p class="question__card-subtitle">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                            <div class="question__card-icon"></div>
+                            <h3 class="question__card-title">Распределены по отраслям</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
                         </div>
                         <!-- /.question__card-heading -->
-                        <p class="question__card-text">Картельные сговоры не допускают ситуации, при которой диаграммы связей, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, понимание сути ресурсосберегающих технологий предоставлены сами себе. </p>
                     </div>
                     <!-- /.question__card-content -->
                 </div>
