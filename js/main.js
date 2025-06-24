@@ -1,32 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Swiper impressions
-    const impressionsSwiper = new Swiper('.impressions__swiper', {
-        // Опциональные параметры
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 30,
-        initialSlide: 3,
-        watchSlidesProgress: true,
-        navigation: {
-            nextEl: '.impressions .swiper-button-next',
-        },
-    });
+    // // Swiper impressions
+    // const impressionsSwiper = new Swiper('.impressions__swiper', {
+    //     // Опциональные параметры
+    //     direction: 'horizontal',
+    //     loop: true,
+    //     slidesPerView: 'auto',
+    //     centeredSlides: true,
+    //     spaceBetween: 30,
+    //     initialSlide: 3,
+    //     watchSlidesProgress: true,
+    //     navigation: {
+    //         nextEl: '.impressions .swiper-button-next',
+    //     },
+    // });
 
-    // Swiper selection
-    const selectionSwiper = new Swiper('.selection__swiper', {
-        // Опциональные параметры
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 4,
-        spaceBetween: 30,
-        watchSlidesProgress: true,
-        navigation: {
-            nextEl: '.selection .swiper-button-next',
-            prevEl: '.selection .swiper-button-prev',
-        },
-    });
+    // // Swiper selection
+    // const selectionSwiper = new Swiper('.selection__swiper', {
+    //     // Опциональные параметры
+    //     direction: 'horizontal',
+    //     loop: true,
+    //     slidesPerView: 4,
+    //     spaceBetween: 30,
+    //     watchSlidesProgress: true,
+    //     navigation: {
+    //         nextEl: '.selection .swiper-button-next',
+    //         prevEl: '.selection .swiper-button-prev',
+    //     },
+    // });
 
     // Accordion function
     function accordion() {
@@ -110,6 +110,48 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHeader();
     }
 
+    function rangeAnimation() {
+        const range = document.querySelector('.profit__range');
+        const textWrap = document.querySelector('.profit__range-text-wrap');
+        const icon = document.querySelector('.profit__range-icon');
+        const line = document.querySelector('.profit__range-line');
+        
+        const updatePosition = () => {
+            const value = parseFloat(range.value);
+            const min = parseFloat(range.min);
+            const max = parseFloat(range.max);
+            const thumbWidth = 20;
+
+            const percent = (value - min) / (max - min);
+            const thumbOffset = (0.5 - percent) * thumbWidth;
+            
+            textWrap.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
+            icon.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
+            line.style.width = `${percent * 100}%`;
+
+            if (value < 33) {
+                icon.classList.remove('profit__range-icon--middle')
+                icon.classList.remove('profit__range-icon--senior')
+                icon.classList.add('profit__range-icon--junior')
+                
+            } else if (value > 33 && value < 66) {
+                icon.classList.remove('profit__range-icon--junior')
+                icon.classList.remove('profit__range-icon--senior')
+                icon.classList.add('profit__range-icon--middle')
+            } else if (value > 66) {
+                icon.classList.remove('profit__range-icon--junior')
+                icon.classList.remove('profit__range-icon--middle')
+                icon.classList.add('profit__range-icon--senior')
+            }
+
+        }
+
+        range.addEventListener('input', updatePosition);
+        updatePosition();
+    }
+    
+
     headerAnimation();
     accordion();
+    rangeAnimation();
 });

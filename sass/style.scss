@@ -455,7 +455,7 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-width: calc($container + 74px);
+    max-width: $container;
     width: 90%;
     padding: 20px calc(74px / 2); // header шире на 74px чем контейнер, поэтому пэдинги по бокам по половине 74px, чтобы выровнять по центру
     margin: auto;
@@ -467,6 +467,7 @@ body {
     &--light {
         color: $light;
         background: none;
+        max-width: calc($container + 74px);
         
         & .header__link {
             color: $light;
@@ -2141,9 +2142,24 @@ body {
 
 .question {
 
-    // &__title {
+    &__heading {
+        @include flex-start-between;
+    }
 
-    // }
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__info-text {
+        padding: 10px 30px;
+        background: $accent;
+        color: $light;
+        font-weight: 600;
+        line-height: 100%;
+        border-radius: 100px;
+    }
 
     &__cards {
         margin-top: 60px;
@@ -2428,6 +2444,243 @@ body {
     }
 }
 
+
+// PROFIT
+
+.profit {
+
+    &__heading {
+        @include flex-start-between;
+    }
+    
+    &__title {
+        max-width: 430px;
+    }
+    
+    &__desc {
+        @include flex-start-between;
+        max-width: 850px;
+        width: 100%;
+        gap: 20px;
+    }   
+    
+    &__about {
+        max-width: 435px;
+    }
+
+    &__info {
+        max-width: 385px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    &__info-text {
+        font-size: 16px;
+        line-height: 100%;
+        font-style: normal;
+        font-weight: 500;
+    }
+    
+    &__info-text-bold {
+        font-weight: 700;
+    }
+    
+    &__range-wrap {
+        margin-top: 120px;
+        background: $light;
+        border-radius: 30px;
+        padding: 60px 47px 30px 47px;
+    }
+    
+    &__range-content {
+        position: relative;
+        width: 100%;
+    }
+    
+    &__range {
+        width: 100%;
+        cursor: pointer;
+        opacity: 0;
+        height: 45px;
+    }
+    
+    &__range-dots {
+        @include flex-center-between;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        pointer-events: none;
+        transform: translateY(-60%);
+    }
+    
+    &__range-dot {
+        width: 20px;
+        height: 20px;
+        background: $accent;
+        border-radius: 50%;
+    }
+    
+    &__range-text-wrap {
+        position: absolute;
+        top: 0;
+        height: 80px;
+        width: 115px;
+        background: url(../img/range-text-wrap.svg) no-repeat center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        color: $light;
+        transform: translate(-50%, -120%);
+    }
+    
+    &__range-title {
+        margin-top: -10px;
+        font-size: 16px;
+        line-height: 100%;
+        font-style: normal;
+        font-weight: 700;
+    }
+    
+    &__range-text {
+        font-size: 16px;
+        line-height: 100%;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    &__range-icon {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -55%);
+        pointer-events: none;
+        z-index: 2;
+
+        &--junior {
+            background: url(../img/junior.png) no-repeat center / cover
+        }
+        &--middle {
+            background: url(../img/middle.png) no-repeat center / cover
+        }
+        &--senior {
+            background: url(../img/senior.png) no-repeat center / cover
+        }
+    }
+
+    &__range-line-wrap {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        top: 45%;
+        left: 0;
+        background-color: #DADADA;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &__range-line {
+        height: 100%;
+        width: 100%;
+        background-color: $gray;
+        z-index: 1;
+    }
+    
+    &__range-info {
+        @include flex-start-between;
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 100%;
+        font-style: normal;
+    }
+    
+    &__range-info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 20%;
+
+        &:nth-child(2) {
+            text-align: center;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+    
+    &__range-info-title {
+        font-weight: bold;
+    }
+    
+    &__range-info-text {
+        font-weight: 500;
+    }
+}
+
+
+// TEACHERS
+
+.teachers {
+
+    &__cards {
+        margin-top: 70px;
+        display: flex;
+        gap: 37px;
+    }
+    
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    &__img-wrap {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    
+    &__card-title {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 120%;
+        max-width: 100px;
+    }
+    
+    &__card-job {
+        max-width: 180px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 120%;
+    }
+}
+    
+    
+    
 
 
 .footer {
