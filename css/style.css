@@ -108,7 +108,8 @@ body {
 .courses-filters__main-buttons {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .courses-filters__main-button {
   position: relative;
@@ -118,7 +119,8 @@ body {
   border: 1px solid #262626;
   background: #262626;
   cursor: pointer;
-  text-align-last: left;
+  -moz-text-align-last: left;
+       text-align-last: left;
 }
 .courses-filters__main-button--filters {
   width: 172px;
@@ -176,7 +178,8 @@ body {
 .courses-filters__lists {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-filters__list {
   height: 50px;
@@ -188,7 +191,8 @@ body {
 .courses-filters__list-button {
   position: relative;
   padding: 0px 20px;
-  text-align-last: left;
+  -moz-text-align-last: left;
+       text-align-last: left;
   height: 50px;
   width: 100%;
   font-family: "Montserrat", sans-serif;
@@ -232,7 +236,8 @@ body {
 .courses-menu__categories {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-menu__category {
   font-family: "Montserrat", sans-serif;
@@ -253,7 +258,8 @@ body {
 .courses-menu__layout-buttons {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-menu__layout-button {
   width: 40px;
@@ -285,7 +291,8 @@ body {
 .pagination__content {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 .pagination__arrow {
   width: 50px;
@@ -304,7 +311,8 @@ body {
 .pagination__pages {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .pagination__page {
   font-family: "Montserrat", sans-serif;
@@ -374,7 +382,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 1670px;
+  max-width: 1596px;
   width: 90%;
   padding: 20px 37px;
   margin: auto;
@@ -386,6 +394,7 @@ body {
 .header--light {
   color: #fff;
   background: none;
+  max-width: 1670px;
 }
 .header--light .header__link {
   color: #fff;
@@ -409,7 +418,8 @@ body {
   animation: slideDown 0.3s ease-in-out forwards;
   border: 2px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(57px);
+  -webkit-backdrop-filter: blur(57px);
+          backdrop-filter: blur(57px);
 }
 .header--hidden {
   position: fixed;
@@ -546,6 +556,14 @@ body {
   border: none;
   padding-left: 30px;
 }
+.promo__input::-moz-placeholder {
+  color: #E6E6E6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 .promo__input::placeholder {
   color: #E6E6E6;
   font-family: "Montserrat", sans-serif;
@@ -595,7 +613,8 @@ body {
   margin-top: 35px;
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .promo__request-link {
   text-decoration: none;
@@ -660,7 +679,8 @@ body {
   border-radius: 11px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+          backdrop-filter: blur(5.5px);
 }
 .promo__img-text::after {
   position: absolute;
@@ -676,7 +696,8 @@ body {
   transform: translate(40%, 40%);
 }
 .promo__img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .courses__title {
@@ -707,7 +728,8 @@ body {
   overflow: hidden;
 }
 .courses__card-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .courses__card-info {
   display: flex;
@@ -724,7 +746,8 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: #fff;
   -webkit-text-stroke-width: 0.76px;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
@@ -802,7 +825,8 @@ body {
   margin-top: 7px;
   display: flex;
   align-items: center;
-  column-gap: 13px;
+  -moz-column-gap: 13px;
+       column-gap: 13px;
 }
 .courses__card-price {
   font-family: "Montserrat", sans-serif;
@@ -824,7 +848,8 @@ body {
   justify-content: space-between;
   margin-top: 14px;
   margin-top: 25px;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses__card-link {
   text-decoration: none;
@@ -844,7 +869,8 @@ body {
 .impressions__info {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .impressions__count-wrapper {
   display: flex;
@@ -886,12 +912,14 @@ body {
   position: relative;
 }
 .impressions__card-video-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .impressions__card-video-controls {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -906,7 +934,8 @@ body {
 }
 .impressions__card-video-play {
   background: rgba(255, 255, 255, 0.4) url(../img/play.svg) no-repeat center;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
   width: 40px;
   height: 40px;
@@ -944,7 +973,8 @@ body {
   max-width: 652px;
   width: 100%;
   padding: 50px;
-  column-gap: 25px;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
 }
 .impressions__card-review-heading {
   display: flex;
@@ -1038,7 +1068,8 @@ body {
   overflow: hidden;
 }
 .impressions__card-review-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .reviews__cards {
@@ -1204,7 +1235,8 @@ body {
 .schools__slide-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30px;
 }
 .schools__button {
@@ -1271,7 +1303,8 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-size: 24.063px;
@@ -1297,7 +1330,8 @@ body {
   max-height: 38px;
 }
 .top-courses__card-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .top-courses__card-content {
   display: flex;
@@ -1381,7 +1415,8 @@ body {
 .top-courses__prices-wrap {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -1395,7 +1430,8 @@ body {
 .top-courses__buttons {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .top-courses__button {
   max-width: 272px;
@@ -1420,7 +1456,8 @@ body {
   margin-top: 34px;
   display: flex;
   align-items: center;
-  column-gap: 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 .selection__link {
   padding: 15px 30px;
@@ -1436,7 +1473,8 @@ body {
 .selection__buttons {
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .selection .swiper-button-prev {
   position: relative;
@@ -1494,7 +1532,8 @@ body {
   font-weight: 600;
   line-height: normal;
   background: rgba(217, 217, 217, 0.01);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 .selection__card-title {
   margin-top: 15px;
@@ -1506,7 +1545,8 @@ body {
   line-height: 100%;
 }
 .selection__img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about {
@@ -1526,7 +1566,8 @@ body {
 .about__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   row-gap: 30px;
   align-items: stretch;
 }
@@ -1683,7 +1724,8 @@ body {
 .news__card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .news__card-info {
   max-width: 507px;
@@ -1750,6 +1792,24 @@ body {
   border-radius: 10px;
 }
 
+.question__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.question__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.question__info-text {
+  padding: 10px 30px;
+  background: #AFE982;
+  color: #fff;
+  font-weight: 600;
+  line-height: 100%;
+  border-radius: 100px;
+}
 .question__cards {
   margin-top: 60px;
   display: grid;
@@ -1913,7 +1973,8 @@ body {
 .about-promo__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about-promo__info-cards {
   margin-top: 10px;
@@ -1972,13 +2033,15 @@ body {
 
 .skills__cards {
   margin-top: 70px;
-  columns: 3;
+  -moz-columns: 3;
+       columns: 3;
   gap: 20;
 }
 .skills__card {
   padding: 50px 40px;
   background: #fff;
-  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   margin-bottom: 20px;
   border-radius: 30px;
 }
@@ -1988,6 +2051,208 @@ body {
   line-height: 120%;
   padding-left: 90px;
   background: url(../img/star-accent.svg) left top no-repeat;
+}
+
+.profit__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.profit__title {
+  max-width: 430px;
+}
+.profit__desc {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 850px;
+  width: 100%;
+  gap: 20px;
+}
+.profit__about {
+  max-width: 435px;
+}
+.profit__info {
+  max-width: 385px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profit__info-text {
+  font-size: 16px;
+  line-height: 100%;
+  font-style: normal;
+  font-weight: 500;
+}
+.profit__info-text-bold {
+  font-weight: 700;
+}
+.profit__range-wrap {
+  margin-top: 120px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 60px 47px 30px 47px;
+}
+.profit__range-content {
+  position: relative;
+  width: 100%;
+}
+.profit__range {
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  height: 45px;
+}
+.profit__range-dots {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateY(-60%);
+}
+.profit__range-dot {
+  width: 20px;
+  height: 20px;
+  background: #AFE982;
+  border-radius: 50%;
+}
+.profit__range-text-wrap {
+  position: absolute;
+  top: 0;
+  height: 80px;
+  width: 115px;
+  background: url(../img/range-text-wrap.svg) no-repeat center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  transform: translate(-50%, -120%);
+}
+.profit__range-title {
+  margin-top: -10px;
+  font-size: 16px;
+  line-height: 100%;
+  font-style: normal;
+  font-weight: 700;
+}
+.profit__range-text {
+  font-size: 16px;
+  line-height: 100%;
+  font-style: normal;
+  font-weight: 500;
+}
+.profit__range-icon {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -55%);
+  pointer-events: none;
+  z-index: 2;
+}
+.profit__range-icon--junior {
+  background: url(../img/junior.png) no-repeat center/cover;
+}
+.profit__range-icon--middle {
+  background: url(../img/middle.png) no-repeat center/cover;
+}
+.profit__range-icon--senior {
+  background: url(../img/senior.png) no-repeat center/cover;
+}
+.profit__range-line-wrap {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 45%;
+  left: 0;
+  background-color: #DADADA;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+.profit__range-line {
+  height: 100%;
+  width: 100%;
+  background-color: #8E8E8E;
+  z-index: 1;
+}
+.profit__range-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 100%;
+  font-style: normal;
+}
+.profit__range-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20%;
+}
+.profit__range-info-item:nth-child(2) {
+  text-align: center;
+}
+.profit__range-info-item:last-child {
+  text-align: right;
+}
+.profit__range-info-title {
+  font-weight: bold;
+}
+.profit__range-info-text {
+  font-weight: 500;
+}
+
+.teachers__cards {
+  margin-top: 70px;
+  display: flex;
+  gap: 37px;
+}
+.teachers__card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  max-width: 500px;
+  width: 100%;
+}
+.teachers__img-wrap {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.teachers__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.teachers__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.teachers__card-title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 120%;
+  max-width: 100px;
+}
+.teachers__card-job {
+  max-width: 180px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
 }
 
 .footer {
@@ -2008,6 +2273,10 @@ body {
 .footer--light .footer__input {
   color: #fff;
   border-bottom: 1px solid #fff;
+}
+.footer--light .footer__input::-moz-placeholder {
+  color: #fff;
+  opacity: 0.8;
 }
 .footer--light .footer__input::placeholder {
   color: #fff;
@@ -2090,6 +2359,10 @@ body {
   padding-bottom: 6px;
   outline: none;
 }
+.footer__input::-moz-placeholder {
+  color: #262626;
+  opacity: 0.8;
+}
 .footer__input::placeholder {
   color: #262626;
   opacity: 0.8;
@@ -2133,7 +2406,8 @@ body {
   margin-top: 40px;
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .footer__button {
   display: flex;
@@ -2170,7 +2444,8 @@ body {
   margin-top: 65px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 150px;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
   row-gap: 50px;
 }
 .footer__contacts-title {
@@ -2217,7 +2492,8 @@ body {
 .footer__info-links {
   display: flex;
   align-items: center;
-  column-gap: 60px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
 }
 .footer__info-link {
   color: #262626;
@@ -2232,4 +2508,4 @@ body {
   line-height: 100%;
   font-style: normal;
   font-weight: 400;
-}/*# sourceMappingURL=style.css.map */
+}
