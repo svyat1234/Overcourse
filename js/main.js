@@ -1,34 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // // Swiper impressions
-    // const impressionsSwiper = new Swiper('.impressions__swiper', {
-    //     // Опциональные параметры
-    //     direction: 'horizontal',
-    //     loop: true,
-    //     slidesPerView: 'auto',
-    //     centeredSlides: true,
-    //     spaceBetween: 30,
-    //     initialSlide: 3,
-    //     watchSlidesProgress: true,
-    //     navigation: {
-    //         nextEl: '.impressions .swiper-button-next',
-    //     },
-    // });
+    // Swiper impressions
+    const impressionsSwiper = new Swiper('.impressions__swiper', {
+        // Опциональные параметры
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 30,
+        initialSlide: 3,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: '.impressions .swiper-button-next',
+        },
+    });
 
-    // // Swiper selection
-    // const selectionSwiper = new Swiper('.selection__swiper', {
-    //     // Опциональные параметры
-    //     direction: 'horizontal',
-    //     loop: true,
-    //     slidesPerView: 4,
-    //     spaceBetween: 30,
-    //     watchSlidesProgress: true,
-    //     navigation: {
-    //         nextEl: '.selection .swiper-button-next',
-    //         prevEl: '.selection .swiper-button-prev',
-    //     },
-    // });
+    // Swiper selection
+    const selectionSwiper = new Swiper('.selection__swiper', {
+        // Опциональные параметры
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: '.selection .swiper-button-next',
+            prevEl: '.selection .swiper-button-prev',
+        },
+    });
 
-    // Accordion function
+    // Swiper reviews-info
+    const reviewsInfoSwiper = new Swiper('.reviews-info__swiper', {
+        // Опциональные параметры
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: '.reviews-info__swiper .swiper-button-next',
+            prevEl: '.reviews-info__swiper .swiper-button-prev',
+        },
+    });
+
     function accordion() {
         const cards = document.querySelectorAll('.question__card');
 
@@ -72,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // Header
 
     function headerAnimation() {
         const header = document.querySelector('.header');
@@ -149,9 +160,71 @@ document.addEventListener('DOMContentLoaded', () => {
         range.addEventListener('input', updatePosition);
         updatePosition();
     }
-    
 
+    function revewsCounterInteractive() {
+        let reviewsArrOfObjs = [
+            { 
+                stars: 5, 
+                reviewsCount: 507 
+            },
+
+            { 
+                stars: 4, 
+                reviewsCount: 231 
+            },
+            { 
+                stars: 3, 
+                reviewsCount: 89 
+
+            },
+            { 
+                stars: 2, 
+                reviewsCount: 42
+
+            },
+            {
+                stars: 1, 
+                reviewsCount: 17 
+            }
+        ];
+
+
+
+        const reviewSum = document.querySelector('.reviews-info__sum-reviews')
+        const reviewScale = document.querySelectorAll('.reviews-info__scale')
+        const reviewCount = document.querySelectorAll('.reviews-info__quantity-reviews')
+        const middlePass = document.querySelector('.reviews-info__middle-pass')
+
+        let reviewSumQuantity = reviewsArrOfObjs.reduce((sum, obj) => sum + obj.reviewsCount, 0)
+
+        function getReviewWord(reviewSumQuantity) {
+            if (reviewSumQuantity % 100 >= 11 && reviewSumQuantity % 100 <= 14) {
+                return 'отзывов';
+            }
+            switch (reviewSumQuantity % 10) {
+                case 1: return 'отзыв';
+                case 2:
+                case 3:
+                case 4: return 'отзыва';
+                default: return 'отзывов';
+            }
+        }
+
+        let middlePassValue = (reviewsArrOfObjs.reduce((sum, obj) => sum + obj.stars * obj.reviewsCount, 0) / reviewSumQuantity).toFixed(1)
+        middlePass.textContent = middlePassValue
+        reviewSum.textContent = `${reviewSumQuantity} ${getReviewWord(reviewSumQuantity)}`;
+
+        reviewsArrOfObjs.forEach((obj, i) => {
+            console.log(obj.stars);
+            reviewCount[reviewsArrOfObjs.length - obj.stars].textContent = obj.reviewsCount
+            reviewScale[reviewsArrOfObjs.length - obj.stars].style.width = `${(obj.reviewsCount / reviewSumQuantity) * 100}%`
+        });
+
+    }
+    
+    revewsCounterInteractive();
     headerAnimation();
     accordion();
     rangeAnimation();
 });
+

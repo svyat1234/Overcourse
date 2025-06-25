@@ -90,6 +90,11 @@ body {
         background: $accent;
         color: $light;
     }
+
+    &--accent {
+        background: $accent;
+        color: $light;
+    }
 }
 
 .button-favorite {
@@ -131,6 +136,20 @@ body {
 .section-title {
     font-family: $main-font;
     font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    &--accent {
+        font-family: $secondary-font;
+        font-style: italic;
+        font-weight: 400;
+    }
+}
+
+.section-title-default {
+    font-family: $main-font;
+    font-size: 45px;
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
@@ -459,7 +478,7 @@ body {
     width: 90%;
     padding: 20px calc(74px / 2); // header шире на 74px чем контейнер, поэтому пэдинги по бокам по половине 74px, чтобы выровнять по центру
     margin: auto;
-    margin-top: 60px;
+    margin-top: 50px;
     background: $light;
     border-radius: 20px;
     z-index: 100;
@@ -1790,10 +1809,6 @@ body {
         border: 1px solid #262626;
     }
 
-    & .swiper-slide {
-       
-    }
-
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -2679,7 +2694,304 @@ body {
     }
 }
     
-    
+// REVIEWS-INFO
+
+.reviews-info {
+    @include flex-start-between;
+    gap: 15px;
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__sum-reviews {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
+        text-decoration: underline;
+    }
+
+    &__statistic {
+        margin-top: 40px;
+        padding: 28px;
+        background: $light;
+        border-radius: 25px;
+        max-width: 433px;
+        width: 100%;
+    }
+
+    &__statistic-heading {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+
+    &__middle-pass {
+        @include flex-center-center;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 100%;
+        width: 60px;
+        height: 35px;
+        border-radius: 8.3px;
+        border: 1px solid #F6F6F6;
+    }
+
+    &__middle-stars {
+        display: flex;
+        align-items: center;
+        gap: 3.5px;
+    }
+
+    &__middle-star {
+        width: 26px;
+        height: 24px;
+        background: url(../img/middle-star.svg) no-repeat center / cover;
+
+        &--active {
+            background: url(../img/middle-star-active.svg) no-repeat center / cover;
+        }
+    }
+
+    &__statistic-items {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__statistic-item {
+        @include flex-center-between;
+        gap: 12px;
+    }
+
+    &__stars {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__star {
+        width: 18px;
+        height: 17px;
+        background: url(../img/reviews-info-star.svg) no-repeat center / cover;
+
+        &--active {
+            background: url(../img/reviews-info-star-active.svg) no-repeat center / cover;
+        }
+    }
+
+    &__scale-wrap {
+        position: relative;
+        width: 183px;
+        height: 5px;
+        background: #F8F8F8;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    &__scale {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background: #E9E9E9;
+    }
+
+    &__quantity-reviews {
+        @include flex-center-center;
+        background: #F8F8F8;
+        border-radius: 10px;
+        width: 53px;
+        height: 26px;
+    }
+
+    &__link {
+        margin-top: 13px;
+    }
+
+    &__swiper {
+        max-width: 1146px;
+        width: 100%;
+    }
+
+    &__nav-wrap {
+        float: right;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        margin-bottom: 40px;
+    }
+
+    &__slider-link {
+        width: 182px;
+        background: $light;
+    }
+
+    &__slider-buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    & .swiper-button-prev {
+        position: relative;
+        width: 58px;
+        height: 40px;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        border-radius: 10px;
+        border: 1px solid #262626;
+        transform: rotate(180deg);
+    }
+
+    & .swiper-button-next {
+        position: relative;
+        left: 0;
+        right: 0;
+        width: 58px;
+        height: 40px;
+        background: url(../img/arrow-right.svg) no-repeat center;
+        border-radius: 10px;
+        border: 1px solid #262626;
+    }
+
+    &__slide {
+        border-radius: 30px;
+        background: $light;
+        padding: 50px 43px;
+    }
+
+    &__slide-heading {
+        @include flex-start-between
+    }
+
+    &__person {
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    &__person-img-wrap {
+        width: 50px;
+        height: 50px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__person-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__person-name {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__person-date {
+        color: #C9C9C9;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &__slide-text-wrap {
+        margin-top: 37px;
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+    }
+
+    &__slide-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 120%;
+    }
+
+    &__slide-link {
+        color: $dark;
+        font-weight: 600;
+    }
+
+    &__slide-footer {
+        @include flex-center-between;
+        margin-top: 67px;
+    }
+
+    &__slide-footer-link {
+    }
+
+    &__slide-company-img {
+        max-height: 30px;
+    }
+
+    &__vote {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__vote-button {
+        position: relative;
+        background: none;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+        padding-left: 23px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 17px;
+            height: 17px;
+            background: url(../img/vote.svg) no-repeat center / cover;
+        }
+
+        &--bad {
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+.section {
+}
+.container {
+}
+.section-title {
+}
+.button {
+
+    &--accent {
+    }
+}
+.swiper {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
     
 
 

@@ -8,10 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./vendor/css/swiper-bundle.css">
+    <!-- <link rel="stylesheet" href="./vendor/css/swiper-bundle.css"> -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./vendor/js/swiper-bundle.min.js"></script>
+    <!-- <script src="./vendor/js/swiper-bundle.min.js"></script> -->
     <script src="./js/main.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     <main id="main">
@@ -54,7 +60,7 @@
                     <a href="#" class="about-promo__tag tag">UX/UI</a>  
                 </div>
 
-                <h1 class="about-promo__title section-title">Project Manager в IT от Skillfactory</h1>
+                <h1 class="about-promo__title section-title-default">Project Manager в IT от Skillfactory</h1>
 
                 <div class="about-promo__text-wrap">
                     <p class="about-promo__text">
@@ -116,7 +122,7 @@
 
         <section class="skills section container">
 
-            <h2 class="skills__title section-title">Чему вы<span class="section-title--accent"> научитесь</span></h2>
+            <h2 class="skills__title section-title-default">Чему вы<span class="section-title-default--accent"> научитесь</span></h2>
 
             <div class="skills__cards">
                 <div class="skills__card">
@@ -145,7 +151,7 @@
         <section class="profit section container">
 
             <div class="profit__heading">
-                <h2 class="profit__title section-title ">Как быстро <span class="section-title--accent">окупится обучение</span></h2>
+                <h2 class="profit__title section-title-default ">Как быстро <span class="section-title-default--accent">окупится обучение</span></h2>
                 <div class="profit__desc">
                     <p class="profit__about">Вы можете рассчитать в калькуляторе, как будет расти ваш заработок вместе с опытом. А так же сколько времени потребуется, чтобы окупить вложения в образование.</p>
                     <div class="profit__info">
@@ -209,7 +215,7 @@
         <!-- /.profit -->
 
         <section class="teachers section container">
-            <h2 class="profit__title section-title">Преподаватели</h2>
+            <h2 class="teachers__title section-title-default">Преподаватели</h2>
             
             <div class="teachers__cards">
                 <div class="teachers__card">
@@ -250,14 +256,411 @@
 
         </section>
         <!-- /.teachers -->
-         
+
+        <section class="question section container">
+
+            <div class="question__heading">
+                <h2 class="question__title section-title-default">Остались<span class="section-title-default--accent"> вопросы?</span></h2>
+
+                <div class="question__info">
+                    <span class="question__info-text">6 модулей</span>
+                    <span class="question__info-text">123 онлайн-уроков</span>
+                </div>
+                <!-- /.questions__info -->
+            </div>
+            <!-- /.question__heading -->
+
+            <div class="question__cards">
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Слияние и поглощение</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Новая политика или регламент</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">А также явные признаки</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Институционализации и по сей день</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+                <div class="question__card">
+                    <div class="question__card-content">
+                        <div class="question__card-heading">
+                            <h3 class="question__card-title">Распределены по отраслям</h3>
+                            <div class="question__card-subtitle-wrap">
+                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
+                                <div class="question__card-icon"></div>
+                            </div>
+                        </div>
+                        <!-- /.question__card-heading -->
+                    </div>
+                    <!-- /.question__card-content -->
+                </div>
+                <!-- /.question__card -->
+            </div>
+            <!-- /.question__cards -->
+        </section>
+
+        <section class="reviews-info section container">
+            
+            <div class="reviews-info__about">
+                <div class="reviews-info__heading">
+                    <h2 class="reviews-info__title section-title-default">Отзывы</h2>
+                    <span class="reviews-info__sum-reviews">999 отзывов</span>
+                </div>
+                <!-- /.reviews-info__heading -->   
+
+                <div class="reviews-info__statistic">
+
+                    <div class="reviews-info__statistic-heading">
+                        <span class="reviews-info__middle-pass">3.9</span>
+                        <div class="reviews-info__middle-stars">
+                            <div class="reviews-info__middle-star reviews-info__middle-star--active"></div>
+                            <div class="reviews-info__middle-star reviews-info__middle-star--active"></div>
+                            <div class="reviews-info__middle-star reviews-info__middle-star--active"></div>
+                            <div class="reviews-info__middle-star"></div>
+                            <div class="reviews-info__middle-star"></div>
+                        </div>
+                        <!-- /.reviews-info__middle-stars -->
+                    </div>
+                    <!-- /.reviews-info__statistic-heading -->
+
+                    <div class="reviews-info__statistic-items">
+
+                        <div class="reviews-info__statistic-item">
+                            <div class="reviews-info__stars">
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                            </div>
+                            <!-- /.reviews-info__stars -->
+    
+                            <div class="reviews-info__scale-wrap">
+                                <div class="reviews-info__scale"></div>
+                            </div>
+                            <!-- /.reviews-info__scale-wrap -->
+    
+                            <span class="reviews-info__quantity-reviews">507</span>
+                        </div>
+                        <!-- /.reviews-info__statistic-item -->
+                        <div class="reviews-info__statistic-item">
+                            <div class="reviews-info__stars">
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star"></div>
+                            </div>
+                            <!-- /.reviews-info__stars -->
+    
+                            <div class="reviews-info__scale-wrap">
+                                <div class="reviews-info__scale"></div>
+                            </div>
+                            <!-- /.reviews-info__scale-wrap -->
+    
+                            <span class="reviews-info__quantity-reviews">507</span>
+                        </div>
+                        <!-- /.reviews-info__statistic-item -->
+                        <div class="reviews-info__statistic-item">
+                            <div class="reviews-info__stars">
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                            </div>
+                            <!-- /.reviews-info__stars -->
+    
+                            <div class="reviews-info__scale-wrap">
+                                <div class="reviews-info__scale"></div>
+                            </div>
+                            <!-- /.reviews-info__scale-wrap -->
+    
+                            <span class="reviews-info__quantity-reviews">507</span>
+                        </div>
+                        <!-- /.reviews-info__statistic-item -->
+                        <div class="reviews-info__statistic-item">
+                            <div class="reviews-info__stars">
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                            </div>
+                            <!-- /.reviews-info__stars -->
+    
+                            <div class="reviews-info__scale-wrap">
+                                <div class="reviews-info__scale"></div>
+                            </div>
+                            <!-- /.reviews-info__scale-wrap -->
+    
+                            <span class="reviews-info__quantity-reviews">507</span>
+                        </div>
+                        <!-- /.reviews-info__statistic-item -->
+                        <div class="reviews-info__statistic-item">
+                            <div class="reviews-info__stars">
+                                <div class="reviews-info__star reviews-info__star--active"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                                <div class="reviews-info__star"></div>
+                            </div>
+                            <!-- /.reviews-info__stars -->
+    
+                            <div class="reviews-info__scale-wrap">
+                                <div class="reviews-info__scale"></div>
+                            </div>
+                            <!-- /.reviews-info__scale-wrap -->
+    
+                            <span class="reviews-info__quantity-reviews">507</span>
+                        </div>
+                        <!-- /.reviews-info__statistic-item -->
+
+                    </div>
+                    <!-- /.reviews-info__statistic-items -->
+
+                </div>
+                <!-- /.reviews-info__statistic -->
+
+                <a href="#" class="reviews-info__link button button--accent">Оставить отзыв</a>
+
+            </div>
+            <!-- /.reviews-info__about -->
+
+        <div class="swiper reviews-info__swiper">
+            
+            <div class="reviews-info__nav-wrap">
+                <a href="#" class="reviews-info__slider-link button">Показать все</a>
+                <div class="reviews-info__slider-buttons">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <!-- /.reviews-info__slider-buttons -->
+            </div>
+            <!-- /.reviews-info__nav-wrap -->
+
+            <div class="reviews-info__slider swiper-wrapper">
+
+                <div class="reviews-info__slide swiper-slide">
+
+                    <div class="reviews-info__slide-heading">
+
+                        <div class="reviews-info__person">
+                            <div class="reviews-info__person-img-wrap">
+                                <img src="./img/review-person.png" alt="" class="reviews-info__img">
+                            </div>
+
+                            <div class="reviews-info__person-info">
+                                <span class="reviews-info__person-name">Алина В.</span>
+                                <span class="reviews-info__person-date">17.01.2924 г</span>
+                            </div>
+                            <!-- /.reviews-info__person-text-wrap -->
+
+                        </div>
+                        <!-- /.reviews-info__person -->
+
+                        <div class="reviews-info__stars">
+                            <div class="reviews-info__star reviews-info__star--active"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                        </div>
+                        <!-- /.reviews-info__stars -->
+                    </div>
+                    <!-- /.reviews-info__slide-heading -->
+
+                    <div class="reviews-info__slide-text-wrap">
+                        <p class="reviews-info__slide-text">Лучше не ходите! После оплаты отношение резко меняется и все обещания забываются! Не очень хорошие курсы, отправляют постоянно искать все в интернете, на вопросы отвечать не любят. Только выкладывают свои вебинары, а как разбираться в теме - так это им не интересно.</p>
+                        <a href="#" class="reviews-info__slide-link">Прочитать полностью</a>
+                    </div>
+                    <!-- /.reviews-info__slide-text-wrap -->
+
+                    <div class="reviews-info__slide-footer">
+                        <a href="#" class="reviews-info__slide-footer-link">
+                            <img src="./img/yandex.svg" alt="" class="reviews-info__slide-company-img">
+                        </a>
+
+                        <form class="reviews-info__vote">
+                            <button class="reviews-info__vote-button reviews-info__vote-button--good">1</button>
+                            <button class="reviews-info__vote-button reviews-info__vote-button--bad">1</button>
+                        </form>
+                        <!-- /.reviews-info__slide-vote -->
+                    </div>
+                    <!-- /.reviews-info__slide-footer -->
+                </div>
+                <div class="reviews-info__slide swiper-slide">
+
+                    <div class="reviews-info__slide-heading">
+
+                        <div class="reviews-info__person">
+                            <div class="reviews-info__person-img-wrap">
+                                <img src="./img/review-person.png" alt="" class="reviews-info__img">
+                            </div>
+
+                            <div class="reviews-info__person-info">
+                                <span class="reviews-info__person-name">Алина В.</span>
+                                <span class="reviews-info__person-date">17.01.2924 г</span>
+                            </div>
+                            <!-- /.reviews-info__person-text-wrap -->
+
+                        </div>
+                        <!-- /.reviews-info__person -->
+
+                        <div class="reviews-info__stars">
+                            <div class="reviews-info__star reviews-info__star--active"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                        </div>
+                        <!-- /.reviews-info__stars -->
+                    </div>
+                    <!-- /.reviews-info__slide-heading -->
+
+                    <div class="reviews-info__slide-text-wrap">
+                        <p class="reviews-info__slide-text">Лучше не ходите! После оплаты отношение резко меняется и все обещания забываются! Не очень хорошие курсы, отправляют постоянно искать все в интернете, на вопросы отвечать не любят. Только выкладывают свои вебинары, а как разбираться в теме - так это им не интересно.</p>
+                        <a href="#" class="reviews-info__slide-link">Прочитать полностью</a>
+                    </div>
+                    <!-- /.reviews-info__slide-text-wrap -->
+
+                    <div class="reviews-info__slide-footer">
+                        <a href="#" class="reviews-info__slide-footer-link">
+                            <img src="./img/yandex.svg" alt="" class="reviews-info__slide-company-img">
+                        </a>
+
+                        <form class="reviews-info__vote">
+                            <button class="reviews-info__vote-button reviews-info__vote-button--good">1</button>
+                            <button class="reviews-info__vote-button reviews-info__vote-button--bad">1</button>
+                        </form>
+                        <!-- /.reviews-info__slide-vote -->
+                    </div>
+                    <!-- /.reviews-info__slide-footer -->
+                </div>
+
+                <div class="reviews-info__slide swiper-slide">
+
+                    <div class="reviews-info__slide-heading">
+
+                        <div class="reviews-info__person">
+                            <div class="reviews-info__person-img-wrap">
+                                <img src="./img/review-person.png" alt="" class="reviews-info__img">
+                            </div>
+
+                            <div class="reviews-info__person-info">
+                                <span class="reviews-info__person-name">Алина В.</span>
+                                <span class="reviews-info__person-date">17.01.2924 г</span>
+                            </div>
+                            <!-- /.reviews-info__person-text-wrap -->
+
+                        </div>
+                        <!-- /.reviews-info__person -->
+
+                        <div class="reviews-info__stars">
+                            <div class="reviews-info__star reviews-info__star--active"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                            <div class="reviews-info__star"></div>
+                        </div>
+                        <!-- /.reviews-info__stars -->
+                    </div>
+                    <!-- /.reviews-info__slide-heading -->
+
+                    <div class="reviews-info__slide-text-wrap">
+                        <p class="reviews-info__slide-text">Лучше не ходите! После оплаты отношение резко меняется и все обещания забываются! Не очень хорошие курсы, отправляют постоянно искать все в интернете, на вопросы отвечать не любят. Только выкладывают свои вебинары, а как разбираться в теме - так это им не интересно.</p>
+                        <a href="#" class="reviews-info__slide-link">Прочитать полностью</a>
+                    </div>
+                    <!-- /.reviews-info__slide-text-wrap -->
+
+                    <div class="reviews-info__slide-footer">
+                        <a href="#" class="reviews-info__slide-footer-link">
+                            <img src="./img/yandex.svg" alt="" class="reviews-info__slide-company-img">
+                        </a>
+
+                        <form class="reviews-info__vote">
+                            <button class="reviews-info__vote-button reviews-info__vote-button--good">1</button>
+                            <button class="reviews-info__vote-button reviews-info__vote-button--bad">1</button>
+                        </form>
+                        <!-- /.reviews-info__slide-vote -->
+                    </div>
+                    <!-- /.reviews-info__slide-footer -->
+                </div>
+
+            </div>
+
+        </div>
+
+        </section>
+        <!-- /.reviews-info -->
+        
         <section class="selection section container">
             
             <div class="selection__swiper swiper">
                 <div class="selection__heading">
-                    <h2 class="selection__title section-title">Подборки<span class="section-title--accent"> курсов</span></h2>
+                    <h2 class="selection__title section-title-default">Подборки<span class="section-title-default--accent"> курсов</span></h2>
                     <div class="selection__interaction">
-                        <span class="section-title section-title--accent">от overcourse</span>
+                        <span class="section-title-default section-title-default--accent">от overcourse</span>
                         <div class="selection__interaction-wrap">
                             <a href="./selection.html" class="selection__link">Все подборки</a>
                             <div class="selection__buttons">
@@ -393,116 +796,14 @@
             </div>
 
         </section>
-
-        <section class="question section container">
-
-            <div class="question__heading">
-                <h2 class="question__title section-title">Остались<span class="section-title--accent"> вопросы?</span></h2>
-
-                <div class="question__info">
-                    <span class="question__info-text">6 модулей</span>
-                    <span class="question__info-text">123 онлайн-уроков</span>
-                </div>
-                <!-- /.questions__info -->
-            </div>
-            <!-- /.question__heading -->
-
-            <div class="question__cards">
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">Как агрегаторы могут помочь в поиске подходящих курсов?</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">Слияние и поглощение</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">Новая политика или регламент</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">А также явные признаки</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">Институционализации и по сей день</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-                <div class="question__card">
-                    <div class="question__card-content">
-                        <div class="question__card-heading">
-                            <h3 class="question__card-title">Распределены по отраслям</h3>
-                            <div class="question__card-subtitle-wrap">
-                                <p class="question__card-text">Предварительное исследование необходимо, если компания намерена расширить ассортимент своих товаров и услуг.</p>
-                                <div class="question__card-icon"></div>
-                            </div>
-                        </div>
-                        <!-- /.question__card-heading -->
-                    </div>
-                    <!-- /.question__card-content -->
-                </div>
-                <!-- /.question__card -->
-            </div>
-            <!-- /.question__cards -->
-        </section>
-        
+        <!-- ./selection -->
 
         <footer class="footer section">
             <div class="footer__wrap">
                 <div class="container">
                     <div class="footer__content">
                         <div class="footer__heading">
-                            <h2 class="footer__title">Новости курсов <br><span class="footer__title--accent section-title--accent"> вам на почту</span></h2>
+                            <h2 class="footer__title">Новости курсов <br><span class="footer__title--accent section-title-default--accent"> вам на почту</span></h2>
                             <form action="#" class="footer__form">
                                 <div class="footer__inputs">
                                     <input type="text" class="footer__input" placeholder="Имя" required>
