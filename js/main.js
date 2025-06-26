@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 stars: 1, 
-                reviewsCount: 17 
+                reviewsCount: 170   
             }
         ];
 
@@ -194,8 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const reviewScale = document.querySelectorAll('.reviews-info__scale')
         const reviewCount = document.querySelectorAll('.reviews-info__quantity-reviews')
         const middlePass = document.querySelector('.reviews-info__middle-pass')
+        const middleSars = document.querySelectorAll('.reviews-info__middle-star')
 
         let reviewSumQuantity = reviewsArrOfObjs.reduce((sum, obj) => sum + obj.reviewsCount, 0)
+        let middlePassValue = (reviewsArrOfObjs.reduce((sum, obj) => sum + obj.stars * obj.reviewsCount, 0) / reviewSumQuantity).toFixed(1)
+        // let middlePassValueRoundedUp = 
 
         function getReviewWord(reviewSumQuantity) {
             if (reviewSumQuantity % 100 >= 11 && reviewSumQuantity % 100 <= 14) {
@@ -210,9 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        let middlePassValue = (reviewsArrOfObjs.reduce((sum, obj) => sum + obj.stars * obj.reviewsCount, 0) / reviewSumQuantity).toFixed(1)
         middlePass.textContent = middlePassValue
         reviewSum.textContent = `${reviewSumQuantity} ${getReviewWord(reviewSumQuantity)}`;
+
+        middleSars.forEach((star, i) => {
+            if (i + 1 <= Math.round(middlePassValue)) {
+                star.classList.add('reviews-info__middle-star--active')
+            }
+        })
 
         reviewsArrOfObjs.forEach((obj, i) => {
             console.log(obj.stars);
@@ -222,9 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     
-    revewsCounterInteractive();
     headerAnimation();
     accordion();
     rangeAnimation();
+    revewsCounterInteractive();
 });
 

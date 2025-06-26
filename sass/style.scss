@@ -816,7 +816,7 @@ body {
 
 .courses {
     &__title {
-        max-width: 905px;
+        max-width: 695px;
         margin-bottom: 60px;
     }
 
@@ -2390,6 +2390,10 @@ body {
         border-radius: 17px;
         transition: all 0.2s ease-in-out;
 
+        &--small {
+            max-width: 195px;
+        }
+
         & * {
             transition: all 0.2s ease-in-out;
         }
@@ -2970,28 +2974,6 @@ body {
         }
     }
 }
-.section {
-}
-.container {
-}
-.section-title {
-}
-.button {
-
-    &--accent {
-    }
-}
-.swiper {
-}
-.swiper-button-prev {
-}
-.swiper-button-next {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-
     
 
 
