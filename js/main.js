@@ -122,12 +122,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function rangeAnimation() {
-        const range = document.querySelector('.profit__range');
-        const textWrap = document.querySelector('.profit__range-text-wrap');
-        const icon = document.querySelector('.profit__range-icon');
-        const line = document.querySelector('.profit__range-line');
-        
-        const updatePosition = () => {
+        const range = document.querySelector('.profit__range'),
+        textWrap = document.querySelector('.profit__range-text-wrap'),
+        icon = document.querySelector('.profit__range-icon'),
+        line = document.querySelector('.profit__range-line'),
+        salary = document.querySelector('.profit__range-title')
+
+        const MIN_SALARY = 20000
+        const MAX_SALARY = 100000
+
+        function getCorrectSalary() {
+            return Math.round(MIN_SALARY + (range.value / 100) * (MAX_SALARY - MIN_SALARY));
+        } 
+
+        function animateSalaryDisplay(startValue, endValue, duration = 400) {
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1); // от 0 до 1
+                const currentValue = Math.round(startValue + (endValue - startValue) * progress);
+                salary.textContent = `${currentValue} Р`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        const updateElementsPosition = () => {
             const value = parseFloat(range.value);
             const min = parseFloat(range.min);
             const max = parseFloat(range.max);
@@ -140,25 +165,33 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
             line.style.width = `${percent * 100}%`;
 
-            if (value < 33) {
+        }
+
+        salary.textContent = getCorrectSalary()
+
+        range.addEventListener('input', () => {
+            const newSalary = getCorrectSalary();
+            const currentSalary = parseInt(salary.textContent.replace(/\D/g, ''), 10) || MIN_SALARY;
+            animateSalaryDisplay(currentSalary, newSalary);
+
+            updateElementsPosition()
+
+            if (range.value <= 33) {
                 icon.classList.remove('profit__range-icon--middle')
                 icon.classList.remove('profit__range-icon--senior')
                 icon.classList.add('profit__range-icon--junior')
                 
-            } else if (value > 33 && value < 66) {
+            } else if (range.value > 33 && range.value <= 66) {
                 icon.classList.remove('profit__range-icon--junior')
                 icon.classList.remove('profit__range-icon--senior')
                 icon.classList.add('profit__range-icon--middle')
-            } else if (value > 66) {
+            } else if (range.value > 66) {
                 icon.classList.remove('profit__range-icon--junior')
                 icon.classList.remove('profit__range-icon--middle')
                 icon.classList.add('profit__range-icon--senior')
             }
-
-        }
-
-        range.addEventListener('input', updatePosition);
-        updatePosition();
+        });
+        updateElementsPosition();
     }
 
     function revewsCounterInteractive() {

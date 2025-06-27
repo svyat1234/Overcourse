@@ -1874,6 +1874,14 @@ body {
 .about {
     padding: 0px 30px;
 
+    &--contacts {
+        margin-top: 20px;
+        
+        & .about__wrap {
+            padding-top: 180px;
+        }
+    }
+
     &__wrap {
         padding: 100px 0;
         background: $light;
