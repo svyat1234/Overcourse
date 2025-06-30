@@ -122,145 +122,155 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function rangeAnimation() {
-        const range = document.querySelector('.profit__range'),
-        textWrap = document.querySelector('.profit__range-text-wrap'),
-        icon = document.querySelector('.profit__range-icon'),
-        line = document.querySelector('.profit__range-line'),
-        salary = document.querySelector('.profit__range-title')
+        if (document.querySelector('.profit')) {
 
-        const MIN_SALARY = 20000
-        const MAX_SALARY = 100000
-
-        function getCorrectSalary() {
-            return Math.round(MIN_SALARY + (range.value / 100) * (MAX_SALARY - MIN_SALARY));
-        } 
-
-        function animateSalaryDisplay(startValue, endValue, duration = 400) {
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1); // от 0 до 1
-                const currentValue = Math.round(startValue + (endValue - startValue) * progress);
-                salary.textContent = `${currentValue} Р`;
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
+            const range = document.querySelector('.profit__range'),
+            textWrap = document.querySelector('.profit__range-text-wrap'),
+            icon = document.querySelector('.profit__range-icon'),
+            line = document.querySelector('.profit__range-line'),
+            salary = document.querySelector('.profit__range-title')
+    
+            const MIN_SALARY = 20000
+            const MAX_SALARY = 100000
+    
+            function getCorrectSalary() {
+                return Math.round(MIN_SALARY + (range.value / 100) * (MAX_SALARY - MIN_SALARY));
+            } 
+    
+            function animateSalaryDisplay(startValue, endValue, duration = 400) {
+                const startTime = performance.now();
+    
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1); // от 0 до 1
+                    const currentValue = Math.round(startValue + (endValue - startValue) * progress);
+                    salary.textContent = `${currentValue} Р`;
+    
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    }
                 }
+    
+                requestAnimationFrame(update);
             }
-
-            requestAnimationFrame(update);
-        }
-
-        const updateElementsPosition = () => {
-            const value = parseFloat(range.value);
-            const min = parseFloat(range.min);
-            const max = parseFloat(range.max);
-            const thumbWidth = 20;
-
-            const percent = (value - min) / (max - min);
-            const thumbOffset = (0.5 - percent) * thumbWidth;
-            
-            textWrap.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
-            icon.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
-            line.style.width = `${percent * 100}%`;
-
-        }
-
-        salary.textContent = getCorrectSalary()
-
-        range.addEventListener('input', () => {
-            const newSalary = getCorrectSalary();
-            const currentSalary = parseInt(salary.textContent.replace(/\D/g, ''), 10) || MIN_SALARY;
-            animateSalaryDisplay(currentSalary, newSalary);
-
-            updateElementsPosition()
-
-            if (range.value <= 33) {
-                icon.classList.remove('profit__range-icon--middle')
-                icon.classList.remove('profit__range-icon--senior')
-                icon.classList.add('profit__range-icon--junior')
+    
+            const updateElementsPosition = () => {
+                const value = parseFloat(range.value);
+                const min = parseFloat(range.min);
+                const max = parseFloat(range.max);
+                const thumbWidth = 20;
+    
+                const percent = (value - min) / (max - min);
+                const thumbOffset = (0.5 - percent) * thumbWidth;
                 
-            } else if (range.value > 33 && range.value <= 66) {
-                icon.classList.remove('profit__range-icon--junior')
-                icon.classList.remove('profit__range-icon--senior')
-                icon.classList.add('profit__range-icon--middle')
-            } else if (range.value > 66) {
-                icon.classList.remove('profit__range-icon--junior')
-                icon.classList.remove('profit__range-icon--middle')
-                icon.classList.add('profit__range-icon--senior')
+                textWrap.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
+                icon.style.left = `calc(${percent * 100}% + ${thumbOffset}px)`;
+                line.style.width = `${percent * 100}%`;
+    
             }
-        });
-        updateElementsPosition();
+    
+            salary.textContent = getCorrectSalary()
+    
+            range.addEventListener('input', () => {
+                const newSalary = getCorrectSalary();
+                const currentSalary = parseInt(salary.textContent.replace(/\D/g, ''), 10) || MIN_SALARY;
+                animateSalaryDisplay(currentSalary, newSalary);
+    
+                updateElementsPosition()
+    
+                if (range.value <= 33) {
+                    icon.classList.remove('profit__range-icon--middle')
+                    icon.classList.remove('profit__range-icon--senior')
+                    icon.classList.add('profit__range-icon--junior')
+                    
+                } else if (range.value > 33 && range.value <= 66) {
+                    icon.classList.remove('profit__range-icon--junior')
+                    icon.classList.remove('profit__range-icon--senior')
+                    icon.classList.add('profit__range-icon--middle')
+                } else if (range.value > 66) {
+                    icon.classList.remove('profit__range-icon--junior')
+                    icon.classList.remove('profit__range-icon--middle')
+                    icon.classList.add('profit__range-icon--senior')
+                }
+            });
+            updateElementsPosition();
+
+        } else {
+            return
+        }
     }
 
     function revewsCounterInteractive() {
-        let reviewsArrOfObjs = [
-            { 
-                stars: 5, 
-                reviewsCount: 507 
-            },
+        if (document.querySelector('.reviews-info')) {
 
-            { 
-                stars: 4, 
-                reviewsCount: 231 
-            },
-            { 
-                stars: 3, 
-                reviewsCount: 89 
-
-            },
-            { 
-                stars: 2, 
-                reviewsCount: 42
-
-            },
-            {
-                stars: 1, 
-                reviewsCount: 170   
+            let reviewsArrOfObjs = [
+                { 
+                    stars: 5, 
+                    reviewsCount: 507 
+                },
+    
+                { 
+                    stars: 4, 
+                    reviewsCount: 231 
+                },
+                { 
+                    stars: 3, 
+                    reviewsCount: 89 
+    
+                },
+                { 
+                    stars: 2, 
+                    reviewsCount: 42
+    
+                },
+                {
+                    stars: 1, 
+                    reviewsCount: 170   
+                }
+            ];
+    
+    
+    
+            const reviewSum = document.querySelector('.reviews-info__sum-reviews')
+            const reviewScale = document.querySelectorAll('.reviews-info__scale')
+            const reviewCount = document.querySelectorAll('.reviews-info__quantity-reviews')
+            const middlePass = document.querySelector('.reviews-info__middle-pass')
+            const middleSars = document.querySelectorAll('.reviews-info__middle-star')
+    
+            let reviewSumQuantity = reviewsArrOfObjs.reduce((sum, obj) => sum + obj.reviewsCount, 0)
+            let middlePassValue = (reviewsArrOfObjs.reduce((sum, obj) => sum + obj.stars * obj.reviewsCount, 0) / reviewSumQuantity).toFixed(1)
+            // let middlePassValueRoundedUp = 
+    
+            function getReviewWord(reviewSumQuantity) {
+                if (reviewSumQuantity % 100 >= 11 && reviewSumQuantity % 100 <= 14) {
+                    return 'отзывов';
+                }
+                switch (reviewSumQuantity % 10) {
+                    case 1: return 'отзыв';
+                    case 2:
+                    case 3:
+                    case 4: return 'отзыва';
+                    default: return 'отзывов';
+                }
             }
-        ];
+    
+            middlePass.textContent = middlePassValue
+            reviewSum.textContent = `${reviewSumQuantity} ${getReviewWord(reviewSumQuantity)}`;
+    
+            middleSars.forEach((star, i) => {
+                if (i + 1 <= Math.round(middlePassValue)) {
+                    star.classList.add('reviews-info__middle-star--active')
+                }
+            })
+    
+            reviewsArrOfObjs.forEach(obj => {
+                reviewCount[reviewsArrOfObjs.length - obj.stars].textContent = obj.reviewsCount
+                reviewScale[reviewsArrOfObjs.length - obj.stars].style.width = `${(obj.reviewsCount / reviewSumQuantity) * 100}%`
+            });
 
-
-
-        const reviewSum = document.querySelector('.reviews-info__sum-reviews')
-        const reviewScale = document.querySelectorAll('.reviews-info__scale')
-        const reviewCount = document.querySelectorAll('.reviews-info__quantity-reviews')
-        const middlePass = document.querySelector('.reviews-info__middle-pass')
-        const middleSars = document.querySelectorAll('.reviews-info__middle-star')
-
-        let reviewSumQuantity = reviewsArrOfObjs.reduce((sum, obj) => sum + obj.reviewsCount, 0)
-        let middlePassValue = (reviewsArrOfObjs.reduce((sum, obj) => sum + obj.stars * obj.reviewsCount, 0) / reviewSumQuantity).toFixed(1)
-        // let middlePassValueRoundedUp = 
-
-        function getReviewWord(reviewSumQuantity) {
-            if (reviewSumQuantity % 100 >= 11 && reviewSumQuantity % 100 <= 14) {
-                return 'отзывов';
-            }
-            switch (reviewSumQuantity % 10) {
-                case 1: return 'отзыв';
-                case 2:
-                case 3:
-                case 4: return 'отзыва';
-                default: return 'отзывов';
-            }
+        } else {
+            return
         }
-
-        middlePass.textContent = middlePassValue
-        reviewSum.textContent = `${reviewSumQuantity} ${getReviewWord(reviewSumQuantity)}`;
-
-        middleSars.forEach((star, i) => {
-            if (i + 1 <= Math.round(middlePassValue)) {
-                star.classList.add('reviews-info__middle-star--active')
-            }
-        })
-
-        reviewsArrOfObjs.forEach((obj, i) => {
-            console.log(obj.stars);
-            reviewCount[reviewsArrOfObjs.length - obj.stars].textContent = obj.reviewsCount
-            reviewScale[reviewsArrOfObjs.length - obj.stars].style.width = `${(obj.reviewsCount / reviewSumQuantity) * 100}%`
-        });
-
     }
     
     headerAnimation();

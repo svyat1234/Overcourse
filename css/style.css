@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
@@ -108,6 +109,22 @@ body {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
   font-weight: 400;
+}
+
+.section-input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #262626;
+  font-size: 14px;
+  font-style: normal;
+  padding-top: 17px;
+  padding-bottom: 6px;
+  outline: none;
+}
+.section-input::placeholder {
+  color: #262626;
+  opacity: 0.8;
 }
 
 .main-text {
@@ -242,7 +259,7 @@ body {
 
 .courses-menu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 60px;
 }
@@ -399,6 +416,7 @@ body {
   background: #fff;
   border-radius: 20px;
   z-index: 100;
+  gap: 20px;
 }
 .header--light {
   color: #fff;
@@ -440,6 +458,7 @@ body {
   justify-content: space-between;
   max-width: 1110px;
   width: 100%;
+  gap: 60px;
 }
 .header__nav {
   display: flex;
@@ -657,7 +676,7 @@ body {
 .promo__img-wrap {
   position: relative;
   margin-top: 100px;
-  width: 754px;
+  min-width: 754px;
   height: 639px;
 }
 .promo__img-text {
@@ -695,6 +714,8 @@ body {
 }
 .promo__img {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .courses__title {
@@ -725,6 +746,8 @@ body {
   overflow: hidden;
 }
 .courses__card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .courses__card-info {
@@ -992,10 +1015,20 @@ body {
   line-height: normal;
 }
 .impressions__card-review-school {
+  position: relative;
   max-width: 146px;
-  width: 100%;
   display: flex;
   flex-direction: column;
+}
+.impressions__card-review-school::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -7px;
+  width: 2px;
+  height: 100%;
+  background: #C9C9C9;
+  border-radius: 100px;
 }
 .impressions__card-review-school-course {
   color: #C9C9C9;
@@ -1056,6 +1089,8 @@ body {
   overflow: hidden;
 }
 .impressions__card-review-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -2477,6 +2512,81 @@ body {
   transform: rotate(180deg);
 }
 
+.contacts {
+  display: flex;
+  gap: 14px;
+  height: 893px;
+}
+.contacts__info {
+  background: #fff;
+  padding: 60px;
+  max-width: 658px;
+  width: 100%;
+  border-radius: 30px;
+}
+.contacts__title {
+  max-width: 466px;
+}
+.contacts__cards {
+  margin-top: 75px;
+  display: flex;
+  align-items: flex-start;
+  gap: 75px 10px;
+  flex-wrap: wrap;
+}
+.contacts__card {
+  max-width: 250px;
+  width: 100%;
+}
+.contacts__card-title {
+  font-size: 25px;
+  line-height: 100%;
+}
+.contacts__card-ino {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.contacts__card-text {
+  color: #AEAEAE;
+  text-decoration: none;
+  font-size: 16px;
+}
+.contacts__socials-card {
+  margin-top: 65px;
+}
+.contacts__socials-info {
+  margin-top: 51px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__socials-info-content {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contacts__feedback {
+  border-radius: 30px;
+  background: #fff;
+  padding: 90px 134px;
+  max-width: 100%;
+  width: 100%;
+}
+.contacts__form {
+  margin-top: 51px;
+}
+.contacts__form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 95px;
+}
+.contacts__input-text {
+  height: 126px;
+  resize: none;
+}
+
 .footer {
   padding: 0px 20px 20px 20px;
 }
@@ -2719,4 +2829,78 @@ body {
   line-height: 100%;
   font-style: normal;
   font-weight: 400;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media screen and (max-width: 1500px) {
+  .courses-menu {
+    gap: 10px;
+  }
+  .courses-menu__categories {
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* ноутбуки */
+  .courses__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  /* планшеты */
+  .section-title {
+    font-size: 50px;
+  }
+  .courses__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .impressions__title {
+    max-width: 500px;
+  }
+  .impressions__card-review {
+    display: flex;
+    flex-direction: column;
+  }
+  .impressions__card-review-content {
+    order: 2;
+  }
+  .impressions__card-review {
+    position: relative;
+    padding: 30px;
+  }
+  .impressions__card-review-img-wrap {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-bottom: 30px;
+  }
+  .impressions__card-review-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .impressions__card-review-school {
+    margin-top: 10px;
+    max-width: 200px;
+  }
+  .impressions__card-review-school::before {
+    display: none;
+  }
+  .impressions__card-review-text {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* смартфоны */
+  .courses__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .courses__card-img-wrap {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 600px) { /* маленькие смартфоны */ }
+@media screen and (max-width: 480px) { /* очень маленькие смартфоны */ }/*# sourceMappingURL=style.css.map */
