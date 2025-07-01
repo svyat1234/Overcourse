@@ -58,7 +58,7 @@ body {
 
 .container {
     max-width: $container;
-    width: 90%;
+    width: 90vw;
     margin: auto;
 }
 
@@ -505,6 +505,7 @@ body {
         color: $light;
         background: none;
         max-width: calc($container + 74px);
+        width: calc(90vw + 74px);
         
         & .header__link {
             color: $light;
@@ -641,7 +642,7 @@ body {
     &__content {
         @include flex-start-between;  
         max-width: $container;
-        width: calc(($container / ($desktop-width - 20px)) * 100%);
+        width: 90vw;
         margin: auto;
         padding-bottom: 90px;
     }
@@ -670,6 +671,7 @@ body {
         margin-top: 30px;
         max-width: 785px;
         width: 100%;
+        gap: 10px;
     }
 
     &__input-wrapper {
@@ -716,7 +718,7 @@ body {
     }
 
     &__form-icon {
-        width: 28px;
+        min-width: 28px;
         height: 15px;
         background: url(../img/arrow-light.svg) no-repeat center / cover;
     }
@@ -1608,7 +1610,7 @@ body {
 
 	&__card-img-wrap {
         position: relative;
-        height: 335px;
+        height: 100%;
         width: 443px;
         overflow: hidden;
 	}
@@ -1648,6 +1650,8 @@ body {
     }
 
 	&__card-img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
 	}
 
@@ -1656,6 +1660,8 @@ body {
         padding: 30px;
         max-width: 1090px;
         width: 100%;
+        gap: 30px;
+        height: 100%;
 	}
 
 	&__card-heading {
@@ -1694,6 +1700,7 @@ body {
         display: flex;
         align-items: center;
         gap: 3px;
+        flex-wrap: wrap;
 	}
 
     &__card-tag {
@@ -1721,8 +1728,8 @@ body {
 	}
 
     &__prices-buttons {
-        height: 272px;
         max-width: 324px;
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -3407,6 +3414,19 @@ body {
 }
 
     
+@media screen and (max-width: 1800px) { 
+    .promo {
+
+        &__content {
+            align-items: center;
+        }
+
+        &__img-wrap {
+            min-width: 604px;
+            height: 520px;
+        }
+    }
+}
 @media screen and (max-width: 1500px) { 
     .courses-menu {
         gap: 10px;
@@ -3414,6 +3434,27 @@ body {
         &__categories {
             flex-wrap: wrap;
             gap: 3px;
+        }
+    }
+
+    .reviews {
+        &__cards {
+            flex-direction: column;
+        }
+
+        &__card-img {
+            max-width: 100px;
+        }
+    }
+
+    .schools {
+
+        &__title {
+            max-width: 590px;
+        }
+
+        &__slider-wrap {
+            max-width: 40%;
         }
     }
 }
@@ -3424,6 +3465,74 @@ body {
 
         &__cards {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .reviews {
+        
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .schools {
+        padding: 40px 0 40px 40px;
+
+        &__heading {
+            order: 2;
+            margin-top: 70px;
+            padding-right: 70px;
+        }
+
+        &__title {
+            max-width: 100%;
+        }
+
+        &__content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__slider-wrap {
+            max-width: 100%;
+        }
+
+        &__button {
+            margin-top: 30px;
+        }
+
+    }
+
+    .top-courses {
+
+        &__card-heading {
+            width: 100%;
+        }
+
+        &__card-text {
+            max-width: 100%;
+        }
+
+        &__card-content {
+            flex-direction: column;
+        }
+
+        &__prices-buttons {
+            margin-top: 50px;
+            max-width: 100%;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        &__prices {
+            min-width: 219px;
+        }
+
+        &__buttons {
+            max-width: 324px;
+            width: 100%;
         }
     }
 }
@@ -3493,6 +3602,10 @@ body {
 }
 @media screen and (max-width: 768px)  { 
     /* смартфоны */
+    .section-title {
+        font-size: clamp(30px, 7vw, 50px);
+    }
+
     .courses {
 
         &__cards {
@@ -3503,6 +3616,74 @@ body {
             height: 300px;
         }
     }
+    
+    .impressions {
+
+        &__heading {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        &__title {
+            max-width: 40%;
+        }
+
+        &__count {
+            font-size: 40px;
+        }
+
+        &__info {
+            // display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 40px;
+        }
+
+        &__count-wrapper {
+            align-items: flex-start;
+        }
+    }
+
+    .reviews {
+        &__cards {
+            flex-direction: column;
+        }
+
+        &__card {
+            height: 200px;
+        }
+
+        &__card-img {
+            max-width: 100px;
+        }
+
+    }
 }
-@media screen and (max-width: 600px)  { /* маленькие смартфоны */ }
-@media screen and (max-width: 480px)  { /* очень маленькие смартфоны */ }
+@media screen and (max-width: 600px)  { 
+    /* маленькие смартфоны */ 
+
+    .reviews {
+        &__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 480px)  {
+     /* очень маленькие смартфоны */ 
+
+     .schools {
+        padding: 50px 0 50px 30px;
+
+        &__title {
+            font-size: clamp(20px, 7vw, 50px);
+        }
+
+        &__heading {
+            margin-top: 50px;
+        }
+
+        &__button {}
+     }
+}
