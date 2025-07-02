@@ -19,13 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Опциональные параметры
         direction: 'horizontal',
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: 30,
         watchSlidesProgress: true,
         navigation: {
             nextEl: '.selection .swiper-button-next',
             prevEl: '.selection .swiper-button-prev',
         },
+        breakpoints: {
+            1500: {
+                slidesPerView: 4,
+            },
+
+            1200: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 2,
+            }
+        }
     });
 
     // Swiper reviews-info
@@ -83,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.remove('question__card--active');
                 }
             });
+
         });
     }
 

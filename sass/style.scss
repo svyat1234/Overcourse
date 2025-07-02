@@ -1907,6 +1907,8 @@ body {
     }
 
     &__img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 }
@@ -1977,7 +1979,7 @@ body {
         height: 110px;
 
         &--search {
-            background: url(../img/info-card-icon-search.svg) no-repeat center;
+            background: url(../img/info-card-icon-search.svg) no-repeat center / cover;
         }
     }
 
@@ -3457,6 +3459,17 @@ body {
             max-width: 40%;
         }
     }
+
+    .about {
+        
+        &__statistic-card-count {
+            font-size: clamp(20px, 4.5vw, 60px);
+
+            &--small {
+                font-size: clamp(20px, 4vw, 40px);
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) { 
@@ -3567,13 +3580,13 @@ body {
         
         &__card-review {
             position: relative;
-            padding: 30px;
+            padding: 40px;
         }
 
         &__card-review-img-wrap {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 40px;
+            right: 40px;
             width: 90px;
             height: 90px;
             border-radius: 100%;
@@ -3598,7 +3611,94 @@ body {
         &__card-review-text {
             margin-top: 50px;
         }
+
+        &__card-review-button {
+            margin-top: 30px;
+        }
     }
+
+    .top-courses {
+
+        & .container {
+            width: 90%;
+        }
+
+        &__card {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        &__card-img-wrap {
+            width: 100%;
+            height: 300px;
+            border-radius: 30px;
+        }
+
+        &__card-content {
+            width: 100%;
+            height: auto;
+            gap: 25px;
+        }
+
+        &__card-info {
+            margin-top: 10px;
+        }
+
+        &__card-tags {
+            margin-top: 10px;
+        }
+
+        &__card-text {
+            margin-top: 20px;
+        }
+
+        &__prices-buttons {
+            width: 100%;
+            margin-top: 0;
+            height: auto;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        &__buttons {
+            max-width: 100%;
+        }
+
+        &__button {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .about {
+
+        & .container {
+            width: 90%;
+        }
+
+        &__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__info-card {
+            height: 300px;
+        }
+
+        &__statistic-card-count {
+            font-size: clamp(20px, 10vw, 60px);
+
+            &--small {
+                font-size: clamp(20px, 8vw, 40px);
+            }
+        }
+
+        &__info-card-text {
+            max-width: 400px;
+        }
+
+    }
+
 }
 @media screen and (max-width: 768px)  { 
     /* смартфоны */
@@ -3658,7 +3758,40 @@ body {
         &__card-img {
             max-width: 100px;
         }
+    }
 
+    .selection {
+
+        &__heading {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+            gap: 0;
+        }
+
+        &__interaction-wrap {
+            max-width: 100%;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &__interaction {
+            max-width: 100%;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        &__interaction-title {
+            max-width: 100%;
+        }
+    }
+
+    .about {
+        &__info-card-icon {
+            width: 60px;
+            height: 60px;;
+        }
     }
 }
 @media screen and (max-width: 600px)  { 
@@ -3669,6 +3802,7 @@ body {
             grid-template-columns: repeat(1, 1fr);
         }
     }
+
 }
 @media screen and (max-width: 480px)  {
      /* очень маленькие смартфоны */ 
@@ -3686,4 +3820,15 @@ body {
 
         &__button {}
      }
+
+    .about {
+
+        &__cards:last-child {
+            margin-top: 100px;
+        }
+
+        &__info-card {
+            height: 250px;
+        }
+    }
 }
