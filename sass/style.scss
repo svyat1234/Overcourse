@@ -519,6 +519,10 @@ body {
             }
         }
 
+        & .header__menu-button rect {
+            fill: $light;
+        }
+
         & .header__search {
             background: url(../img/search-light.svg) no-repeat center / cover;
         }
@@ -584,11 +588,25 @@ body {
         width: 100%;
     }
 
+    &__menu-button {
+        width: 21px;
+        height: 17px;
+        background: none;
+        border: none;
+        display: none;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     &__search {
         border: none;
         width: 17px;
         height: 19px;
-        background: url(../img/search.svg) no-repeat center / cover;
+        background: url(../img/search.svg) no-repeat center;
         cursor: pointer;
     }
 
@@ -631,7 +649,6 @@ body {
 // PROMO
 
 .promo {
-    // margin-top: calc(0px - $header-height - 60px); // отнимаем высоту хедера и отступ сверху
     padding: 20px 20px 0 20px;
 
     &__wrap {
@@ -2230,11 +2247,16 @@ body {
     }
 
     &__card {
-        padding: 50px 0px;
+        position: relative;
+        padding-block: 50px;
+        padding-right: 30px;
         width: 100%;
         overflow: hidden;
         border-top: 1px solid #ECECEC;
         cursor: pointer;
+        min-height: 150px;
+        transition: max-height 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+
 
         &:last-child {
             border-bottom: 1px solid #ECECEC;
@@ -2263,21 +2285,17 @@ body {
         }
     }
 
-    &__card-content {
-        width: 100%;
-        height: 50px;
-        overflow: hidden;
-        transition: height 0.3s ease-in-out;
-    }
 
     &__card-heading {
         @include flex-start-between;
         max-width: 1500px;
         width: 100%;
+        gap: 20px;
     }
 
     &__card-title {
-        max-width: 580px;
+        max-width: 550px;
+        width: 100%;
         font-family: $main-font;
         font-size: 25px;
         line-height: 97%;
@@ -2302,11 +2320,12 @@ body {
     }
 
     &__card-icon {
-        position: relative;
+        position: absolute;
+        top: 50px;
+        right: 0;
         min-width: 25px;
         width: 25px;
         height: 25px;
-        // background: url(../img/question-arrow.svg) no-repeat center;
         transition: all 0.3s ease-in-out;
 
         &:before {
@@ -3204,6 +3223,7 @@ body {
         @include flex-start-between;
         max-width: 1320px;
         width: 100%;
+        gap: 40px;
     }
     
     &__heading {
@@ -3481,10 +3501,52 @@ body {
             font-size: 20px;
         }
     }
+
+    .promo {
+
+        &__img-wrap {
+            min-width: auto;
+            max-width: 33vw;
+            width: 100%;    
+            height: 28vw;
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) { 
     /* ноутбуки */ 
+
+    .header {
+
+        &__content {
+            width: auto;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__interaction {
+            max-width: 100%;
+            width: auto;
+            gap: 30px;
+        }
+
+        &__menu-button {
+            display: flex;
+        }
+    }
+
+    .promo {
+        position: relative;
+
+        &__img-wrap {
+            position: absolute;
+            right: 40px;
+            bottom: 80px
+        }
+    }
+
     .courses {
 
         &__cards {
@@ -3587,12 +3649,66 @@ body {
             }
         }
     }
+
+    .footer {
+        
+        &__contacts-cards {
+            column-gap: 60px;
+        }
+    }
+    
 }
 
 @media screen and (max-width: 992px)  {
      /* планшеты */ 
     .section-title {
         font-size: 50px;
+    }
+
+    .promo__content {
+        max-width: 90%;
+    }
+
+    .top-courses,
+    .footer {
+        .container {
+            width: 90%;
+        }
+    }
+
+    .promo {
+
+        &__heading {
+            margin-top: 150px;
+        }
+
+        &__img-wrap {
+            display: none;
+        }
+
+        &__form {
+            flex-direction: column;
+            // align-items: flex-start;
+            max-width: 600px;
+            gap: 15px;
+        }
+
+        &__input-wrapper {
+            max-width: 100%;
+        }
+
+        &__form-icon {
+            display: none;
+        }
+
+        &__form-text {
+            max-width: 100%;
+        }
+
+        &__requests {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
     }
 
     .courses {
@@ -3738,6 +3854,63 @@ body {
 
     }
 
+    .question {
+
+        &__card {
+            padding-block: 40px;
+        }
+
+        &__card-content {
+            overflow: hidden;
+            transition: height 0.3s;
+            width: 100%;
+        }
+
+        &__card-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* или stretch, если нужно */
+            width: 100%;
+            height: 100%;
+        }
+
+        &__card-text {
+            padding-bottom: 40px;
+        }
+
+        &__card-icon {
+            top: 40px;
+        }
+    }
+
+    .footer {
+
+        &__content {
+            flex-direction: column;
+        }
+
+        &__contacts {
+            margin-top: 20px;
+        }
+
+        &__contacts-cards {
+            margin-top: 4   0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__info {
+            column-gap: 40px;
+            row-gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        &__info-links {
+            flex-wrap: wrap;
+            gap: 10px
+        }
+    }
+
 }
 @media screen and (max-width: 768px)  { 
     /* смартфоны */
@@ -3832,6 +4005,17 @@ body {
             height: 60px;;
         }
     }
+
+    .footer {
+        
+        &__wrap {
+            padding: 50px 0;
+        }
+
+        &__title {
+            font-size: clamp(30px, 7vw, 50px);
+        }
+    }
 }
 @media screen and (max-width: 600px)  { 
     /* маленькие смартфоны */ 
@@ -3839,6 +4023,27 @@ body {
     .reviews {
         &__cards {
             grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .news {
+
+        &__cards {
+            max-width: 100%;
+            gap: 40px;
+        }
+
+        &__card {
+            max-width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &__card-img-wrap {
+            max-width: 100%;
+            width: 100%;
+            height: 300px;
         }
     }
 
@@ -3857,7 +4062,6 @@ body {
             margin-top: 50px;
         }
 
-        &__button {}
      }
 
     .about {

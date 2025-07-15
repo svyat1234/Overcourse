@@ -54,48 +54,48 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    function accordion() {
+    // Функционал для аккордеона вопросов
+    function questionsAccordion() {
         const cards = document.querySelectorAll('.question__card');
+        const minHeight = 150; // Минимальная высота закрытой карточки
 
         cards.forEach(card => {
-            const cardContent = card.querySelector('.question__card-content');
-            const cardText = card.querySelector('.question__card-text');
+            const textWrap = card.querySelector('.question__card-subtitle-wrap');
 
-            card.addEventListener('click', () => {
+            // Сбросить начальное состояние
+            if (card.classList.contains('question__card--active')) {
+                card.style.maxHeight = card.scrollHeight + 'px';
+                textWrap.style.opacity = 1;
+            } else {
+                card.style.maxHeight = minHeight + 'px';
+                textWrap.style.opacity = 0;
+            }
+
+            card.addEventListener('click', function() {
                 const isActive = card.classList.contains('question__card--active');
-
-                // Закрыть все другие карточки
-                cards.forEach(otherCard => {
-                    if (otherCard !== card) {
-                        otherCard.classList.remove('question__card--active');
-                        const otherContent = otherCard.querySelector('.question__card-content');
-                        otherContent.style.height = '50px';
-                    }
+                // Закрыть все карточки
+                cards.forEach(c => {
+                    c.classList.remove('question__card--active');
+                    const wrap = c.querySelector('.question__card-subtitle-wrap');
+                    c.style.maxHeight = minHeight + 'px';
+                    wrap.style.opacity = 0;
                 });
-
-                // Переключить текущую карточку
+                // Открыть текущую, если была закрыта
                 if (!isActive) {
-                    // Сначала делаем текст видимым для измерения
-                    cardText.style.opacity = '1';
-                    cardText.style.visibility = 'hidden';
-                    
-                    // Получаем реальную высоту текста
-                    const textHeight = cardText.offsetHeight;
-                    
-                    // Возвращаем стили
-                    cardText.style.opacity = '';
-                    cardText.style.visibility = '';
-                    
-                    // Устанавливаем высоту только если текст действительно больше 50px
-                    const totalHeight = textHeight > 50 ? textHeight : 50;
-                    cardContent.style.height = totalHeight + 'px';
                     card.classList.add('question__card--active');
-                } else {
-                    cardContent.style.height = '50px';
-                    card.classList.remove('question__card--active');
+                    requestAnimationFrame(() => {
+                        card.style.maxHeight = card.scrollHeight + 'px';
+                    });
+                    textWrap.style.opacity = 1;
                 }
             });
+        });
 
+        // Обновлять maxHeight при ресайзе (адаптивность)
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.question__card--active').forEach(card => {
+                card.style.maxHeight = card.scrollHeight + 'px';
+            });
         });
     }
 
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     headerAnimation();
-    accordion();
+    questionsAccordion();
     rangeAnimation();
     revewsCounterInteractive();
 });
