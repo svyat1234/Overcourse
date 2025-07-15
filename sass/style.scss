@@ -2077,13 +2077,11 @@ body {
 
 .news {
 
-    &__title {
-
-    }
     
     &__content {
         @include flex-start-between;
         margin-top: 70px;
+        gap: 20px;
     }
     
     &__card {
@@ -2091,6 +2089,7 @@ body {
         max-width: 785px;
         width: 100%;
         cursor: pointer;
+        gap: 30px;
     
         &--active {
             cursor: default;
@@ -2103,10 +2102,6 @@ body {
 
             & .news__card-info {
                 max-width: 100%;
-            }
-
-            & .news__card-tags {
-                margin-top: 30px;
             }
 
             & .news__card-title {
@@ -2122,7 +2117,7 @@ body {
     }
     
     &__card-img-wrap {
-        width: 250px;
+        min-width: 250px;
         height: 160px;
         border-radius: 20px;
         overflow: hidden;
@@ -3470,6 +3465,22 @@ body {
             }
         }
     }
+
+    .news {
+
+        &__card {
+
+            &--active {
+                & .news__card-title {
+                    font-size: 35px;
+                }
+            }
+        }
+
+        &__card-title {
+            font-size: 20px;
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) { 
@@ -3546,6 +3557,34 @@ body {
         &__buttons {
             max-width: 324px;
             width: 100%;
+        }
+    }
+
+    .news {
+
+        &__content {
+            flex-direction: column;
+            gap: 50px;
+
+        }
+
+        &__cards-wrap {
+            max-width: 100%;
+        }
+
+        &__card {
+            max-width: 100%;
+            width: 100%;
+            justify-content: flex-start;
+
+            &--active {
+                max-width: 100%;
+                align-items: flex-start;
+
+                .news__card-title {
+                    max-width: 900px;
+                }
+            }
         }
     }
 }

@@ -122,6 +122,10 @@ body {
   padding-bottom: 6px;
   outline: none;
 }
+.section-input::-moz-placeholder {
+  color: #262626;
+  opacity: 0.8;
+}
 .section-input::placeholder {
   color: #262626;
   opacity: 0.8;
@@ -142,7 +146,8 @@ body {
 .courses-filters__main-buttons {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .courses-filters__main-button {
   position: relative;
@@ -152,7 +157,8 @@ body {
   border: 1px solid #262626;
   background: #262626;
   cursor: pointer;
-  text-align-last: left;
+  -moz-text-align-last: left;
+       text-align-last: left;
 }
 .courses-filters__main-button--filters {
   width: 172px;
@@ -210,7 +216,8 @@ body {
 .courses-filters__lists {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-filters__list {
   height: 50px;
@@ -222,7 +229,8 @@ body {
 .courses-filters__list-button {
   position: relative;
   padding: 0px 20px;
-  text-align-last: left;
+  -moz-text-align-last: left;
+       text-align-last: left;
   height: 50px;
   width: 100%;
   font-family: "Montserrat", sans-serif;
@@ -266,7 +274,8 @@ body {
 .courses-menu__categories {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-menu__category {
   font-family: "Montserrat", sans-serif;
@@ -287,7 +296,8 @@ body {
 .courses-menu__layout-buttons {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses-menu__layout-button {
   width: 40px;
@@ -319,7 +329,8 @@ body {
 .pagination__content {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 .pagination__arrow {
   width: 50px;
@@ -338,7 +349,8 @@ body {
 .pagination__pages {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .pagination__page {
   font-family: "Montserrat", sans-serif;
@@ -446,7 +458,8 @@ body {
   animation: slideDown 0.3s ease-in-out forwards;
   border: 2px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(57px);
+  -webkit-backdrop-filter: blur(57px);
+          backdrop-filter: blur(57px);
 }
 .header--hidden {
   position: fixed;
@@ -585,6 +598,14 @@ body {
   border: none;
   padding-left: 30px;
 }
+.promo__input::-moz-placeholder {
+  color: #E6E6E6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 .promo__input::placeholder {
   color: #E6E6E6;
   font-family: "Montserrat", sans-serif;
@@ -634,7 +655,8 @@ body {
   margin-top: 35px;
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .promo__request-link {
   text-decoration: none;
@@ -699,7 +721,8 @@ body {
   border-radius: 11px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+          backdrop-filter: blur(5.5px);
 }
 .promo__img-text::after {
   position: absolute;
@@ -715,7 +738,8 @@ body {
   transform: translate(40%, 40%);
 }
 .promo__img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -750,7 +774,8 @@ body {
 .courses__card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .courses__card-info {
   display: flex;
@@ -767,7 +792,8 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: #fff;
   -webkit-text-stroke-width: 0.76px;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
@@ -845,7 +871,8 @@ body {
   margin-top: 7px;
   display: flex;
   align-items: center;
-  column-gap: 13px;
+  -moz-column-gap: 13px;
+       column-gap: 13px;
 }
 .courses__card-price {
   font-family: "Montserrat", sans-serif;
@@ -867,7 +894,8 @@ body {
   justify-content: space-between;
   margin-top: 14px;
   margin-top: 25px;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .courses__card-link {
   text-decoration: none;
@@ -887,7 +915,8 @@ body {
 .impressions__info {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .impressions__count-wrapper {
   display: flex;
@@ -929,12 +958,14 @@ body {
   position: relative;
 }
 .impressions__card-video-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .impressions__card-video-controls {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -949,7 +980,8 @@ body {
 }
 .impressions__card-video-play {
   background: rgba(255, 255, 255, 0.4) url(../img/play.svg) no-repeat center;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
   width: 40px;
   height: 40px;
@@ -987,7 +1019,8 @@ body {
   max-width: 652px;
   width: 100%;
   padding: 50px;
-  column-gap: 25px;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
 }
 .impressions__card-review-heading {
   display: flex;
@@ -1093,7 +1126,8 @@ body {
 .impressions__card-review-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .reviews__cards {
@@ -1259,7 +1293,8 @@ body {
 .schools__slide-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30px;
 }
 .schools__button {
@@ -1326,7 +1361,8 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(217, 217, 217, 0.01) url(../img/star.svg) no-repeat left 10px center;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-size: 24.063px;
@@ -1354,7 +1390,8 @@ body {
 .top-courses__card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .top-courses__card-content {
   display: flex;
@@ -1441,7 +1478,8 @@ body {
 .top-courses__prices-wrap {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -1455,7 +1493,8 @@ body {
 .top-courses__buttons {
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
 }
 .top-courses__button {
   max-width: 272px;
@@ -1480,7 +1519,8 @@ body {
   margin-top: 34px;
   display: flex;
   align-items: center;
-  column-gap: 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 .selection__link {
   padding: 15px 30px;
@@ -1496,7 +1536,8 @@ body {
 .selection__buttons {
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .selection .swiper-button-prev {
   position: relative;
@@ -1554,7 +1595,8 @@ body {
   font-weight: 600;
   line-height: normal;
   background: rgba(217, 217, 217, 0.01);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 .selection__card-title {
   margin-top: 15px;
@@ -1568,7 +1610,8 @@ body {
 .selection__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about {
@@ -1594,7 +1637,8 @@ body {
 .about__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   row-gap: 30px;
   align-items: stretch;
 }
@@ -1713,6 +1757,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 70px;
+  gap: 20px;
 }
 .news__card {
   display: flex;
@@ -1721,6 +1766,7 @@ body {
   max-width: 785px;
   width: 100%;
   cursor: pointer;
+  gap: 30px;
 }
 .news__card--active {
   cursor: default;
@@ -1733,9 +1779,6 @@ body {
 .news__card--active .news__card-info {
   max-width: 100%;
 }
-.news__card--active .news__card-tags {
-  margin-top: 30px;
-}
 .news__card--active .news__card-title {
   font-size: 45px;
 }
@@ -1743,7 +1786,7 @@ body {
   display: block;
 }
 .news__card-img-wrap {
-  width: 250px;
+  min-width: 250px;
   height: 160px;
   border-radius: 20px;
   overflow: hidden;
@@ -1751,7 +1794,8 @@ body {
 .news__card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .news__card-info {
   max-width: 507px;
@@ -1999,7 +2043,8 @@ body {
 .about-promo__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about-promo__info-cards {
   margin-top: 10px;
@@ -2061,13 +2106,15 @@ body {
 
 .skills__cards {
   margin-top: 70px;
-  columns: 3;
+  -moz-columns: 3;
+       columns: 3;
   gap: 20;
 }
 .skills__card {
   padding: 50px 40px;
   background: #fff;
-  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   margin-bottom: 20px;
   border-radius: 30px;
 }
@@ -2260,7 +2307,8 @@ body {
 .teachers__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .teachers__card-info {
   display: flex;
@@ -2409,7 +2457,8 @@ body {
 .reviews-info__slider-buttons {
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .reviews-info .swiper-button-prev {
   position: relative;
@@ -2452,7 +2501,8 @@ body {
 .reviews-info__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .reviews-info__person-info {
   display: flex;
@@ -2615,6 +2665,10 @@ body {
   color: #fff;
   border-bottom: 1px solid #fff;
 }
+.footer--light .footer__input::-moz-placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
 .footer--light .footer__input::placeholder {
   color: #fff;
   opacity: 0.8;
@@ -2696,6 +2750,10 @@ body {
   padding-bottom: 6px;
   outline: none;
 }
+.footer__input::-moz-placeholder {
+  color: #262626;
+  opacity: 0.8;
+}
 .footer__input::placeholder {
   color: #262626;
   opacity: 0.8;
@@ -2739,7 +2797,8 @@ body {
   margin-top: 40px;
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .footer__button {
   display: flex;
@@ -2776,7 +2835,8 @@ body {
   margin-top: 65px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 150px;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
   row-gap: 50px;
 }
 .footer__contacts-title {
@@ -2823,7 +2883,8 @@ body {
 .footer__info-links {
   display: flex;
   align-items: center;
-  column-gap: 60px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
 }
 .footer__info-link {
   color: #262626;
@@ -2874,6 +2935,12 @@ body {
   }
   .about__statistic-card-count--small {
     font-size: clamp(20px, 4vw, 40px);
+  }
+  .news__card--active .news__card-title {
+    font-size: 35px;
+  }
+  .news__card-title {
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -2928,6 +2995,25 @@ body {
   .top-courses__buttons {
     max-width: 324px;
     width: 100%;
+  }
+  .news__content {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .news__cards-wrap {
+    max-width: 100%;
+  }
+  .news__card {
+    max-width: 100%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .news__card--active {
+    max-width: 100%;
+    align-items: flex-start;
+  }
+  .news__card--active .news__card-title {
+    max-width: 900px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -3127,4 +3213,4 @@ body {
   .about__info-card {
     height: 250px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
