@@ -606,7 +606,7 @@ body {
         border: none;
         width: 17px;
         height: 19px;
-        background: url(../img/search.svg) no-repeat center;
+        background: url(../img/search.svg) no-repeat center / cover;
         cursor: pointer;
     }
 
@@ -1593,13 +1593,6 @@ body {
     &__title { 
         max-width: 753px;
         margin-bottom: 60px;
-    }
-
-    &__cards-wrap {
-        // border-radius: 30px;
-        // max-height: 790px;
-        // padding-bottom: 60px;
-        // overflow: hidden; 
     }
 
 	&__cards {
@@ -3001,9 +2994,6 @@ body {
         margin-top: 67px;
     }
 
-    &__slide-footer-link {
-    }
-
     &__slide-company-img {
         max-height: 30px;
     }
@@ -3112,9 +3102,6 @@ body {
         padding: 90px 134px;
         max-width: 100%;
         width: 100%;
-    }
-
-    &__feednback-title {
     }
 
     &__form {
@@ -3665,14 +3652,20 @@ body {
         font-size: 50px;
     }
 
+    .header--light {
+        width: 85vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .promo__content {
-        max-width: 90%;
+        width: 85vw;
     }
 
     .top-courses,
     .footer {
         .container {
-            width: 90%;
+            width: 85vw;
         }
     }
 
@@ -3680,6 +3673,10 @@ body {
 
         &__heading {
             margin-top: 150px;
+        }
+
+        &__title {
+        font-size: clamp(40px, 7vw, 70px);
         }
 
         &__img-wrap {
@@ -3707,7 +3704,11 @@ body {
 
         &__requests {
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px;
+        }
+
+        &__tags {
+            margin-top: 40px;
         }
     }
 
@@ -3773,10 +3774,6 @@ body {
     }
 
     .top-courses {
-
-        & .container {
-            width: 90%;
-        }
 
         &__card {
             flex-direction: column;
@@ -3914,6 +3911,11 @@ body {
 }
 @media screen and (max-width: 768px)  { 
     /* смартфоны */
+
+    .section {
+        margin-top: 25vw;
+    }
+
     .section-title {
         font-size: clamp(30px, 7vw, 50px);
     }
@@ -4020,6 +4022,40 @@ body {
 @media screen and (max-width: 600px)  { 
     /* маленькие смартфоны */ 
 
+    .header {
+        margin-top: 30px;
+    }
+
+    .promo__wrap,
+    .top-courses__wrap,
+    .about__wrap,
+    .footer__wrap {
+        border-radius: 40px;
+    }
+
+    .header {
+
+        &__menu-button {
+            order: 2;
+        }
+        
+        &__button {
+            display: none;
+        }
+    }
+
+    .promo {
+
+        &__heading {
+            margin-top: 110px;
+        }
+
+        &__tag {
+            padding: 10px 20px;
+            font-size: clamp(10px, 2.7vw, 16px);
+        }
+    }
+
     .reviews {
         &__cards {
             grid-template-columns: repeat(1, 1fr);
@@ -4050,6 +4086,48 @@ body {
 }
 @media screen and (max-width: 480px)  {
      /* очень маленькие смартфоны */ 
+
+    .promo,
+    .top-courses,
+    .about,
+    .footer {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .header {
+
+        &--light {
+            width: 80vw;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &--active {
+            padding: 13px 20px;
+        }
+    }
+
+    .promo__content {
+        width: 80vw;
+    }
+
+    .top-courses,
+    .footer {
+        .container {
+            width: 80vw;
+        }
+    }
+
+    .promo {
+        
+        &__form-text {
+            font-size: 12px;
+        }
+    }
 
      .schools {
         padding: 50px 0 50px 30px;
