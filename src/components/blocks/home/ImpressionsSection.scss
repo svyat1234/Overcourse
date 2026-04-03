@@ -1,0 +1,132 @@
+@use "@/app/variables" as *;
+
+.impressions {
+  overflow-x: hidden;
+
+  /* Полоса на всю ширину экрана (вне контейнера), внутри — до 2000px */
+  &__swiper-outer {
+    width: 100vw;
+    max-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+  }
+
+  &__swiper-inner {
+    width: min(100vw, 2000px);
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  &__swiper {
+    width: 100%;
+    overflow: hidden;
+
+    .swiper-slide {
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+
+  &__slide {
+    min-width: 0;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    max-width: 800px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__count-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__count-text {
+    font-family: $main-font;
+    font-size: 18.232px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__count {
+    font-family: $main-font;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  & .swiper-button-next {
+    margin-top: 0;
+    top: auto;
+    position: relative;
+    background: url("/images/arrow-right.svg") no-repeat center;
+    width: 50px;
+    height: 77px;
+    border-radius: 10px;
+    border: 1px solid $dark;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: $dark url("/images/arrow-right-active.svg") no-repeat center;
+      border: 1px solid $dark;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .impressions {
+    &__title {
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .impressions {
+    &__heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      max-width: 40%;
+    }
+
+    &__count {
+      font-size: 40px;
+    }
+
+    &__info {
+      justify-content: space-between;
+      width: 100%;
+      gap: 40px;
+    }
+
+    &__count-wrapper {
+      align-items: flex-start;
+    }
+  }
+}

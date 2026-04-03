@@ -1,0 +1,59 @@
+@use "@/app/variables" as *;
+
+.selection {
+  &__heading {
+    @include flex-start-between;
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    max-width: 500px;
+  }
+
+  &__interaction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .selection__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .selection__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .selection {
+    &__heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 30px;
+    }
+
+    &__interaction {
+      max-width: 100%;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

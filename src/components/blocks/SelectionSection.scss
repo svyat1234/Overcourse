@@ -1,0 +1,103 @@
+@use "@/app/variables" as *;
+
+.selection {
+  &__heading {
+    @include flex-start-between;
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    max-width: 500px;
+  }
+
+  &__interaction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__interaction-wrap {
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+
+  &__link {
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $dark;
+    background: $light;
+    font-family: $main-font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  & .swiper-button-prev {
+    position: relative;
+    width: 58px;
+    height: 40px;
+    background: url("/images/arrow-right.svg") no-repeat center;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    transform: rotate(180deg);
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: $dark url("/images/arrow-right-active.svg") no-repeat center;
+      border: 1px solid $dark;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  & .swiper-button-next {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 58px;
+    height: 40px;
+    background: url("/images/arrow-right.svg") no-repeat center;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    transition: transform 0.1s ease-in-out;
+    &:hover { 
+      background: $dark url("/images/arrow-right-active.svg") no-repeat center;
+      border: 1px solid $dark;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .selection {
+    &__heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 30px;
+    }
+
+    &__interaction-wrap {
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &__interaction {
+      max-width: 100%;
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+}

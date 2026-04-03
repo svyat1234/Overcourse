@@ -1,0 +1,209 @@
+@use "@/app/variables" as *;
+
+.about-promo {
+  @include flex-start-between;
+  gap: 20px;
+
+  &__content {
+    max-width: 650px;
+    width: 100%;
+    padding: 30px;
+    background: $light;
+    border-radius: 30px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__company-img {
+    max-width: 130px;
+    max-height: 25px;
+    object-fit: contain;
+  }
+
+  &__rating {
+    padding-left: 25px;
+    background: url("/images/star-light.svg") no-repeat left center;
+  }
+
+  &__tags {
+    margin-top: 60px;
+  }
+
+  &__title {
+    margin-top: 20px;
+  }
+
+  &__text-wrap {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 513px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 110%;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+  }
+
+  &__button {
+    max-width: 272px;
+    width: 100%;
+  }
+
+  &__info {
+    min-width: 920px;
+  }
+
+  &__img-wrap {
+    width: 100%;
+    height: 520px;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info-cards {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    background: $light;
+    border-radius: 30px;
+  }
+
+  &__info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 100%;
+    width: 100%;
+    padding-block: 17px;
+    padding-left: 40px;
+    border-radius: 17px;
+    transition: all 0.2s ease-in-out;
+
+    &--small {
+      max-width: 195px;
+    }
+
+    &--highlight {
+      background: $accent;
+      color: $light;
+
+      .about-promo__info-card-title,
+      .about-promo__info-card-value {
+        color: $light;
+      }
+    }
+
+    & * {
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      background: $accent;
+
+      & * {
+        color: $light;
+      }
+    }
+  }
+
+  &__info-card-title {
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__info-card-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__info-card-value {
+    font-size: clamp(14px, 1.5625vw, 30px);
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__info-card-text {
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 600;
+    color: $gray;
+
+    &--strike {
+      text-decoration: line-through;
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    &__info {
+      min-width: 800px;
+    }
+    &__info-card {
+      padding: 15px;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    &__title {
+      font-size: 35px;
+    }
+    &__info {
+      min-width: 700px;
+    }
+    &__info-card {
+      padding: 15px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    &__info {
+      min-width: 50%;
+    }
+    &__info-cards {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__img-wrap {
+      height: 350px;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+}

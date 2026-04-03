@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import GlassDistortionFilter from "@/components/graphics/GlassDistortionFilter";
+import ScrollRevealHeadingsLoader from "@/components/animations/ScrollRevealHeadingsLoader";
+import SiteLoadGate from "@/components/layouts/SiteLoadGate";
+import "./globals.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru" className="scroll-reveal--enabled">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <SiteLoadGate />
+        <GlassDistortionFilter />
+        <Header />
+        <main id="main">{children}</main>
+        <ScrollRevealHeadingsLoader />
+        <Footer />
       </body>
     </html>
   );

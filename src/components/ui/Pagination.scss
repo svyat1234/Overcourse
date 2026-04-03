@@ -1,0 +1,99 @@
+@use "@/app/variables" as *;
+
+.pagination {
+  @include flex-center-between;
+  margin-top: 50px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &--prev {
+      background: $light url("/images/pagination-arrow.svg") no-repeat center;
+    }
+
+    &--next {
+      background: $light url("/images/pagination-arrow.svg") no-repeat center;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__page {
+    font-family: $main-font;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+
+    &:hover:not(:disabled) {
+      background: $accent;
+      color: $light;
+    }
+
+    &--active {
+      color: $light;
+      background: $accent;
+    }
+  }
+
+  &__ellipsis {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $main-font;
+    font-size: 25px;
+    font-weight: 400;
+    pointer-events: none;
+  }
+
+  &__link {
+    background: $light;
+    max-width: 344px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+
+    &__content {
+      justify-content: center;
+    }
+
+    &__link {
+      max-width: none;
+    }
+  }
+}

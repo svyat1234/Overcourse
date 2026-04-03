@@ -1,0 +1,365 @@
+@use "@/app/variables" as *;
+
+.news-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+
+  & .course-card {
+    max-width: 100%;
+    border: 2px solid #F8F8F8;
+  }
+
+  &__left-column {
+    width: 428px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__right-column {
+    flex: 1;
+    min-width: 0;
+    max-width: 922px;
+  }
+
+  &__profile-card {
+    background: $light;
+    border: 2px solid #f8f8f8;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__profile-top {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &__avatar-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #d9d9d9;
+  }
+
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__author-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  &__author-name {
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.219;
+    color: $dark;
+  }
+
+  &__author-role {
+    font-family: $main-font;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.219;
+    color: #adadad;
+  }
+
+  &__all-link {
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark;
+    background: #f9f9f9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__top-courses {
+    background: $light;
+    border: 2px solid #f9f9f9;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__top-courses-title {
+    font-family: $main-font;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+    color: $dark;
+  }
+
+  &__top-courses-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  &__top-courses-list .course-card {
+    max-width: 100%;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.219;
+  }
+
+  &__breadcrumb-link {
+    color: #adadad;
+    text-decoration: none;
+  }
+
+  &__breadcrumb-sep {
+    color: #adadad;
+  }
+
+  &__breadcrumb-current {
+    color: $dark;
+  }
+
+  &__article-title {
+    margin-top: 24px;
+    max-width: 810px;
+    font-family: $main-font;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 1;
+    color: $dark;
+  }
+
+  &__meta-row {
+    margin-top: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__meta-text {
+    padding-left: 27px;
+    font-family: $main-font;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.219;
+    color: #adadad;
+
+    &--date {
+      background: url("/images/news-calendar.svg") no-repeat left center;
+    }
+    &--views {
+      background: url("/images/news-eye.svg") no-repeat left center;
+    }
+    &--reading-time {
+      background: url("/images/news-clock.svg") no-repeat left center;
+    }
+  }
+
+  &__toc {
+    margin-top: 30px;
+    background: $light;
+    border: 2px solid #f8f8f8;
+    border-radius: 24px;
+    padding: 30px 40px;
+  }
+
+  &__toc-title {
+    padding-left: 27px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.219;
+    color: #0f172a;
+    background: url("/images/news-list.svg") no-repeat left center;
+  }
+
+  &__toc-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.219;
+    color: $dark;
+    list-style: none;
+  }
+
+  &__paragraph {
+    margin-top: 28px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $dark;
+  }
+
+  &__h2 {
+    margin-top: 40px;
+    font-family: $main-font;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+    color: $dark;
+  }
+
+  &__code {
+    margin-top: 20px;
+    padding: 20px;
+    background: #262626;
+    border-left: 4px solid #9ee77e;
+    border-radius: 24px;
+    color: #9ee77e;
+    font-family: "Liberation Mono", monospace;
+    font-size: 14px;
+    line-height: 1.43;
+    white-space: pre-wrap;
+  }
+
+  &__list {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $dark;
+  }
+
+  &__article-image {
+    margin-top: 24px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    object-fit: cover;
+  }
+
+  &__tip {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-left: 4px solid #9ee77e;
+    border-radius: 0 24px 24px 0;
+    background: rgba(158, 231, 126, 0.1);
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $dark;
+
+    code {
+      font-family: "Liberation Mono", monospace;
+      background: #e2e8f0;
+      padding: 0 4px;
+      border-radius: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .news-content {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .news-content {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .news-content {
+    flex-direction: column;
+
+    &__left-column {
+      order: 2;
+    }
+
+    &__right-column {
+      order: 1;
+    }
+
+    &__left-column,
+    &__right-column {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__article-title {
+      font-size: 34px;
+    }
+
+    &__meta-row {
+      gap: 10px;
+    }
+
+    &__toc {
+      padding: 24px;
+    }
+
+    &__top-courses-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .news-content {
+    &__top-courses-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .news-content {
+    &__top-courses-list {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-content {
+    &__article-title {
+      font-size: 28px;
+    }
+
+    &__toc {
+      padding: 20px;
+    }
+  }
+}

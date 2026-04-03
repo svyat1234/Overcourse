@@ -1,0 +1,209 @@
+@use "@/app/variables" as *;
+
+.profit {
+  &__heading {
+    @include flex-start-between;
+    gap: 40px;
+  }
+
+  &__title {
+    max-width: 430px;
+  }
+
+  &__desc {
+    @include flex-start-between;
+    max-width: 850px;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__about {
+    max-width: 435px;
+  }
+
+  &__info {
+    min-width: 385px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__info-text {
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__info-text-bold {
+    font-weight: 700;
+  }
+
+  &__range-wrap {
+    margin-top: 120px;
+    background: $light;
+    border-radius: 30px;
+    padding: 60px 47px 30px 47px;
+  }
+
+  &__range-content {
+    position: relative;
+    width: 100%;
+  }
+
+  &__range {
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+    height: 45px;
+  }
+
+  &__range-dots {
+    @include flex-center-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    transform: translateY(-60%);
+  }
+
+  &__range-dot {
+    width: 20px;
+    height: 20px;
+    background: $accent;
+    border-radius: 50%;
+  }
+
+  &__range-text-wrap {
+    position: absolute;
+    top: 0;
+    height: 80px;
+    width: 115px;
+    background: url("/images/range-text-wrap.svg") no-repeat center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: $light;
+    transform: translate(-50%, -120%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &__range-title {
+    margin-top: -10px;
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  &__range-text {
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__range-icon {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -55%);
+    pointer-events: none;
+    z-index: 2;
+
+    &--junior {
+      background: url("/images/junior.png") no-repeat center / cover;
+    }
+    &--middle {
+      background: url("/images/middle.png") no-repeat center / cover;
+    }
+    &--senior {
+      background: url("/images/senior.png") no-repeat center / cover;
+    }
+  }
+
+  &__range-line-wrap {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 45%;
+    left: 0;
+    background-color: #dadada;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__range-line {
+    height: 100%;
+    width: 100%;
+    background-color: $gray;
+    z-index: 1;
+  }
+
+  &__range-info {
+    @include flex-start-between;
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+  }
+
+  &__range-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 20%;
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__range-info-title {
+    font-weight: bold;
+  }
+
+  &__range-info-text {
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 1280px) {
+    &__desc {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    &__info {
+      max-width: 435px;
+      width: 100%;
+      min-width: auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+   &__heading {
+    flex-direction: column;
+   }
+   &__desc {
+    align-items: flex-start;
+   }
+   &__range-wrap {
+    padding: 60px 30px 30px
+   }
+  }
+  @media screen and (max-width: 480px) {
+    &__range-info-item {
+      width: 30%;
+    }
+  }
+}

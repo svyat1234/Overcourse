@@ -1,0 +1,466 @@
+@use "../../app/variables.scss" as *;
+
+.footer {
+  padding: 0 20px 20px;
+
+  &--light {
+    color: #fff;
+
+    .footer__wrap {
+      background: #86bced;
+    }
+
+    .footer__title {
+      color: #fff;
+    }
+
+    .footer__title--accent {
+      background: url("/images/footer-arrow-light.svg") no-repeat left top 30px;
+    }
+
+    .footer__input {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+
+      &::-moz-placeholder {
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      &::placeholder {
+        color: #fff;
+        opacity: 0.8;
+      }
+    }
+
+    .footer__checkbox:checked + .footer__checkbox-custom {
+      background: url("/images/checkbox-light.svg") no-repeat center;
+    }
+
+    .footer__checkbox-custom {
+      border: 1px solid #fff;
+    }
+
+    .footer__checkbox-text {
+      color: #fff;
+    }
+
+    .footer__checkbox-link {
+      color: #fff;
+    }
+
+    .footer__button--request {
+      background: #fff;
+      color: #86bced;
+      border: 1px solid #fff !important;
+
+      &:hover {
+        background: rgba(#86bced, 0);
+        color: #fff;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    .footer__button--telegram {
+      background: #86bced;
+      color: #fff;
+      border: 1px solid #fff !important;
+
+      &:hover {
+        background: #fff;
+        color: $main;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    .footer__contacts-item {
+      color: #d0e7fc;
+    }
+
+    .footer__info {
+      border-top: 1px solid #fff;
+    }
+
+    .footer__info-link {
+      color: #fff;
+    }
+
+    .footer__info-button {
+      color: #86bced;
+      background: #fff;
+      &:hover {
+        background: rgba(#86bced, 0);
+        color: #fff;
+        border: 1px solid #fff !important;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__wrap {
+    padding: 80px 0;
+    background: #fff;
+    border-radius: 60px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1320px;
+    width: 100%;
+    gap: 40px;
+  }
+
+  &__heading {
+    max-width: 650px;
+    width: 100%;
+  }
+
+  &__title {
+    max-width: 470px;
+    font-size: 44px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 600;
+
+    &--accent {
+      padding-left: 80px;
+      background: url("/images/footer-arrow.svg") no-repeat left top 30px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__inputs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #262626;
+    font-size: 14px;
+    font-style: normal;
+    padding-top: 17px;
+    padding-bottom: 6px;
+    outline: none;
+
+    &::-moz-placeholder {
+      color: #262626;
+      opacity: 0.8;
+    }
+
+    &::placeholder {
+      color: #262626;
+      opacity: 0.8;
+    }
+  }
+
+  &__checkbox-label {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    transform: translate(10px, 10px);
+    white-space: nowrap;
+    border: 0;
+
+    &:checked + .footer__checkbox-custom {
+      background: url("/images/checkbox.svg") no-repeat center;
+    }
+  }
+
+  &__checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #262626;
+    flex-shrink: 0;
+  }
+
+  &__checkbox-text {
+    font-size: 14px;
+  }
+
+  &__checkbox-link {
+    color: #262626;
+    text-decoration: underline;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__buttons {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 49px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &--request {
+      border: none;
+      max-width: 320px;
+      width: 100%;
+      color: #fff;
+      background: #262626;
+      &:hover {
+        background: rgba(#fff, 0);
+        color: $dark;
+        border: 1px solid $dark;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    &--telegram {
+      max-width: 180px;
+      width: 100%;
+      background: none;
+      border: 1px solid #262626;
+      &:hover {
+        background: #262626;
+        color: #fff;
+        border: 1px solid #262626;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__contacts-cards {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 150px;
+    row-gap: 50px;
+
+    & a:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__contacts-title {
+    font-size: 25px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__contacts-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &__contacts-card-title {
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__contacts-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  &__contacts-item {
+    color: #262626;
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #262626;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  &__info-links {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+  }
+
+  &__info-link {
+    color: #262626;
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__info-blocks {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__info-made {
+    font-size: 16px;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__info-button {
+    padding: 10px 19px;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: #262626;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #fff;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: #fff;
+      color: #262626;
+      border: 1px solid #262626 !important;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer__contacts-cards {
+    column-gap: 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer .container {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__contacts {
+      margin-top: 20px;
+    }
+
+    &__contacts-cards {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__info {
+      column-gap: 40px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    &__info-links {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    &__wrap {
+      padding: 50px 0;
+      border-radius: 40px;
+    }
+
+    &__title {
+      font-size: clamp(30px, 7vw, 50px);
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    &__buttons {
+      flex-direction: column;
+      gap: 5px;
+    }
+    &__button--request, &__button--telegram {
+      max-width: 100%;
+    }
+  }
+
+  .footer .container {
+    width: 80vw;
+  }
+  
+}

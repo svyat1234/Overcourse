@@ -1,0 +1,47 @@
+@use "@/app/variables" as *;
+
+.skills {
+  &__cards {
+    margin-top: 70px;
+    columns: 3;
+    gap: 20px;
+  }
+
+  &__card {
+    padding: 50px 40px;
+    background: $light;
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 30px;
+  }
+
+  &__card-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    padding-left: 90px;
+    background: url("/images/star-accent.svg") left top no-repeat;
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__card {
+      padding: 30px;
+    }
+    &__card-text {
+      padding-left: 60px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    &__cards {
+      columns: 2;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__cards {
+      columns: 1;
+    }
+  }
+}
+
+

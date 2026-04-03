@@ -1,0 +1,62 @@
+@use "@/app/variables" as *;
+
+.site-load-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(249, 249, 249);
+}
+
+.site-load-gate__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 36px;
+  border-radius: 16px;
+}
+
+.site-load-gate__spinner {
+  width: 80px;
+  height: 80px;
+  border: 10px solid rgba(142, 142, 142, 0.35);
+  border-top-color: $main;
+  border-radius: 50%;
+  animation: site-load-gate-spin 1.5s linear infinite;
+}
+
+@keyframes site-load-gate-spin {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: $main;
+  }
+  45% {
+    border-top-color: $accent;
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  95% {
+    border-top-color: $main;
+  }
+  100% {
+    transform: rotate(720deg);
+    border-top-color: $main;
+  }
+}
+
+.site-load-gate__text {
+  margin: 0;
+  font-family: $main-font, system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: $dark;
+}
+
+/* Глобальное гашение анимаций при site-slow-load не должно останавливать этот спиннер */
+html.site-slow-load .site-load-gate__spinner {
+  animation: site-load-gate-spin 0.75s linear infinite !important;
+}

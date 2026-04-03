@@ -1,0 +1,151 @@
+@use "@/app/variables" as *;
+
+.contacts {
+  display: flex;
+  gap: 14px;
+  min-height: 893px;
+
+  &__info {
+    background: $light;
+    padding: 60px;
+    max-width: 658px;
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  &__title {
+    max-width: 466px;
+  }
+
+  &__cards {
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 75px 10px;
+  }
+
+  &__card {
+    max-width: 250px;
+    width: 100%;
+  }
+
+  &__card-title {
+    font-size: 25px;
+    line-height: 100%;
+  }
+
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  &__card-text {
+    color: #aeaeae;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  & a.contacts__card-text:hover {
+    transition: color 0.1s ease-in-out;
+  }
+  & a.contacts__card-text:hover {
+    color: $accent;
+  }
+  & a.contacts__card-text:active {
+    opacity: 0.5;
+  }
+
+  &__socials-card {
+    margin-top: 65px;
+  }
+
+  &__socials-info {
+    margin-top: 51px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__socials-info-left,
+  &__socials-info-right {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__feedback {
+    border-radius: 30px;
+    background: $light;
+    padding: 90px 134px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__form-accent-title {
+    padding-left: 80px;
+    background: url("/images/contacts-arrow.svg") no-repeat left top 60%;
+  }
+
+  &__form {
+    margin-top: 51px;
+  }
+  
+
+  &__form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 95px;
+  }
+
+  &__input-text {
+    height: 126px;
+    resize: none;
+  }
+
+  @media screen and (max-width: 1600px) {
+    &__feedback {
+      padding: 80px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    &__info {
+      padding: 50px;
+    }
+    &__title {
+      font-size: 60px;
+    }
+    &__feedback {
+      height: fit-content;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    &__feedback {
+      padding: 50px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    &__feedback, &__info {
+      max-width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    &__info, &__feedback {
+      padding: 30px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__card-info, .contacts__socials-info {
+      margin-top: 20px;
+    }
+    &__card-title {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@use "@/app/variables" as *;
+
+.review-card {
+  border-radius: 30px;
+  background: $light;
+  padding: 50px 43px;
+
+  &--assets-loading {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__person {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  &__person-img-wrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__person-name {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__person-date {
+    color: #c9c9c9;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__star {
+    width: 18px;
+    height: 17px;
+    background: url("/images/reviews-info-star.svg") no-repeat center / cover;
+
+    &--active {
+      background: url("/images/reviews-info-star-active.svg") no-repeat center / cover;
+    }
+  }
+
+  &__text-wrap {
+    margin-top: 37px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  &__link {
+    color: $dark;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: underline;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      color: $accent;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent;
+      outline-offset: 2px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 67px;
+  }
+
+  &__company-img {
+    max-height: 30px;
+    width: auto;
+    height: auto;
+  }
+
+  &__vote {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &:is(form) {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: none;
+      min-inline-size: 0;
+    }
+  }
+
+  &__vote-button {
+    position: relative;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 23px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 17px;
+      height: 17px;
+      background: url("/images/vote.svg") no-repeat center / cover;
+    }
+
+    &--good-active {
+      color: $accent;
+    }
+    &--bad-active {
+      color: $accent;
+    }
+    &--good-active::before {
+      background: url("/images/vote-active.svg") no-repeat center / cover;
+    }
+
+    &--bad::before {
+      transform: rotate(180deg);
+    }
+    &--bad-active::before {
+      background: url("/images/vote-active.svg") no-repeat center / cover;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    border-radius: 30px;
+    background: $light;
+    padding: 30px;
+  }
+
+  @media screen and (max-width: 480px) {
+    &__heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+}

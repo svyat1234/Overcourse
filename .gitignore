@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# старый статический экспорт, не часть Next-проекта
+/overcourse-static/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

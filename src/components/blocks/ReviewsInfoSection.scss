@@ -1,0 +1,212 @@
+@use "@/app/variables" as *;
+
+.reviews-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__sum-reviews {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    text-decoration: underline;
+  }
+
+  &__statistic {
+    margin-top: 40px;
+    padding: 28px;
+    background: $light;
+    border-radius: 25px;
+    max-width: 433px;
+    width: 100%;
+  }
+
+  &__statistic-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__middle-pass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 100%;
+    width: 60px;
+    height: 35px;
+    border-radius: 8.3px;
+    border: 1px solid #f6f6f6;
+  }
+
+  &__middle-stars {
+    display: flex;
+    align-items: center;
+    gap: 3.5px;
+  }
+
+  &__middle-star {
+    width: 26px;
+    height: 24px;
+    background: url("/images/middle-star.svg") no-repeat center / cover;
+
+    &--active {
+      background: url("/images/middle-star-active.svg") no-repeat center / cover;
+    }
+  }
+
+  &__statistic-items {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__statistic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__star {
+    width: 18px;
+    height: 17px;
+    background: url("/images/reviews-info-star.svg") no-repeat center / cover;
+
+    &--active {
+      background: url("/images/reviews-info-star-active.svg") no-repeat center / cover;
+    }
+  }
+
+  &__scale-wrap {
+    position: relative;
+    width: 183px;
+    height: 5px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__scale {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    background: #e9e9e9;
+  }
+
+  &__quantity-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    border-radius: 10px;
+    width: 53px;
+    height: 26px;
+  }
+
+  &__link {
+    margin-top: 13px;
+  }
+
+  &__swiper {
+    max-width: 1146px;
+    width: 100%;
+  }
+
+  &__nav-wrap {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 40px;
+  }
+
+  &__slider-link {
+    width: 182px;
+    background: $light;
+  }
+
+  &__slider-buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  & .swiper-button-prev {
+    position: relative;
+    width: 58px;
+    height: 40px;
+    background: url("/images/arrow-right.svg") no-repeat center;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    transform: rotate(180deg);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: $dark url("/images/arrow-right-active.svg") no-repeat center;
+      border: 1px solid $dark;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  & .swiper-button-next {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 58px;
+    height: 40px;
+    background: url("/images/arrow-right.svg") no-repeat center;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: $dark url("/images/arrow-right-active.svg") no-repeat center;
+      border: 1px solid $dark;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    &__statistic {
+      max-width: 300px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    &__about, &__statistic {
+      max-width: 100%;
+      width: 100%;
+    }
+    &__nav-wrap {
+      float: left;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+  }
+}

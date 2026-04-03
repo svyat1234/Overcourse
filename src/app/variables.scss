@@ -1,0 +1,44 @@
+// Общий файл переменных и миксинов
+
+// COLORS
+$light: #fff;
+$background: #f9f9f9;
+$dark: #262626;
+$main: #86bced;
+$accent: #afe982;
+$gray: #8e8e8e;
+$button: #f8f8f8;
+
+// CONTAINER
+$container: 1596px;
+$desktop-width: 1920px;
+
+// TYPO & UI
+$main-font: "Montserrat", sans-serif;
+$secondary-font: "Open Sans", sans-serif;
+$button-border-radius: 10px;
+
+// MIXINS
+@mixin flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin flex-end-between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

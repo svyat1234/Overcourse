@@ -1,0 +1,63 @@
+@use "@/app/variables" as *;
+
+.news {
+  &__content {
+    @include flex-start-between;
+    margin-top: 70px;
+    gap: 20px;
+  }
+
+  &__cards-wrap {
+    max-width: 785px;
+    width: 100%;
+  }
+
+  &__cards {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__link {
+    margin-top: 26px;
+    @include flex-center-center;
+    width: 100%;
+    height: 55px;
+    text-decoration: none;
+    color: $dark;
+    font-family: $main-font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: $light;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news {
+    &__content {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &__cards-wrap {
+      max-width: 100%;
+    }
+
+    &__cards--mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .news {
+    &__cards {
+      max-width: 100%;
+      gap: 40px;
+    }
+  }
+}

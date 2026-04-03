@@ -1,0 +1,354 @@
+@use "@/app/variables" as *;
+
+.courses {
+  &__title {
+    max-width: 695px;
+    margin-bottom: 60px;
+  }
+
+  &__menu {
+    @include flex-start-between;
+    margin-bottom: 60px;
+
+    &-categories {
+      display: flex;
+      align-items: center;
+      column-gap: 3px;
+    }
+
+    &-category {
+      font-family: $main-font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding: 10px 30px;
+      border-radius: 999px;
+      border: 1px solid $dark;
+      background: none;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        background-color: $dark;
+        color: $light;
+      }
+      &:active {
+        background-color: rgba($dark, 0.8);
+      }
+
+      &--popular {
+        padding-left: 45px;
+        background: url("/images/popular.svg") no-repeat left 18px center;
+        &:hover {
+          background: $dark url("/images/popular-active.svg") no-repeat left 18px center;
+          color: $light;
+        }
+        &:active {
+          background-color: rgba($dark, 0.8);
+        }
+      }
+    }
+
+    &-layout-buttons {
+      display: flex;
+      align-items: center;
+      column-gap: 3px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-layout-button {
+      width: 40px;
+      height: 40px;
+      background: none;
+      border-radius: 10px;
+      border: 1px solid $dark;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      &--grid {
+        background: url("/images/grid.svg") no-repeat center;
+        &:hover {
+          background: $dark url("/images/grid-active.svg") no-repeat center;
+        }
+        &:active {
+          background: rgba($dark, 0.8) url("/images/grid-active.svg") no-repeat center;
+        }
+      }
+
+      &--list {
+        background: url("/images/list.svg") no-repeat center;
+        &:hover {
+          background: $dark url("/images/list-active.svg") no-repeat center;
+        }
+        &:active {
+          background: rgba($dark, 0.8) url("/images/list-active.svg") no-repeat center;
+        }
+      }
+
+      &--grid-active {
+        background: $dark url("/images/grid-active.svg") no-repeat center;
+      }
+
+      &--list-active {
+        background: $dark url("/images/list-active.svg") no-repeat center;
+      }
+    }
+  }
+
+  &__cards {
+    margin-top: 60px;
+    display: grid;
+    gap: 20px;
+    align-items: stretch;
+
+    &--normal {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &--wide {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .courses__cards--normal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .courses__cards--normal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .courses__cards--normal,
+  .courses__cards--wide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .courses {
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__menu {
+      margin-bottom: 20px;
+    }
+
+    &__menu-category {
+      padding: 10px 20px;
+
+      &--popular {
+        padding-left: 40px;
+      }
+    }
+
+
+    &__cards {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .courses__menu {
+    gap: 10px;
+
+    &-categories {
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+  }
+}
+
+.courses-filters {
+  @include flex-center-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 20px;
+
+  &__main-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__main-button {
+    position: relative;
+    padding: 0 20px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: $dark;
+    cursor: pointer;
+    text-align-last: left;
+    font: inherit;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background: $accent;
+    }
+    &:active {
+      background: rgba($accent, 0.8);
+    }
+
+    &--filters {
+      width: 172px;
+    }
+
+    &--categories {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 227px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        width: 11px;
+        height: 6px;
+        background: url("/images/arrow-down-light.svg") no-repeat center;
+      }
+    }
+  }
+
+  &__main-button-count {
+    @include flex-center-center;
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 16px;
+    color: $light;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 30px;
+    height: 30px;
+    background: $accent;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__main-button-title {
+    font-size: 16px;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $light;
+  }
+
+  &__main-button-subtitle {
+    color: $light;
+    opacity: 0.7;
+    font-size: 10px;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__lists {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__list {
+    height: 50px;
+    width: 305px;
+    background: $light;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__list-button {
+    position: relative;
+    padding: 0 20px;
+    text-align-last: left;
+    height: 50px;
+    width: 100%;
+    font-family: $main-font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: $light;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background: $accent;
+    }
+    &:active {
+      background: rgba($accent, 0.8);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      width: 11px;
+      height: 6px;
+      background: url("/images/arrow-down.svg") no-repeat center;
+    }
+  }
+
+  &__text-icon {
+    padding-left: 40px;
+
+    &--filters {
+      background: url("/images/filters.svg") no-repeat left center;
+    }
+
+    &--rating {
+      background: url("/images/rating.svg") no-repeat left center;
+    }
+
+    &--price {
+      background: url("/images/price.svg") no-repeat left center;
+    }
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .courses-filters {
+    &__list {
+      width: 250px;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .courses-filters {
+    &__lists {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .courses {
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .courses-filters {
+    
+    &__main-buttons {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+}

@@ -1,0 +1,32 @@
+@use "@/app/variables" as *;
+
+.course-questions {
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: none;
+  }
+
+  &__info-text {
+    padding: 10px 30px;
+    background: $accent;
+    color: $light;
+    font-weight: 600;
+    line-height: 100%;
+    border-radius: 100px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__heading {
+      flex-direction: column;
+    }
+  }
+}

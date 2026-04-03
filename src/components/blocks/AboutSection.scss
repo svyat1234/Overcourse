@@ -1,0 +1,228 @@
+@use "@/app/variables" as *;
+
+.about {
+  padding: 0 30px;
+
+  &--first-section {
+    margin-top: 20px;
+
+    & .about__wrap {
+      padding-top: 180px;
+    }
+  }
+
+  &__wrap {
+    padding: 100px 0;
+    background: $light;
+    border-radius: 60px;
+  }
+
+  &__title {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 70px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+    align-items: stretch;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__info-card {
+    background: #f8f8f8;
+    border-radius: 30px;
+    padding: 30px;
+    height: 364px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__info-card-heading {
+    @include flex-start-between;
+  }
+
+  &__info-card-num {
+    font-family: $main-font;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__info-card-icon {
+    width: 110px;
+    height: 110px;
+
+    &--search {
+      background: url("/images/info-card-icon-search.svg") no-repeat center / cover;
+    }
+  }
+
+  &__info-card-text {
+    font-family: $main-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    &--accent {
+      font-weight: 600;
+    }
+  }
+
+  &__statistic-card {
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $main;
+      color: $light;
+
+      .about__statistic-card-info {
+        background: $light;
+        color: $main;
+      }
+
+      .about__statistic-card-text {
+        opacity: 1;
+      }
+    }
+
+    &:nth-child(1) .about__statistic-card-text {
+      max-width: 275px;
+    }
+
+    &:nth-child(2) .about__statistic-card-text {
+      max-width: 350px;
+    }
+
+    &:nth-child(3) .about__statistic-card-text {
+      max-width: 418px;
+    }
+  }
+
+  &__statistic-card-count {
+    margin-top: 50px;
+    font-family: $main-font;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    &--small {
+      font-size: 51px;
+    }
+  }
+
+  &__statistic-card-info {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 10px 30px;
+    border-radius: 999px;
+    background: $main;
+    color: $light;
+    font-family: $main-font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__statistic-card-text {
+    margin-top: 10px;
+    text-align: center;
+    font-kerning: none;
+    font-family: $main-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    opacity: 0.6;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .about {
+    &__statistic-card-count {
+      font-size: clamp(20px, 4.5vw, 60px);
+
+      &--small {
+        font-size: clamp(20px, 4vw, 40px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    & .container {
+      width: 90%;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__info-card {
+      height: 300px;
+    }
+
+    &__statistic-card-count {
+      font-size: clamp(20px, 10vw, 60px);
+
+      &--small {
+        font-size: clamp(20px, 8vw, 40px);
+      }
+    }
+
+    &__info-card-text {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about__wrap {
+    border-radius: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    &__cards:last-child {
+      margin-top: 100px;
+    }
+
+    &__info-card {
+      height: 250px;
+    }
+
+    &__info-card-icon {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

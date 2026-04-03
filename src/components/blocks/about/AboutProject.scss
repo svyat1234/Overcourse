@@ -1,0 +1,38 @@
+@use "@/app/variables" as *;
+
+.about-project {
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 20px;
+    }
+    &__text {
+        font-size: 18px;
+        line-height: 120%;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 120%;
+        font-weight: 600;
+        margin-top: 30px;
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    &__contact {
+        font-size: 18px;
+        line-height: 120%;
+        text-decoration: none;
+        color: $dark;
+        transition: color 0.2s ease;
+        width: fit-content;
+        &:hover {
+            color: $accent;
+        }
+    }
+}

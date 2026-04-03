@@ -1,0 +1,96 @@
+@use "@/app/variables" as *;
+
+.schools-sections {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+  }
+}
+
+.schools-sections-card {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  padding: 30px;
+  border-radius: 30px;
+  border: 2px solid #f8f8f8;
+  background: $light;
+  text-decoration: none;
+
+  &--assets-loading {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    position: relative;
+    z-index: 1;
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__logo-wrap {
+    width: 152px;
+    height: 49px;
+    border-radius: 12px;
+    border: 2px solid #f9f9f9;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(29px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 120px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 100%;
+    color: $dark;
+  }
+
+  &__desc {
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.22;
+    color: $dark;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .schools-sections {
+    &__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .schools-sections {
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
