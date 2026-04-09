@@ -91,7 +91,6 @@ export default function ImpressionReviewCard({
               height={236}
               sizes="200px"
               onLoad={onImgLoad}
-              onLoadingComplete={onImgLoad}
               onError={onImgError}
             />
           </div>

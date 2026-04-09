@@ -119,7 +119,7 @@
   }
 
   &__form-icon {
-    min-width: 28px;
+    min-width: 30px;
     height: 15px;
     background: url("/images/arrow-light.svg") no-repeat center/cover;
   }
@@ -254,6 +254,11 @@
     z-index: 1;
   }
 
+  &__img-books {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
   &__img-loop-wrap {
     position: absolute;
     top: 0;
@@ -262,6 +267,11 @@
     aspect-ratio: 360/400;
     z-index: 10;
     will-change: transform;
+  }
+
+  &__img-loop {
+    object-fit: contain;
+    object-position: center;
   }
 
   &__img-text {

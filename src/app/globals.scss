@@ -339,6 +339,10 @@ body {
         color: $light;
     }
 
+    &:active {
+        opacity: 0.5;
+    }
+
     &--accent {
         background: $accent;
         color: $light;
@@ -361,14 +365,27 @@ body {
     background: $button url("/images/favorite.svg") no-repeat center;
     cursor: pointer;
     border-radius: 10px;
-    transition: background 0.1s ease-in-out;
+    transition: background 0.2s ease-in-out;
 
     &:hover {
-        background: $accent url("/images/favorite-active.svg") no-repeat center;
+        background: rgb(233, 233, 233)url("/images/favorite.svg") no-repeat center;
     }
 
     &--active {
-        background: $accent url("/images/favorite-active.svg") no-repeat center;
+        background: $accent url("/images/favorite-active.svg") no-repeat center !important;
+        transition: background 0.1s ease-in-out;
+        transition: opacity 0.1s ease-in-out;
+
+        &:hover {
+            opacity: 0.5;
+        }
+        &:active {
+            opacity: 0.3 !important;
+        }
+    }
+
+    &:active {
+        opacity: 0.5;
     }
 }
 
@@ -383,6 +400,10 @@ body {
 
     &:hover {
         background: $accent url("/images/share-active.svg") no-repeat center;
+    }
+
+    &:active {
+        opacity: 0.5;
     }
 
     &--active {

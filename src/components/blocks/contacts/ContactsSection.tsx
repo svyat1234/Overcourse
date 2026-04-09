@@ -7,7 +7,7 @@ import "./ContactsSection.scss";
 const CONTACT_CARDS = [
   {
     title: "Адрес",
-    items: [{ type: "text" as const, value: "ул. Жудро 88, Минск, Беларусь" }],
+    items: [{ type: "text" as const, value: "г. Жуковский, ул. Королёва, 23" }],
   },
   {
     title: "Контакты",

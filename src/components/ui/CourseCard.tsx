@@ -42,6 +42,7 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [logoLoaded, setLogoLoaded] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const assetsReady = imageLoaded && logoLoaded;
 
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -57,7 +58,7 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
     setLogoLoaded(false);
   }, [course.slug, image, schoolLogo]);
 
-  /** next/image не всегда вызывает onLoadingComplete для кэша; ловим через onLoad + img.complete */
+  /** next/image не всегда вызывает onLoad при кэше; дублируем проверку в useLayoutEffect (img.complete) */
   useLayoutEffect(() => {
     const img = imageRef.current;
     const logo = logoRef.current;
@@ -84,11 +85,9 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
             src={image}
             alt=""
             className="course-card--wide__img"
-            width={443}
-            height={400}
-            sizes="(max-width: 768px) 100vw, 443px"
+            fill
+            sizes="(max-width: 992px) 100vw, 443px"
             onLoad={onImageLoad}
-            onLoadingComplete={onImageLoad}
             onError={onImageError}
           />
           <div className="course-card--wide__rating">{rating}</div>
@@ -101,7 +100,6 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
               width={120}
               height={38}
               onLoad={onLogoLoad}
-              onLoadingComplete={onLogoLoad}
               onError={onLogoError}
             />
           </div>
@@ -138,7 +136,12 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
               <Link href={courseHref} className="course-card--wide__button button">
                 Перейти на сайт
               </Link>
-              <button type="button" className="button-favorite" aria-label="В избранное" />
+              <button
+                type="button"
+                className={`button-favorite${isFavorite ? " button-favorite--active" : ""}`}
+                onClick={() => setIsFavorite(!isFavorite)}
+                aria-label={isFavorite ? "Убрать из избранного" : "В избранное"}
+              />
             </div>
           </div>
         </div>
@@ -155,11 +158,9 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
           src={image}
           alt=""
           className="course-card__img"
-          width={400}
-          height={202}
+          fill
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1500px) 33vw, 25vw"
           onLoad={onImageLoad}
-          onLoadingComplete={onImageLoad}
           onError={onImageError}
         />
         <div className="course-card__info">
@@ -173,7 +174,6 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
               width={120}
               height={38}
               onLoad={onLogoLoad}
-              onLoadingComplete={onLogoLoad}
               onError={onLogoError}
             />
           </div>
@@ -201,7 +201,12 @@ export default function CourseCard({ course, variant = "standard" }: CourseCardP
             <Link href={courseHref} className="course-card__link button">
               Перейти на сайт
             </Link>
-            <button type="button" className="button-favorite" aria-label="В избранное" />
+            <button
+              type="button"
+              className={`button-favorite${isFavorite ? " button-favorite--active" : ""}`}
+              onClick={() => setIsFavorite(!isFavorite)}
+              aria-label={isFavorite ? "Убрать из избранного" : "В избранное"}
+            />
           </div>
         </div>
       </div>

@@ -178,7 +178,7 @@ export function schoolToPromoData(school: School): AboutPromoSectionData {
     tags: school.tags,
     title: school.title,
     descriptionParagraphs: school.descriptionParagraphs,
-    primaryButton: { href: "#", text: "Перейти на сайт школы" },
+    primaryButton: { href: "#", text: "Перейти на сайт" },
     image: { src: school.image, alt: school.title },
     infoCards: [
       { title: "Курсов", value: `${school.coursesCount} ШТ`, highlight: true },

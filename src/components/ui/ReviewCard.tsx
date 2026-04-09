@@ -100,7 +100,6 @@ export default function ReviewCard({ review, className = "" }: ReviewCardProps) 
                 width={50}
                 height={50}
                 onLoad={onAvatarLoad}
-                onLoadingComplete={onAvatarLoad}
                 onError={onAvatarError}
               />
             </div>
@@ -148,7 +147,6 @@ export default function ReviewCard({ review, className = "" }: ReviewCardProps) 
                 width={100}
                 height={30}
                 onLoad={onLogoLoad}
-                onLoadingComplete={onLogoLoad}
                 onError={onLogoError}
               />
             </Link>

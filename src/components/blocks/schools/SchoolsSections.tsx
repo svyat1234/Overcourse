@@ -80,7 +80,6 @@ function SchoolsSectionsCard({ school }: { school: SchoolListItem }) {
             width={120}
             height={24}
             onLoad={onLogoLoad}
-            onLoadingComplete={onLogoLoad}
             onError={onLogoError}
           />
         </div>

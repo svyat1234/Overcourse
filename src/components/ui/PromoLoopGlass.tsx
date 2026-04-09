@@ -55,6 +55,7 @@ export default function PromoLoopGlass() {
         alt="Loop"
         className="promo__img-loop"
         fill
+        sizes="(max-width: 1450px) 40vw, 360px"
       />
 
       <div className="promo__glass liquidGlass-wrapper">

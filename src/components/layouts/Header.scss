@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1110px;
+    max-width: 1100px;
     width: 100%;
     gap: 60px;
   }
@@ -92,7 +92,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 705px;
+    max-width: 600px;
     width: 100%;
   }
 
@@ -238,7 +238,7 @@
     border: none;
     width: 17px;
     height: 19px;
-    background: url("/images/search.svg") no-repeat center/cover;
+    background: url("/images/search.svg") no-repeat center/contain;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
@@ -324,6 +324,7 @@
 
 @media screen and (max-width: 600px) {
   .header {
+    margin-top: 30px;
 
     &__button {
       display: none;

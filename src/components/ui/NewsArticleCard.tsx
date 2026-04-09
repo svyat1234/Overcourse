@@ -77,7 +77,6 @@ export default function NewsArticleCard({
       height={isFeatured ? 520 : 160}
       sizes={isFeatured ? "785px" : "250px"}
       onLoad={onImgLoad}
-      onLoadingComplete={onImgLoad}
       onError={onImgError}
     />
   );

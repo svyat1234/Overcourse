@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import SearchModal from "@/components/ui/SearchModal";
+import MobileMenu from "@/components/layouts/MobileMenu";
 import {
   headerVariantByPath,
   defaultHeaderVariant,
@@ -17,7 +19,6 @@ const HEADER_LINKS: { href: string; label: string; modifier?: string }[] = [
   { href: "/courses", label: "Все курсы", modifier: "header__link--courses" },
   { href: "/schools", label: "Школы" },
   { href: "/news", label: "Новости" },
-  { href: "/contacts", label: "Контакты" },
 ];
 
 const INFO_LINKS = [
@@ -37,6 +38,8 @@ export default function Header() {
   const [isScrollActive, setIsScrollActive] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const infoWrapperRef = useRef<HTMLDivElement | null>(null);
   const exitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isScrollActiveRef = useRef(false);
@@ -125,6 +128,7 @@ export default function Header() {
             className="logo"
             width={200}
             height={34}
+            priority
           />
         </Link>
         <nav className="header__nav" aria-label="Основная навигация">
@@ -172,11 +176,17 @@ export default function Header() {
         </nav>
       </div>
       <div className="header__interaction">
-        <Link href="#" className="header__search" aria-label="Поиск" />
+        <button
+          type="button"
+          className="header__search"
+          aria-label="Поиск"
+          onClick={() => setIsSearchOpen(true)}
+        />
         <button
           type="button"
           className="header__menu-button"
           aria-label="Открыть меню"
+          onClick={() => setIsMenuOpen(true)}
         >
           <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <rect width="21" height="3" rx="1.5" fill="currentColor" />
@@ -188,5 +198,17 @@ export default function Header() {
     </>
   );
 
-  return <header className={headerClasses}>{headerContent}</header>;
+  return (
+    <>
+      <header className={headerClasses}>{headerContent}</header>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <MobileMenu 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)} 
+        links={HEADER_LINKS}
+        infoLinks={INFO_LINKS as unknown as { href: string; label: string }[]}
+        logoSrc={LOGO_DARK}
+      />
+    </>
+  );
 }

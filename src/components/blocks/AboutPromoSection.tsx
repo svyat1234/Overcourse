@@ -1,6 +1,16 @@
+"use client";
+
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./AboutPromoSection.scss";
+
+const SHARE_SOCIALS = [
+  { id: "vk", label: "VK", icon: "/images/socials/vk.svg", href: "#" },
+  { id: "tg", label: "Telegram", icon: "/images/socials/telegram.svg", href: "#" },
+  { id: "wa", label: "WhatsApp", icon: "/images/socials/whatsapp.svg", href: "#" },
+  { id: "pi", label: "Pinterest", icon: "/images/socials/pinterest.svg", href: "#" },
+];
 
 export type AboutPromoTag = {
   label: string;
@@ -40,6 +50,41 @@ export default function AboutPromoSection({
   data,
   showFavoriteShare = true,
 }: AboutPromoSectionProps) {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  const [isCopied, setIsFavoriteCopied] = useState(false);
+  const shareWrapperRef = useRef<HTMLDivElement | null>(null);
+
+  const handleCopy = useCallback(() => {
+    const url = typeof window !== "undefined" ? window.location.href : "";
+    navigator.clipboard.writeText(url).then(() => {
+      setIsFavoriteCopied(true);
+      setTimeout(() => setIsFavoriteCopied(false), 2000);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isShareOpen) {
+      setIsFavoriteCopied(false);
+    }
+  }, [isShareOpen]);
+
+  useEffect(() => {
+    if (!isShareOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        shareWrapperRef.current &&
+        !shareWrapperRef.current.contains(event.target as Node)
+      ) {
+        setIsShareOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isShareOpen]);
+
   const {
     company,
     tags,
@@ -89,7 +134,7 @@ export default function AboutPromoSection({
           
         </div>
 
-        <div className="about-promo__buttons">
+        <div className="about-promo__buttons" ref={shareWrapperRef}>
           <Link href={primaryButton.href} className="about-promo__button button">
             {primaryButton.text}
           </Link>
@@ -97,14 +142,48 @@ export default function AboutPromoSection({
             <>
               <button
                 type="button"
-                className="about-promo__button-favorite button-favorite"
-                aria-label="Добавить в избранное"
+                className={`about-promo__button-favorite button-favorite${isFavorite ? " button-favorite--active" : ""}`}
+                onClick={() => setIsFavorite(!isFavorite)}
+                aria-label={isFavorite ? "Убрать из избранного" : "Добавить в избранное"}
               />
               <button
                 type="button"
                 className="about-promo__button-share button-share"
                 aria-label="Поделиться"
+                onClick={() => setIsShareOpen(!isShareOpen)}
               />
+              {isShareOpen && (
+                <div className="about-promo__share-modal">
+                  <div className="about-promo__share-list">
+                    {SHARE_SOCIALS.map((social) => (
+                      <a
+                        key={social.id}
+                        href={social.href}
+                        className="about-promo__share-item"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image src={social.icon} alt={social.label} fill />
+                      </a>
+                    ))}
+                    <button
+                      type="button"
+                      className="about-promo__share-item about-promo__share-item--copy"
+                      onClick={handleCopy}
+                    >
+                      <div className="about-promo__share-copy-icon">
+                        <Image 
+                          src={isCopied ? "/images/socials/confirm.svg" : "/images/socials/copy.svg"} 
+                          alt="Копировать" 
+                          width={20} 
+                          height={20} 
+                        />
+                      </div>
+                      {isCopied && <span className="about-promo__share-tooltip">Скопировано!</span>}
+                    </button>
+                  </div>
+                </div>
+              )}
             </>
           )}
         </div>

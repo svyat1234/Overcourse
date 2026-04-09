@@ -62,11 +62,127 @@
     width: 100%;
     display: flex;
     gap: 2px;
+    position: relative;
+    width: fit-content;
+  }
+
+  &__share-modal {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 272px;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 20px;
+    z-index: 10;
+    animation: shareFadeIn 0.3s ease-out;
+
+    @media screen and (max-width: 600px) {
+      left: 0;
+      bottom: auto;
+      top: calc(100% + 10px);
+    }
+  }
+
+  &__share-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__share-item {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ececec;
+
+    &:hover {
+      background: #eee;
+      transform: translateY(-2px);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--copy {
+      background: #fff;
+      border: 1px solid #eee;
+
+      &:hover {
+        background: #fff;
+        border-color: $accent;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__share-copy-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $dark;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: shareFadeIn 0.2s ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: $dark;
+    }
+  }
+
+  @keyframes shareFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__button {
-    max-width: 272px;
-    width: 100%;
+    width: 272px;
+
+    @media screen and (max-width: 480px) {
+      width: 200px;
+    }
   }
 
   &__info {

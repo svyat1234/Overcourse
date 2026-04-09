@@ -141,7 +141,6 @@ export default function ReviewModal({ review, onClose }: ReviewModalProps) {
                   height={236}
                   sizes="240px"
                   onLoad={onImgLoad}
-                  onLoadingComplete={onImgLoad}
                   onError={onImgError}
                 />
               </div>
