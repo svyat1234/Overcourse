@@ -17,6 +17,7 @@
     border: none;
     cursor: pointer;
     flex-shrink: 0;
+    transition: all 0.1s ease-in-out;
 
     &:disabled {
       opacity: 0.5;
@@ -24,12 +25,36 @@
     }
 
     &--prev {
-      background: $light url("/images/pagination-arrow.svg") no-repeat center;
+      background-color: $light;
+      background-image: url("/images/pagination-arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        background-color: $accent;
+        background-image: url("/images/pagination-arrow-light.svg");
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
     }
 
     &--next {
-      background: $light url("/images/pagination-arrow.svg") no-repeat center;
+      background-color: $light;
+      background-image: url("/images/pagination-arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
       transform: rotate(180deg);
+
+      &:hover {
+        background-color: $accent;
+        background-image: url("/images/pagination-arrow-light.svg");
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
     }
   }
 

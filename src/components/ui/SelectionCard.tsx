@@ -14,9 +14,11 @@ export default function SelectionCard({ card }: SelectionCardProps) {
       <div className="selection-card__content">
         <div className="selection-card__tags">
           {card.tags.map((tag) => (
-            <span key={tag.label} className="selection-card__tag">
-              {tag.label}
-            </span>
+            tag.label.map((label) => (
+              <span key={label} className="selection-card__tag">
+                {label}
+              </span>
+            ))
           ))}
         </div>
         <h3 className="selection-card__title">{card.title}</h3>

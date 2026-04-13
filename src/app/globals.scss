@@ -493,7 +493,10 @@ body {
     &::after {
         content: '' !important;
     }
+}
 
+.swiper-navigation-icon {
+    display: none !important;
 }
 
 // ========== Медиа для глобальных стилей (из overcourse-static/sass/style.scss) ==========
@@ -1212,60 +1215,34 @@ body {
     }
 }
 
-/* Scroll reveal: все h1/h2 в контенте (IntersectionObserver + класс .scroll-reveal--visible) */
-#main h1,
-#main h2 {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-html.scroll-reveal--enabled #main h1:not(.scroll-reveal--visible),
-html.scroll-reveal--enabled #main h2:not(.scroll-reveal--visible) {
-    opacity: 0;
-    transform: translateY(12px);
-}
-
-@keyframes heading-scroll-reveal {
-    from {
+// Простая и надежная анимация появления заголовков (Scroll Reveal)
+@media (prefers-reduced-motion: no-preference) {
+    // Начальное скрытое состояние
+    // Не применяем класс .site-slow-load, чтобы заголовки появлялись даже если JS отвалился
+    #main h1, 
+    #main .section-title, 
+    #main .section-title-default {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(15px);
+        transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    to {
+
+    // Состояние когда JS отключен (скрипт в <head> не сработал)
+    html.no-js #main h1, 
+    html.no-js #main .section-title, 
+    html.no-js #main .section-title-default {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+
+    // Анимированное состояние (когда IntersectionObserver добавил класс)
+    #main h1.is-visible, 
+    #main .section-title.is-visible, 
+    #main .section-title-default.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-html.scroll-reveal--enabled #main h1.scroll-reveal--visible,
-html.scroll-reveal--enabled #main h2.scroll-reveal--visible {
-    opacity: 1;
-    transform: translateY(0);
-    animation: heading-scroll-reveal 0.6s ease both;
-}
 
-@media (prefers-reduced-motion: reduce) {
-    #main h1,
-    #main h2 {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-
-/* Без JS заголовки не должны оставаться скрытыми */
-@media (scripting: none) {
-    #main h1,
-    #main h2 {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-/* Медленная первичная загрузка: класс `site-slow-load` ставит SiteLoadGate (см. SiteLoadGate.tsx) */
-html.site-slow-load *,
-html.site-slow-load *::before,
-html.site-slow-load *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-}

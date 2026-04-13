@@ -31,6 +31,16 @@
     line-height: normal;
     background: $light;
     border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+    
+    &:hover {
+      background: $accent;
+      color: $light;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 }
 

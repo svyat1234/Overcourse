@@ -16,7 +16,7 @@ export default function SchoolsSection() {
       <div className="schools__content">
         <div className="schools__heading">
           <h2 className="schools__title section-title">
-            <span className="schools__title--accent section-title--accent">2 150+ школ</span> уже на Overcourse&nbsp;— Ваш ход!
+            <span className="schools__title--accent section-title--accent">150+ школ </span>уже на Overcourse&nbsp;— Ваш ход!
           </h2>
           <span className="schools__text">
             Присоединяйтесь к лидерам образования: опубликуйте курсы вашей школы и начните обучение новых студентов уже сейчас.

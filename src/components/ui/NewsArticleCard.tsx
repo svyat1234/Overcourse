@@ -18,12 +18,14 @@ export type NewsArticleCardProps = {
   /** Крупная карточка с лидом или компактная строка в списке */
   layout: NewsArticleCardLayout;
   className?: string;
+  priority?: boolean;
 };
 
 export default function NewsArticleCard({
   card,
   layout,
   className = "",
+  priority = false,
 }: NewsArticleCardProps) {
   const articleHref = card.articleHref ?? NEWS_ARTICLE_HREF_PLACEHOLDER;
   const isFeatured = layout === "featured";
@@ -73,9 +75,9 @@ export default function NewsArticleCard({
       src={card.image}
       alt=""
       className="news-article-card__img"
-      width={785}
-      height={isFeatured ? 520 : 160}
-      sizes={isFeatured ? "785px" : "250px"}
+      fill
+      sizes={isFeatured ? "(max-width: 768px) 100vw, 785px" : "(max-width: 400px) 100vw, 250px"}
+      priority={priority}
       onLoad={onImgLoad}
       onError={onImgError}
     />

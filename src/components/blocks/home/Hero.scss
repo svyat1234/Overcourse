@@ -1,3 +1,5 @@
+@use "@/app/variables" as *;
+
 .promo {
   padding: 20px 20px 0;
 
@@ -79,6 +81,7 @@
     border-radius: 12px;
     border: none;
     padding-left: 30px;
+    outline: none;
 
     &::-moz-placeholder {
       color: #e6e6e6;
@@ -97,6 +100,7 @@
       font-weight: 600;
       line-height: normal;
     }
+
   }
 
   &__button {
@@ -156,6 +160,16 @@
     font-style: normal;
     font-weight: 600;
     border-bottom: 1px solid #fff;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
   }
 
   &__tags {
@@ -182,6 +196,7 @@
     transition: all 0.1s;
 
     &:hover {
+      background: $light;
       color: #afe982;
       border: 1px solid #afe982;
     }

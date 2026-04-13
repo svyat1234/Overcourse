@@ -18,7 +18,7 @@ export default function CourseQuestionsSection() {
     <section className="course-questions section container">
       <div className="course-questions__heading">
         <h2 className="course-questions__title section-title-default">
-          Остались<span className="section-title-default--accent"> вопросы?</span>
+          Программа<span className="section-title-default--accent"> курса</span>
         </h2>
         <div className="course-questions__info">
           {INFO_TEXTS.map((text) => (

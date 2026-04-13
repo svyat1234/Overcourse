@@ -108,11 +108,6 @@ export default function SchoolsSections() {
     return Math.min(page, totalPages);
   }, [searchParams, totalPages]);
 
-  useEffect(() => {
-    setViewMode("single");
-    setVisiblePages(currentPage);
-  }, [currentPage]);
-
   const setPage = (page: number) => {
     const url = page === 1 ? pathname : `${pathname}?page=${page}`;
     router.replace(url, { scroll: false });
@@ -141,8 +136,7 @@ export default function SchoolsSections() {
   }, [currentPage]);
 
   const handleShowMore = () => {
-    shouldScrollAfterPageChangeRef.current = true;
-    const nextVisible = Math.min(totalPages, visiblePages + 1);
+    const nextVisible = Math.min(totalPages, Math.max(visiblePages, currentPage) + 1);
     setVisiblePages(nextVisible);
     setViewMode("expanded");
     setPage(nextVisible);

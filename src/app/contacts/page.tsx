@@ -4,7 +4,8 @@ import ContactsSection from "@/components/blocks/contacts/ContactsSection";
 export default function ContactsPage() {
   return (
     <>
-      <AboutSection />
+      {/* Временно отключен, неясно нужна ли эта секция */}
+      {/* <AboutSection /> */}
       <ContactsSection />
     </>
   );

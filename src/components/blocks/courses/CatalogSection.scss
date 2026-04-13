@@ -1,6 +1,25 @@
 @use "@/app/variables" as *;
 
 .courses {
+  position: relative;
+
+  &__loading-overlay {
+    display: none; // Скрываем оверлей загрузки
+  }
+
+  &__spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba($accent, 0.3);
+    border-top-color: $accent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
   &__title {
     max-width: 695px;
     margin-bottom: 60px;
@@ -9,6 +28,40 @@
   &__menu {
     @include flex-start-between;
     margin-bottom: 60px;
+
+    &-sort-wrapper {
+      position: relative;
+    }
+
+    &-dropdown {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      width: 200px;
+      background: $light;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000; // Увеличено
+      padding: 10px 0;
+      border: 1px solid rgba($dark, 0.1);
+    }
+
+    &-dropdown-item {
+      width: 100%;
+      padding: 10px 20px;
+      text-align: left;
+      background: none;
+      border: none;
+      font-family: $main-font;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
 
     &-categories {
       display: flex;
@@ -27,24 +80,38 @@
       border: 1px solid $dark;
       background: none;
       cursor: pointer;
-      transition: all 0.1s ease-in-out;
+      transition: all 0.2s;
+
       &:hover {
-        background-color: $dark;
-        color: $light;
+        opacity: 0.7;
       }
+
       &:active {
-        background-color: rgba($dark, 0.8);
+        transform: scale(0.98);
+      }
+
+      &.active {
+        background: $dark;
+        color: $light;
+        border-color: rgba($accent, 0);
       }
 
       &--popular {
         padding-left: 45px;
         background: url("/images/popular.svg") no-repeat left 18px center;
+
         &:hover {
           background: $dark url("/images/popular-active.svg") no-repeat left 18px center;
           color: $light;
         }
+
         &:active {
-          background-color: rgba($dark, 0.8);
+          opacity: 0.5;
+        }
+
+        &.active {
+          background: $dark url("/images/popular-active.svg") no-repeat left 18px center;
+          border-color: rgba($accent, 0);
         }
       }
     }
@@ -67,23 +134,28 @@
       border: 1px solid $dark;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+
       &--grid {
         background: url("/images/grid.svg") no-repeat center;
+
         &:hover {
           background: $dark url("/images/grid-active.svg") no-repeat center;
-        }
-        &:active {
-          background: rgba($dark, 0.8) url("/images/grid-active.svg") no-repeat center;
         }
       }
 
       &--list {
         background: url("/images/list.svg") no-repeat center;
+
         &:hover {
           background: $dark url("/images/list-active.svg") no-repeat center;
-        }
-        &:active {
-          background: rgba($dark, 0.8) url("/images/list-active.svg") no-repeat center;
         }
       }
 
@@ -178,6 +250,11 @@
     gap: 10px;
   }
 
+  &__main-button-wrapper {
+    position: relative;
+    z-index: 10; // Добавлено
+  }
+
   &__main-button {
     position: relative;
     padding: 0 20px;
@@ -188,13 +265,22 @@
     cursor: pointer;
     text-align-last: left;
     font: inherit;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s;
 
     &:hover {
-      background: $accent;
+      background: lighten($dark, 10%);
     }
+
     &:active {
-      background: rgba($accent, 0.8);
+      opacity: 0.5;
+    }
+
+    &.active {
+      background: $accent;
+
+      &::after {
+        transform: translateY(-50%) rotate(-180deg);
+      }
     }
 
     &--filters {
@@ -216,6 +302,7 @@
         width: 11px;
         height: 6px;
         background: url("/images/arrow-down-light.svg") no-repeat center;
+        transition: transform 0.2s;
       }
     }
   }
@@ -234,7 +321,6 @@
     height: 30px;
     background: $accent;
     border-radius: 50%;
-    transition: all 0.2s ease-in-out;
   }
 
   &__main-button-title {
@@ -259,15 +345,112 @@
   &__lists {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 10px;
   }
 
   &__list {
+    position: relative;
     height: 50px;
-    width: 305px;
+    width: 280px;
     background: $light;
     border-radius: 10px;
-    overflow: hidden;
+    z-index: 10; // Добавлено, чтобы дропдауны были выше карточек
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: $light;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000; // Увеличено
+    padding: 10px 0;
+    border: 1px solid rgba($dark, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+
+    &--price {
+      width: 320px;
+      padding: 20px;
+      overflow: visible;
+    }
+  }
+
+  &__price-popover {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__price-inputs {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__price-field {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 0 12px;
+    height: 40px;
+    border-radius: 8px;
+    gap: 5px;
+    flex: 1;
+
+    span {
+      color: $gray;
+      font-size: 12px;
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 600;
+      color: $dark;
+      outline: none;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  &__price-apply {
+    background: $dark;
+    color: $light;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__dropdown-item {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-family: $main-font;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f5f5f5;
+    }
   }
 
   &__list-button {
@@ -285,13 +468,15 @@
     border: none;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+    border-radius: 10px;
+
     &:hover {
-      background: $accent;
-    }
-    &:active {
       background: rgba($accent, 0.8);
     }
 
+    &:active {
+      opacity: 0.8;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -301,6 +486,15 @@
       width: 11px;
       height: 6px;
       background: url("/images/arrow-down.svg") no-repeat center;
+      transition: transform 0.2s;
+    }
+
+    &.active::after {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+
+    &.active {
+      background: $accent;
     }
   }
 
@@ -324,7 +518,7 @@
 @media screen and (max-width: 1540px) {
   .courses-filters {
     &__list {
-      width: 250px;
+      // width: 250px;
     }
   }
 }
@@ -350,5 +544,4 @@
       align-items: flex-start;
     }
   }
-  
 }

@@ -290,6 +290,11 @@
   width: 200px;
   height: 34px;
   object-fit: contain;
+  transition: opacity 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 @media screen and (max-width: 1200px) {

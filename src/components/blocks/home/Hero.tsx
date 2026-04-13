@@ -151,6 +151,7 @@ export default function Hero() {
                 className="promo__img-books"
                 fill
                 sizes="(max-width: 1450px) 50vw, 754px"
+                priority
               />
             </div>
             <PromoLoopGlass />

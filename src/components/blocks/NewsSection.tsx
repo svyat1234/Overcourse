@@ -92,7 +92,7 @@ export default function NewsSection({ variant = "preview" }: NewsSectionProps) {
 
       <div className="news__content">
         {!isMobile && featuredCard && (
-          <NewsArticleCard card={featuredCard} layout="featured" />
+          <NewsArticleCard card={featuredCard} layout="featured" priority />
         )}
 
         <div className="news__cards-wrap">
@@ -103,6 +103,7 @@ export default function NewsSection({ variant = "preview" }: NewsSectionProps) {
                     key={`${card.title}-${index}`}
                     card={card}
                     layout="featured"
+                    priority={index === 0}
                   />
                 ))
               : listCards.map((card, index) => (

@@ -1381,8 +1381,7 @@ export function reviewItemToModalReview(item: ReviewItem): ReviewCard | null {
 
 /** Тег подборки (ссылка) */
 export type SelectionTag = {
-  label: string;
-  href: string;
+  label: string[];
 };
 
 /** Карточка подборки курсов (секция «Подборки курсов») */
@@ -1398,11 +1397,7 @@ export type SelectionCard = {
 };
 
 const SELECTION_TAGS: SelectionTag[] = [
-  { label: "Дизайн", href: "#" },
-  { label: "Frontend", href: "#" },
-  { label: "Backend", href: "#" },
-  { label: "Программирование", href: "#" },
-  { label: "UX/UI", href: "#" },
+  { label: ["Дизайн", "Frontend", "Backend", "Программирование", "UX/UI"] },
 ];
 
 /** 16 карточек подборок. Изображения: public/images/selection/selection1.png … selection16.png */
@@ -1410,7 +1405,7 @@ export const SELECTION_CARDS: SelectionCard[] = Array.from({ length: 16 }, (_, i
   tags: SELECTION_TAGS,
   title: "Научиться делать сайты и сервисы",
   image: `/images/selection/selection${i + 1}.png`,
-  href: "#",
+  href: "/courses",
 }));
 
 // --- News section (новости и статьи) ---

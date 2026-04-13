@@ -19,8 +19,8 @@ export default function NewsContent() {
                 src={AUTHOR_AVATAR}
                 alt=""
                 className="news-content__avatar"
-                width={48}
-                height={48}
+                fill
+                sizes="48px"
               />
             </div>
 
@@ -117,6 +117,8 @@ export default function NewsContent() {
           className="news-content__article-image"
           width={922}
           height={456}
+          sizes="(max-width: 1200px) 100vw, 922px"
+          style={{ width: "100%", height: "auto" }}
         />
 
         <h2 className="news-content__h2">Использование шага</h2>
